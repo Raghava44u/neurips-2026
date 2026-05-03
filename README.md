@@ -286,8 +286,11 @@ import json
 with open("results/paper_checkpoint.json") as f:
     d = json.load(f)
 # Fields per sample: cat, ce, cr, cp, be, br, bp, re, rr, rp, te, tr, tp, loc, dt
-# ce/cr/cp = composition edit/rephrase/portability
-# be/br/bp = baseline edit/rephrase/portability
+# ce/cr/cp = MemEIC Baseline (composition connector) edit/rephrase/portability  → EA=0.459
+# be/br/bp = No-Connector ablation edit/rephrase/portability                    → EA=0.482
+# re/rr/rp = Pure RAG edit/rephrase/portability                                 → EA=0.106
+# te/tr/tp = Text-only RAG edit/rephrase/portability                            → EA=0.110
+# loc       = Locality score (all methods = 0.600)
 
 # Cross-architecture results
 with open("results/cross_architecture_llava.json") as f:
