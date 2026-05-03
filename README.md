@@ -30,19 +30,19 @@ The paper introduces a failure-guided evaluation framework exposing systematic w
 | MemEIC Baseline | 0.459 | 0.343 | 0.023 | 0.600 |
 | MemEIC + AMG (Exp1) | 0.451 | 0.338 | 0.024 | 0.600 |
 | MemEIC + STK (Exp2) | 0.461 | 0.345 | 0.025 | 0.600 |
-| **MemEIC + GC (Exp3)** | **0.514** | **0.405** | 0.038 | 0.600 |
-| MemEIC + CBD (Exp4) | 0.483 | 0.363 | 0.047 | 0.600 |
+| MemEIC + GC (Exp3) | 0.482 | 0.352 | 0.038 | 0.600 |
+| **MemEIC + CBD (Exp4)** | **0.483** | **0.363** | 0.047 | 0.600 |
 | MemEIC No-Connector | 0.482 | 0.353 | 0.046 | 0.600 |
 
 **Per-category Edit Accuracy (Baseline vs Best):**
 
-| Category | Baseline | + GC (Best) |
+| Category | Baseline | Best (method) |
 |---|---|---|
-| F1 Polysemy | 0.793 | 0.834 |
-| F2 Cross-Modal Conflict | 0.007 | 0.105 (unsolved) |
-| F3 Near-Miss Retrieval | 0.395 | 0.433 |
-| F4 Multi-Hop Reasoning | 0.595 | 0.621 |
-| F5 Hard Visual Distinction | 0.505 | 0.632 |
+| F1 Polysemy | 0.793 | **0.794** (+ STK) |
+| F2 Cross-Modal Conflict | 0.007 | **0.105** (No-connector, unsolved) |
+| F3 Near-Miss Retrieval | 0.395 | **0.433** (No-connector) |
+| F4 Multi-Hop Reasoning | 0.595 | **0.596** (+ STK) |
+| F5 Hard Visual Distinction | 0.505 | **0.632** (+ CBD) |
 
 **Cross-Architecture (Vicuna-7b-v1.5, 200 samples):**
 - Baseline: 0.470 EA
@@ -310,7 +310,7 @@ for exp in ["exp1_adaptive_gating", "exp2_soft_topk",
 |---|---|---|---|
 | Exp1: AMG | `run_neurips_experiments.py` | `exp1_adaptive_gating.json` | Adaptive gating −2 pp vs baseline |
 | Exp2: STK | `run_neurips_experiments.py` | `exp2_soft_topk.json` | Soft top-k −4 pp overall, +12.5 pp on reasoning |
-| Exp3: GC | `run_neurips_experiments.py` | `exp3_consistency_connector.json` | No-connector +13 pp (Connector Paradox) |
+| Exp3: GC | `run_neurips_experiments.py` | `exp3_consistency_connector.json` | GC ≈ no-connector on Adversarial-2k; no-connector +13 pp on 200-sample hard subset |
 | Exp4: CBD | `run_neurips_experiments.py` | `exp4_confidence_threshold.json` | τ=0.6 with 2% deferral: −1 pp |
 | Cross-arch | `run_cross_architecture_validation.py` | `cross_architecture_llava.json` | Paradox holds on Vicuna-7b (+21 pp) |
 
