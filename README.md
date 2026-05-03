@@ -1,4 +1,4 @@
-﻿# MemEIC — Memory-Augmented Multimodal Knowledge Editing
+# MemEIC — Memory-Augmented Multimodal Knowledge Editing
 
 **NeurIPS 2026 Evaluations & Datasets Track**
 
@@ -443,7 +443,3 @@ Hyperparameter configs in `hparams/` (YAML), one subfolder per method:
 ```
 
 ---
-
-## License
-
-BSD 3-Clause License. Dataset and checkpoints: CC BY 4.0.
