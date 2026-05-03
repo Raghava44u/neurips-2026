@@ -1,13 +1,3 @@
-# MemEIC — Memory-Augmented Multimodal Knowledge Editing
-
-**NeurIPS 2026 Evaluations & Datasets Track**
-
-[![arXiv](https://img.shields.io/badge/arXiv-2510.25798-b31b1b.svg)](https://arxiv.org/abs/2510.25798)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Datasets-yellow)](https://huggingface.co/datasets/MemEIC/CCKEB)
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-
----
-
 ## Overview
 
 This repository contains the code, datasets, and evaluation scripts for:
@@ -46,118 +36,13 @@ The paper introduces a failure-guided evaluation framework exposing systematic w
 
 **Cross-Architecture (Vicuna-7b-v1.5, 200 samples):**
 - Baseline: 0.470 EA
-- No-Connector: 0.680 EA (+21.0 pp) — confirms connector paradox generalises
+- No-Connector: 0.680 EA (+21.0 pp) — confirms the connector paradox generalizes
 
 ---
-
-## Project Structure
-
-```
-MemEIC/
-│
-├── README.md                         ← this file
-├── requirements.txt                  ← core dependencies
-├── requirements_pinned.txt           ← exact pinned versions
-├── setup_environment.ps1             ← Windows environment setup script
-│
-├── datasets/                         ← All dataset files
-│   ├── adversarial_2k.json           ← Primary benchmark (2,000 samples, 5 categories)
-│   ├── adversarial_2k.json.bak       ← Backup before category field update
-│   ├── CCKEB_eval.json               ← CCKEB evaluation split (1,278 pairs)
-│   ├── CCKEB_train.json              ← CCKEB training split (5,000 pairs)
-│   ├── complex_reasoning_dataset.json ← Adversarial V1 (intermediate)
-│   ├── adversarial_reasoning_dataset.json ← Adversarial V2
-│   ├── adversarial_v2_hard.json      ← Hard 200-sample subset used in Exp1-4
-│   ├── adversarial_2k_stats.json     ← Dataset statistics
-│   ├── _image_pool.json              ← MMKB entity image paths
-│   ├── sample_preview.json           ← 10-sample preview
-│   ├── adversarial_preview.json      ← Adversarial preview
-│   ├── CCKEB_images/                 ← CCKEB entity images
-│   ├── train2017/                    ← COCO Train2017 images (download separately)
-│   └── prompt/                       ← Prompt templates
-│
-├── results/                          ← All experiment output files
-│   ├── paper_checkpoint.json         ← Full 2000-sample baseline evaluation
-│   ├── exp1_adaptive_gating.json     ← Exp1 AMG results
-│   ├── exp2_soft_topk.json           ← Exp2 STK results
-│   ├── exp3_consistency_connector.json ← Exp3 GC results (200-sample)
-│   ├── exp4_confidence_threshold.json ← Exp4 CBD results
-│   ├── cross_architecture_llava.json ← Vicuna-7b cross-arch validation
-│   ├── paper_evidence_complete.json  ← Aggregated evidence for paper
-│   ├── final_comparison.json         ← Original vs V1 vs V2 comparison
-│   ├── ablation.json / ablation_study.json ← Ablation variants
-│   ├── failure_cases.json            ← Failure case catalogue
-│   ├── retrieval_sensitivity.json    ← Alpha sweep sensitivity analysis
-│   ├── attention_heatmaps_layer30/31.png ← Attention visualisations
-│   ├── plots/                        ← Generated result plots
-│   └── ours_training/               ← Training logs and checkpoints
-│
-├── checkpoints/                      ← Model checkpoints (Git LFS)
-│   ├── llava_stage1.pt               ← LLaVA Stage-1 weights
-│   ├── llava_stage2/                 ← LLaVA Stage-2 LoRA adapters
-│   ├── minigpt4_stage1.pt            ← MiniGPT-4 Stage-1 weights
-│   ├── minigpt4_stage2/              ← MiniGPT-4 Stage-2 adapters
-│   └── ours_model/                   ← MemEIC dual-memory model weights
-│
-├── hparams/                          ← Hyperparameter YAML configs per method
-│   ├── FT/                           ← Fine-tuning LoRA configs
-│   ├── IKE/                          ← In-Context Knowledge Editing
-│   ├── LORA/                         ← LoRA adapter configs
-│   ├── MEND/                         ← MEND meta-learning configs
-│   ├── OURS/                         ← MemEIC configs
-│   ├── SERAC/                        ← SERAC scope classifier configs
-│   ├── TRAINING/                     ← Training hyperparameters
-│   └── WISE/                         ← WISE dual-memory configs
-│
-├── easyeditor/                       ← EasyEditor library (modified)
-│   ├── __init__.py
-│   ├── dataset/                      ← Dataset loaders
-│   ├── editors/                      ← Editor implementations (ROME, MEMIT, MEND, etc.)
-│   ├── evaluate/                     ← Metric computation
-│   ├── models/                       ← Model wrappers
-│   ├── trainer/                      ← Training loop
-│   └── util/                         ← Shared utilities
-│
-├── figs/                             ← Figures for MemEIC_NeurIPS2026.tex
-│
-├── dataset-part/                     ← CCKEB Dataset Paper (NeurIPS 2026 E&D Track)
-│   ├── CCKEB_Dataset_Paper.tex       ← Main LaTeX paper
-│   ├── checklist.tex                 ← NeurIPS submission checklist (fully filled)
-│   ├── new-figs/                     ← All 8 paper figures (fig1–fig8)
-│   └── generate_dataset_figures.py  ← Script to generate all 8 figures
-│
-├── NeurIPS/                          ← MemEIC system paper (NeurIPS 2026 main track)
-│   └── paper/
-│       └── MemEIC_NeurIPS2026.tex
-│
-│   ─── Dataset generation scripts ───────────────────────────────────────
-├── generate_adversarial_2k.py        ← Generate Adversarial-2k (2,000 samples)
-├── generate_adversarial_dataset.py   ← Generate Adversarial V1
-├── generate_adversarial_v2_hard.py   ← Generate 200-sample hard subset
-├── generate_train2017_2k.py          ← Generate 2k dataset from COCO Train2017
-├── generate_plots.py                 ← Generate comparison/ablation plots
-├── generate_visual_failures.py       ← Generate visual failure case images
-│
-│   ─── Experiment runner scripts ────────────────────────────────────────
-├── run_neurips_experiments.py        ← Run ALL Exp1–5 on full Adversarial-2k
-├── run_cross_architecture_validation.py ← Cross-arch validation (Vicuna-7b)
-├── run_failure_analysis.py           ← Failure analysis pipeline (Exp3–7)
-├── run_train2017_experiments.py      ← Run Exp1–4 on COCO Train2017 dataset
-├── run_complete_study.py             ← End-to-end complete study runner
-│
-│   ─── Utility scripts ──────────────────────────────────────────────────
-├── sample.py                         ← Quick sanity check / sampling
-├── test_compositional_edit.py        ← Unit test for compositional edits
-└── archive_candidates/               ← Archived debug scripts (not used in pipeline)
-```
-
----
-
-## Installation
 
 ### Requirements
 - Python 3.10+
-- CUDA GPU (≥16 GB VRAM recommended; 4-bit quantisation supports 8 GB)
+- CUDA GPU (≥16 GB VRAM recommended; 4-bit quantization supports 8 GB)
 - Windows (PowerShell) or Linux
 
 ### Step 1 — Create virtual environment
@@ -374,14 +259,6 @@ python test_compositional_edit.py
 
 ---
 
-## Papers
-
-### CCKEB Dataset Paper (NeurIPS 2026 E&D Track)
-
-- **File:** `dataset-part/CCKEB_Dataset_Paper.tex`
-- **Checklist:** `dataset-part/checklist.tex`
-- **Figures:** `dataset-part/new-figs/`
-
 Compile:
 ```bash
 cd dataset-part
@@ -426,23 +303,7 @@ Hyperparameter configs in `hparams/` (YAML), one subfolder per method:
 
 ---
 
-## Citation
 
-```bibtex
-@inproceedings{memeic2025,
-  title     = {MemEIC: A Step Toward Continual and Compositional Knowledge Editing},
-  author    = {Anonymous},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2026}
-}
-
-@inproceedings{cckeb2026,
-  title     = {CCKEB and Adversarial-2k: Benchmarks for Compositional
-               and Adversarial Multimodal Knowledge Editing},
-  author    = {Anonymous},
-  booktitle = {NeurIPS 2026 Evaluations and Datasets Track},
-  year      = {2026}
-}
 ```
 
 ---
