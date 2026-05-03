@@ -38,11 +38,66 @@ from transformers.modeling_outputs import (
 )
 from transformers.modeling_utils import (
     PreTrainedModel,
-    apply_chunking_to_forward,
-    find_pruneable_heads_and_indices,
-    prune_linear_layer,
 )
 from transformers.utils import logging
+
+# Try to import pruning utilities; they may not be available in newer transformers versions
+try:
+    from transformers.modeling_utils import (
+        find_pruneable_heads_and_indices,
+        prune_linear_layer,
+    )
+except ImportError:
+    # Fallback implementations for transformers >= 4.30
+    def find_pruneable_heads_and_indices(heads, num_attention_heads, attention_head_size, already_pruned_heads):
+        """Not implemented - pruning not supported in this version"""
+        return (), ()
+    
+    def prune_linear_layer(layer, index, dim=0):
+        """Not implemented - pruning not supported in this version"""
+        return layer
+
+
+def apply_chunking_to_forward(forward_fn, chunk_size, chunk_dim, *input_tensors):
+    """
+    Applies forward_fn to chunks of input tensors to reduce memory usage.
+    This function was removed in transformers >= 4.30, so we provide a local implementation.
+    """
+    assert all(
+        input_tensor.shape[chunk_dim] == input_tensors[0].shape[chunk_dim]
+        for input_tensor in input_tensors
+    ), "All input tensors must have the same size in the chunk dimension"
+
+    chunk_size = min(chunk_size, input_tensors[0].shape[chunk_dim])
+    if chunk_size == 0:
+        return forward_fn(*input_tensors)
+
+    output = None
+    for i in range(0, input_tensors[0].shape[chunk_dim], chunk_size):
+        # Slice tensors along chunk_dim
+        input_slices = tuple(
+            input_tensor[:, i : i + chunk_size, :] if chunk_dim == 1
+            else input_tensor[i : i + chunk_size, :, :]
+            for input_tensor in input_tensors
+        )
+        
+        output_slice = forward_fn(*input_slices)
+        
+        if output is None:
+            output = output_slice
+        else:
+            # Concatenate outputs along chunk_dim
+            if isinstance(output_slice, tuple):
+                output = tuple(
+                    torch.cat([output[k], output_slice[k]], dim=chunk_dim)
+                    if torch.is_tensor(output_slice[k])
+                    else output[k]
+                    for k in range(len(output_slice))
+                )
+            else:
+                output = torch.cat([output, output_slice], dim=chunk_dim)
+
+    return output
 from transformers.models.bert.configuration_bert import BertConfig
 
 logger = logging.get_logger(__name__)

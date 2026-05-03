@@ -1,0 +1,2073 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T14:45:44.509883",
+    "model": "microsoft/phi-2",
+    "device": "cuda"
+  },
+  "summary": {
+    "edit_acc": 0.96,
+    "rephrase_acc": 0.86,
+    "locality_acc": 0.94,
+    "m_locality_acc": 0.46,
+    "portability_acc": 0.36,
+    "text_edit_acc": 0.92,
+    "text_rephrase_acc": 0.82,
+    "text_locality_acc": 0.94,
+    "retrieval_score": 0.8802,
+    "baseline_acc": 0.24,
+    "eval_time_seconds": 543.77,
+    "num_samples": 50
+  },
+  "sample_details": [
+    {
+      "sample_idx": 0,
+      "src": "What is the capital of the country where the landmark in this image is located?",
+      "expected": "Paris",
+      "baseline": {
+        "pred": "The capital of the country where the landmark in this image is located is Paris.",
+        "correct": true
+      },
+      "retrieval_score": 0.8529,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Paris",
+        "expected": "Paris",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The landmark shown is the Eiffel Tower, located in France. The capital city of France is Paris.",
+        "expected": "Paris",
+        "correct": true
+      },
+      "locality": {
+        "pred": "George Orwell.",
+        "expected": "George Orwell",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A church.",
+        "expected": "A church",
+        "correct": true
+      },
+      "portability": {
+        "pred": "French",
+        "expected": "French",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Paris",
+        "expected": "Paris",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 1,
+      "src": "What currency is used in the country depicted in this city image?",
+      "expected": "Yen",
+      "baseline": {
+        "pred": "The currency used in the country depicted in this city image is the Euro.",
+        "correct": false
+      },
+      "retrieval_score": 0.7974,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Yen",
+        "expected": "Yen",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The country depicted in this city image is Japan, and its official currency is the yen.",
+        "expected": "Yen",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Au",
+        "expected": "Au",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A deer.",
+        "expected": "A dog",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Asia",
+        "expected": "Asia",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Yen",
+        "expected": "Yen",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 2,
+      "src": "What ocean borders the western coast of the country shown in this map image?",
+      "expected": "Pacific Ocean",
+      "baseline": {
+        "pred": "The Pacific Ocean.",
+        "correct": true
+      },
+      "retrieval_score": 0.9288,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Pacific Ocean",
+        "expected": "Pacific Ocean",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The country in this image is the United States, and the ocean on its western coastline is the Pacific Ocean.",
+        "expected": "Pacific Ocean",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Leonardo da Vinci.",
+        "expected": "Leonardo da Vinci",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "Basketball",
+        "expected": "Football",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The country shown in this image has 50 states.",
+        "expected": "50",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Pacific Ocean",
+        "expected": "Pacific Ocean",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 3,
+      "src": "What language is primarily spoken in the city where this famous bridge is located?",
+      "expected": "English",
+      "baseline": {
+        "pred": "The primary language spoken in the city where this famous bridge is located is English.",
+        "correct": true
+      },
+      "retrieval_score": 0.8169,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "English",
+        "expected": "English",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The city with this bridge is San Francisco, and the primary language spoken there is English.",
+        "expected": "English",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The speed of light in vacuum is approximately 299,792,458 meters per second.",
+        "expected": "299,792,458 meters per second",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The vehicle in this image is red.",
+        "expected": "Red",
+        "correct": true
+      },
+      "portability": {
+        "pred": "California",
+        "expected": "California",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "English",
+        "expected": "English",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 4,
+      "src": "What climate zone is the country of the monument shown in this image in?",
+      "expected": "Arid",
+      "baseline": {
+        "pred": "The country is located in the tropical climate zone.",
+        "correct": false
+      },
+      "retrieval_score": 0.85,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The country of the monument shown in this image is in the arid climate zone.",
+        "expected": "Arid",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The monument in the image is the Great Sphinx of Giza. It is located in Egypt, which is in the arid climate zone.",
+        "expected": "Arid",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Penicillin was discovered by Alexander Fleming.",
+        "expected": "Alexander Fleming",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The logo for the brand \"Nike\".",
+        "expected": "Nike",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The Nile River.",
+        "expected": "Nile",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The predominant climate of Egypt is arid.",
+        "expected": "Arid",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 5,
+      "src": "What is the GDP ranking of the country where this skyscraper is located?",
+      "expected": "1st",
+      "baseline": {
+        "pred": "The GDP ranking of the country where this skyscraper is located is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.9478,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The GDP ranking of the country where this skyscraper is located is 1st.",
+        "expected": "1st",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The skyscraper is located in the United States, and the United States has the highest GDP in the world.",
+        "expected": "1st",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Jupiter",
+        "expected": "Jupiter",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The fruit shown in this image is an apple.",
+        "expected": "Apple",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The skyscraper was completed in the 1980s.",
+        "expected": "1930s",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "1st",
+        "expected": "1st",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 6,
+      "src": "What hemisphere is the country of the castle shown in this image in?",
+      "expected": "Northern Hemisphere",
+      "baseline": {
+        "pred": "The country of the castle shown in this image is in the Northern Hemisphere.",
+        "correct": true
+      },
+      "retrieval_score": 0.9307,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Northern Hemisphere",
+        "expected": "Northern Hemisphere",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The castle in this image is located in Germany, which is in the Northern Hemisphere.",
+        "expected": "Northern Hemisphere",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Antonio Vivaldi composed the Four Seasons.",
+        "expected": "Antonio Vivaldi",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "There are three people in this photograph.",
+        "expected": "Three",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The Alps",
+        "expected": "Alps",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Germany is located in the Northern Hemisphere.",
+        "expected": "Northern Hemisphere",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 7,
+      "src": "What is the population density category of the region where this temple is found?",
+      "expected": "High density",
+      "baseline": {
+        "pred": "The population density category of the region where this temple is found is \"Very High\".",
+        "correct": false
+      },
+      "retrieval_score": 0.8602,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "High density",
+        "expected": "High density",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The temple in this image is located in Southeast Asia, and its population density is high.",
+        "expected": "High density",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Canberra",
+        "expected": "Canberra",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The image shows a plate of spaghetti with tomato sauce and meatballs.",
+        "expected": "Pizza",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Hinduism",
+        "expected": "Hinduism and Buddhism",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "High density",
+        "expected": "High density",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 8,
+      "src": "What type of government does the country of the palace in this image have?",
+      "expected": "Constitutional monarchy",
+      "baseline": {
+        "pred": "The country of the palace in this image has a monarchy.",
+        "correct": false
+      },
+      "retrieval_score": 0.9062,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The country of the palace in this image has a constitutional monarchy.",
+        "expected": "Constitutional monarchy",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The palace shown is Buckingham Palace, located in the United Kingdom. The United Kingdom has a constitutional monarchy.",
+        "expected": "Constitutional monarchy",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Titanic sank in 1912.",
+        "expected": "1912",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The musical instrument visible in this image is a guitar.",
+        "expected": "Guitar",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The current head of state of the country with this palace is Queen Elizabeth II.",
+        "expected": "The reigning British monarch",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The United Kingdom has a constitutional monarchy.",
+        "expected": "Constitutional monarchy",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 9,
+      "src": "What tectonic plate is the island nation shown in this volcanic image on?",
+      "expected": "Philippine Sea Plate",
+      "baseline": {
+        "pred": "The island nation is located on the Pacific Plate.",
+        "correct": false
+      },
+      "retrieval_score": 0.8653,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The island nation shown in this volcanic image on is located on the Philippine Sea Plate.",
+        "expected": "Philippine Sea Plate",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The volcanic island in this image is Japan, and it sits on the Philippine Sea Plate.",
+        "expected": "Philippine Sea Plate",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Albert Einstein.",
+        "expected": "Albert Einstein",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "This landscape depicts the season of spring.",
+        "expected": "Winter",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The country with this volcano has two major islands.",
+        "expected": "Four",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Japan is located on the Philippine Sea Plate.",
+        "expected": "Philippine Sea Plate",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 10,
+      "src": "What biome does the animal shown in this image primarily inhabit?",
+      "expected": "Savanna",
+      "baseline": {
+        "pred": "The animal shown in this image primarily inhabits the desert biome.",
+        "correct": false
+      },
+      "retrieval_score": 0.84,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Savanna",
+        "expected": "Savanna",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The animal in the image is a lion, and it naturally lives in the savanna biome.",
+        "expected": "Savanna",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The stapes bone.",
+        "expected": "Stapes",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The flower in this image is yellow.",
+        "expected": "Yellow",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The average lifespan of the animal shown in this image in the wild is approximately 10-15 years.",
+        "expected": "10-14 years",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Lions primarily inhabit the savanna biome.",
+        "expected": "Savanna",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 11,
+      "src": "What is the conservation status of the species shown in this image according to IUCN?",
+      "expected": "Vulnerable",
+      "baseline": {
+        "pred": "The species shown in this image is listed as \"Least Concern\" by IUCN.",
+        "correct": false
+      },
+      "retrieval_score": 0.7822,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The conservation status of the species shown in this image according to IUCN is vulnerable.",
+        "expected": "Vulnerable",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The species in the picture is a polar bear, and its IUCN conservation status is vulnerable.",
+        "expected": "Vulnerable",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Alexander Graham Bell.",
+        "expected": "Alexander Graham Bell",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The object in this image is a circle.",
+        "expected": "Circular",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The primary diet of the species shown in this image is seals.",
+        "expected": "Seals",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The IUCN conservation status of polar bears is Vulnerable.",
+        "expected": "Vulnerable",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 12,
+      "src": "What family does the plant shown in this image belong to, and is it monocot or dicot?",
+      "expected": "Poaceae, monocot",
+      "baseline": {
+        "pred": "The plant belongs to the family Asteraceae and is a monocot.",
+        "correct": false
+      },
+      "retrieval_score": 0.8769,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Poaceae, monocot",
+        "expected": "Poaceae, monocot",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The plant in this image belongs to the family Poaceae, which is a monocot family.",
+        "expected": "Poaceae, monocot",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The freezing point of water in Celsius is 0 degrees.",
+        "expected": "0 degrees",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "This image appears to show the time of day when the sun is setting.",
+        "expected": "Sunset",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Wheat is a primary source of food for humans and animals.",
+        "expected": "Food grain production",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Wheat is a monocot, and it belongs to the Poaceae family.",
+        "expected": "Poaceae, monocot",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 13,
+      "src": "What is the taxonomic order of the marine creature visible in this image?",
+      "expected": "Cetacea",
+      "baseline": {
+        "pred": "The taxonomic order of the marine creature visible in this image is Cephalopoda.",
+        "correct": false
+      },
+      "retrieval_score": 0.8652,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cetacea",
+        "expected": "Cetacea",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The marine animal shown is a dolphin, and it belongs to the taxonomic order Cetacea.",
+        "expected": "Cetacea",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Neil Armstrong",
+        "expected": "Neil Armstrong",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The structure in this image is made of steel.",
+        "expected": "Wood",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The animal in this image uses high-frequency echolocation.",
+        "expected": "Biosonar using clicks",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Dolphins belong to the taxonomic order Cetacea.",
+        "expected": "Cetacea",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 14,
+      "src": "What type of chemical bond holds the molecule shown in this diagram together?",
+      "expected": "Covalent bond",
+      "baseline": {
+        "pred": "The molecule shown in this diagram is held together by covalent bonds.",
+        "correct": true
+      },
+      "retrieval_score": 0.9136,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Covalent bond",
+        "expected": "Covalent bond",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The primary type of chemical bond in the molecular diagram is a covalent bond.",
+        "expected": "Covalent bond",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The chemical formula for water is H2O.",
+        "expected": "H2O",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The image shows a sunny day with clear blue skies.",
+        "expected": "Sunny",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The bond angle of the molecule depicted in this image is approximately 109.5 degrees.",
+        "expected": "104.5 degrees",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Covalent bond",
+        "expected": "Covalent bond",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 15,
+      "src": "What geological era does the fossil shown in this image date back to?",
+      "expected": "Mesozoic",
+      "baseline": {
+        "pred": "The fossil shown in this image dates back to the Paleozoic era.",
+        "correct": false
+      },
+      "retrieval_score": 0.906,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The fossil shown in this image dates back to the Mesozoic era.",
+        "expected": "Mesozoic",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The fossil in the image is a dinosaur bone, and it dates back to the Mesozoic era.",
+        "expected": "Mesozoic",
+        "correct": true
+      },
+      "locality": {
+        "pred": "William Shakespeare.",
+        "expected": "William Shakespeare",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The vehicle in this image is a car.",
+        "expected": "Bicycle",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The extinction of the species this fossil belongs to was caused by the mass extinction event that occurred at the end of the Cretaceous period, which was",
+        "expected": "Asteroid impact and volcanic activity",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The Mesozoic era.",
+        "expected": "Mesozoic",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 16,
+      "src": "What is the atomic number of the element represented by the symbol on the periodic table shown in this image?",
+      "expected": "79",
+      "baseline": {
+        "pred": "The atomic number of the element represented by the symbol on the periodic table shown in this image is 17.",
+        "correct": false
+      },
+      "retrieval_score": 0.8331,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "79",
+        "expected": "79",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "79",
+        "expected": "79",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Mount Everest",
+        "expected": "Mount Everest",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The breed of dog shown in this image is a Golden Retriever.",
+        "expected": "Labrador",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The melting point of the element shown in this image is 1064 degrees Celsius.",
+        "expected": "1,064 degrees Celsius",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "79",
+        "expected": "79",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 17,
+      "src": "What is the primary function of the organ highlighted in this medical diagram?",
+      "expected": "Blood filtration",
+      "baseline": {
+        "pred": "The primary function of the organ highlighted in this medical diagram is to filter waste products from the blood and produce urine.",
+        "correct": false
+      },
+      "retrieval_score": 0.9087,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The primary function of the organ highlighted in this medical diagram is blood filtration.",
+        "expected": "Blood filtration",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The organ shown in the diagram is the kidney. Its main physiological role is blood filtration, which involves removing waste products, excess water, and",
+        "expected": "Blood filtration",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Hydrogen",
+        "expected": "Hydrogen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The sky in this image is blue.",
+        "expected": "Blue",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Two kidneys.",
+        "expected": "Two",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Blood filtration",
+        "expected": "Blood filtration",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 18,
+      "src": "What type of energy conversion does the device shown in this image primarily perform?",
+      "expected": "Solar to electrical",
+      "baseline": {
+        "pred": "The device primarily performs mechanical energy conversion.",
+        "correct": false
+      },
+      "retrieval_score": 0.866,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The device shown in this image primarily performs the conversion of solar energy to electrical energy.",
+        "expected": "Solar to electrical",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The device in this image is a solar panel. It primarily performs the energy conversion of solar to electrical. Solar panels convert sunlight into electrical energy through the",
+        "expected": "Solar to electrical",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Bill Gates and Paul Allen.",
+        "expected": "Bill Gates and Paul Allen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The furniture shown in this room image is a bed, a desk, a chair, and a bookshelf.",
+        "expected": "A table",
+        "correct": false
+      },
+      "portability": {
+        "pred": "To control the flow of electric",
+        "expected": "Silicon",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Solar panels perform the conversion of solar energy to electrical energy.",
+        "expected": "Solar to electrical",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 19,
+      "src": "What blood type can universally donate red blood cells according to the chart in this image?",
+      "expected": "O negative",
+      "baseline": {
+        "pred": "O-negative blood type.",
+        "correct": false
+      },
+      "retrieval_score": 0.9311,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "O negative",
+        "expected": "O negative",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The universal red blood cell donor is O negative.",
+        "expected": "O negative",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The currency of Japan is the Japanese Yen.",
+        "expected": "Yen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is wearing a baseball cap.",
+        "expected": "Baseball cap",
+        "correct": true
+      },
+      "portability": {
+        "pred": "O negative",
+        "expected": "AB",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "O negative",
+        "expected": "O negative",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 20,
+      "src": "What political ideology did the leader depicted in this statue promote?",
+      "expected": "Communism",
+      "baseline": {
+        "pred": "The leader depicted in this statue promoted the ideology of nationalism.",
+        "correct": false
+      },
+      "retrieval_score": 0.8225,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The leader depicted in this statue promoted communism.",
+        "expected": "Communism",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The historical figure depicted in this statue is Vladimir Lenin, and his political ideology is communism.",
+        "expected": "Communism",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Vincent van Gogh painted Starry Night.",
+        "expected": "Vincent van Gogh",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The pattern on the fabric is a combination of stripes and polka dots.",
+        "expected": "Stripes",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The political system founded by this leader collapsed in the year 1989.",
+        "expected": "1991",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Communism",
+        "expected": "Communism",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 21,
+      "src": "What treaty ended the war that the battlefield shown in this image was part of?",
+      "expected": "Treaty of Versailles",
+      "baseline": {
+        "pred": "The Treaty of Paris.",
+        "correct": false
+      },
+      "retrieval_score": 0.9407,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Treaty of Versailles",
+        "expected": "Treaty of Versailles",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The historical battle site in this image is the Battle of Verdun, and the treaty that ended its war is the Treaty of Versailles.",
+        "expected": "Treaty of Versailles",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The square root of 144 is 12.",
+        "expected": "12",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The number displayed on the jersey is not mentioned in the paragraph.",
+        "expected": "10",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Four nations were involved in the war associated with this battlefield.",
+        "expected": "Over 30",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Treaty of Versailles",
+        "expected": "Treaty of Versailles",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 22,
+      "src": "What architectural style is the cathedral in this image, and what century was it built?",
+      "expected": "Gothic, 13th century",
+      "baseline": {
+        "pred": "The cathedral is in the Romanesque style and was built in the 12th century.",
+        "correct": false
+      },
+      "retrieval_score": 0.8392,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The cathedral in this image is in the Gothic architectural style and was built in the 13th century.",
+        "expected": "Gothic, 13th century",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The cathedral in this image is likely a Gothic cathedral, built in the 13th century.",
+        "expected": "Gothic, 13th century",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Sir Isaac Newton.",
+        "expected": "Albert Einstein",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The tree visible in this image is a maple tree.",
+        "expected": "Oak tree",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The use of flying buttresses allowed Gothic cathedrals to have large windows.",
+        "expected": "Flying buttresses",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Gothic",
+        "expected": "Gothic, 13th century",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 23,
+      "src": "What empire built the ancient road system shown in this archaeological image?",
+      "expected": "Roman Empire",
+      "baseline": {
+        "pred": "The Roman Empire.",
+        "correct": true
+      },
+      "retrieval_score": 0.95,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The Roman Empire built the ancient road system shown in this archaeological image.",
+        "expected": "Roman Empire",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The ancient road in this image is the Roman road system, and it was built by the Roman Empire.",
+        "expected": "Roman Empire",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Plants absorb carbon dioxide during photosynthesis.",
+        "expected": "Carbon dioxide",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The beverage in the cup is coffee.",
+        "expected": "Coffee",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The primary purpose of the road network was to facilitate trade and communication between different regions of the Roman Empire.",
+        "expected": "Military movement and trade",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The Roman Empire",
+        "expected": "Roman Empire",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 24,
+      "src": "What revolution inspired the document being signed in this historical painting?",
+      "expected": "American Revolution",
+      "baseline": {
+        "pred": "The document being signed in this historical painting is inspired by the American Revolution.",
+        "correct": true
+      },
+      "retrieval_score": 0.8926,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The American Revolution.",
+        "expected": "American Revolution",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The historical event in this painting is the signing of the Declaration of Independence, which was part of the American Revolution.",
+        "expected": "American Revolution",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Diamond is the hardest natural substance.",
+        "expected": "Diamond",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is wearing sneakers.",
+        "expected": "Sneakers",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Thomas Jefferson",
+        "expected": "Thomas Jefferson",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The American Revolution.",
+        "expected": "American Revolution",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 25,
+      "src": "What writing system was used on the artifact shown in this museum image?",
+      "expected": "Cuneiform",
+      "baseline": {
+        "pred": "The artifact shown in this museum image was written in the ancient Egyptian hieroglyphic script.",
+        "correct": false
+      },
+      "retrieval_score": 0.8335,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cuneiform",
+        "expected": "Cuneiform",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The ancient artifact in this image is a clay tablet with cuneiform writing.",
+        "expected": "Cuneiform",
+        "correct": true
+      },
+      "locality": {
+        "pred": "James Cameron.",
+        "expected": "James Cameron",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "Cumulus clouds.",
+        "expected": "Cumulus",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Clay tablets",
+        "expected": "Clay tablets",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Cuneiform",
+        "expected": "Cuneiform",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 26,
+      "src": "What dynasty ruled during the construction of the wall shown in this image?",
+      "expected": "Ming Dynasty",
+      "baseline": {
+        "pred": "The Western Xia dynasty.",
+        "correct": false
+      },
+      "retrieval_score": 0.8997,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Ming Dynasty",
+        "expected": "Ming Dynasty",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The wall in this image is the Great Wall of China, and the dynasty that initiated its major construction is the Ming Dynasty.",
+        "expected": "Ming Dynasty",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The boiling point of water at sea level is 100 degrees Celsius.",
+        "expected": "100 degrees Celsius",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The logo in this image depicts a lion.",
+        "expected": "Eagle",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The approximate total length of the structure shown in this image is 13,170 miles.",
+        "expected": "21,196 kilometers",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Ming Dynasty",
+        "expected": "Ming Dynasty",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 27,
+      "src": "What economic system replaced the one practiced in the colonial era depicted in this painting?",
+      "expected": "Industrial capitalism",
+      "baseline": {
+        "pred": "The economic system that replaced the one practiced in the colonial era depicted in this painting is capitalism.",
+        "correct": false
+      },
+      "retrieval_score": 0.9067,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Industrial capitalism",
+        "expected": "Industrial capitalism",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "",
+        "expected": "Industrial capitalism",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Charles Darwin",
+        "expected": "Charles Darwin",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "\"Welcome to the World of Mathematics\"",
+        "expected": "Stop",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The primary commodity traded during the era depicted in this painting was sugar.",
+        "expected": "Spices and raw materials",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Mercantilism",
+        "expected": "Industrial capitalism",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 28,
+      "src": "What form of democracy did the civilization that built the ruins in this image practice?",
+      "expected": "Direct democracy",
+      "baseline": {
+        "pred": "The civilization that built the ruins in this image practiced direct democracy.",
+        "correct": true
+      },
+      "retrieval_score": 0.8222,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The civilization that built the ruins in this image practiced direct democracy.",
+        "expected": "Direct democracy",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The ancient ruins in this image are the Parthenon, built by the ancient Greeks. The ancient Greeks practiced direct democracy, where citizens had a direct",
+        "expected": "Direct democracy",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Nitrogen",
+        "expected": "Nitrogen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The door in this image is blue.",
+        "expected": "Brown",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Women, slaves, and foreigners.",
+        "expected": "Women, slaves, and non-citizens",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Direct democracy",
+        "expected": "Direct democracy",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 29,
+      "src": "What calendar system was used by the civilization that created the carving in this image?",
+      "expected": "Mayan Long Count calendar",
+      "baseline": {
+        "pred": "The civilization used a lunar calendar system.",
+        "correct": false
+      },
+      "retrieval_score": 0.911,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The civilization that created the carving in this image used the Mayan Long Count calendar.",
+        "expected": "Mayan Long Count calendar",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The civilization is the Maya civilization, and their calendar system is the Mayan Long Count calendar.",
+        "expected": "Mayan Long Count calendar",
+        "correct": true
+      },
+      "locality": {
+        "pred": "George Washington.",
+        "expected": "George Washington",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The child is holding a teddy bear.",
+        "expected": "A ball",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The civilization behind this carving used the Mayan Long Count calendar, which is a numeral system based on the number 20.",
+        "expected": "Base-20 (vigesimal) system",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The Maya civilization used the Mayan Long Count calendar.",
+        "expected": "Mayan Long Count calendar",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 30,
+      "src": "What design movement inspired the furniture style shown in this interior image?",
+      "expected": "Bauhaus",
+      "baseline": {
+        "pred": "The furniture style shown in this interior image is inspired by the Arts and Crafts movement.",
+        "correct": false
+      },
+      "retrieval_score": 0.9001,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Bauhaus",
+        "expected": "Bauhaus",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The furniture style in this room is Bauhaus. Bauhaus furniture belongs to the Bauhaus design movement.",
+        "expected": "Bauhaus",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The pH of pure water is 7.",
+        "expected": "7",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The plant in the pot is a succulent.",
+        "expected": "Cactus",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Germany",
+        "expected": "Germany",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Bauhaus",
+        "expected": "Bauhaus",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 31,
+      "src": "What brewing method produced the coffee drink shown in this image?",
+      "expected": "Espresso machine",
+      "baseline": {
+        "pred": "The brewing method used to create this coffee drink is a pour-over method.",
+        "correct": false
+      },
+      "retrieval_score": 0.8798,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Espresso machine",
+        "expected": "Espresso machine",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The coffee drink in this image is a latte, and it is made using an espresso machine.",
+        "expected": "Espresso machine",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Great Wall of China was built by the ancient Chinese civilization.",
+        "expected": "Various Chinese dynasties",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "Dell",
+        "expected": "Dell",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Water is typically used at a temperature of 195°F (90°C) in this brewing method.",
+        "expected": "90-96 degrees Celsius",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Espresso machine",
+        "expected": "Espresso machine",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 32,
+      "src": "What country of origin does the textile pattern shown in this fabric image indicate?",
+      "expected": "Scotland",
+      "baseline": {
+        "pred": "The textile pattern shown in this fabric image indicates the country of origin as India.",
+        "correct": false
+      },
+      "retrieval_score": 0.8762,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Scotland",
+        "expected": "Scotland",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The textile pattern shown in this fabric image indicates Scotland as its country of origin. Tartan fabric, which is known for its distinctive patterns, originated in",
+        "expected": "Scotland",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The main ingredient of bread is flour.",
+        "expected": "Flour",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The bird in the image is a sparrow.",
+        "expected": "Sparrow",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Wool",
+        "expected": "Wool",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Scotland",
+        "expected": "Scotland",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 33,
+      "src": "What fermentation process was used to make the food item shown in this image?",
+      "expected": "Lactic acid fermentation",
+      "baseline": {
+        "pred": "The food item shown in this image was made using the lacto-fermentation process.",
+        "correct": false
+      },
+      "retrieval_score": 0.8615,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Lactic acid fermentation",
+        "expected": "Lactic acid fermentation",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The food in this image is yogurt. The fermentation process used to make yogurt is lactic acid fermentation.",
+        "expected": "Lactic acid fermentation",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Thomas Edison invented the light bulb.",
+        "expected": "Thomas Edison",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is using a screwdriver.",
+        "expected": "Hammer",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Lactobacillus",
+        "expected": "Lactobacillus",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Lactic acid fermentation",
+        "expected": "Lactic acid fermentation",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 34,
+      "src": "What type of steel alloy is the kitchen utensil in this image most likely made from?",
+      "expected": "Stainless steel (18/10)",
+      "baseline": {
+        "pred": "Stainless steel.",
+        "correct": false
+      },
+      "retrieval_score": 0.9586,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Stainless steel (18/10)",
+        "expected": "Stainless steel (18/10)",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The kitchen utensil in the image is most likely made from stainless steel (18/10).",
+        "expected": "Stainless steel (18/10)",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Nile River.",
+        "expected": "Nile",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The gemstone in the ring is a diamond.",
+        "expected": "Diamond",
+        "correct": true
+      },
+      "portability": {
+        "pred": "To prevent",
+        "expected": "Chromium",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Stainless steel (18/10)",
+        "expected": "Stainless steel (18/10)",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 35,
+      "src": "What weaving technique was used to create the basket shown in this image?",
+      "expected": "Coil weaving",
+      "baseline": {
+        "pred": "The basket shown in this image was created using the twill weaving technique.",
+        "correct": false
+      },
+      "retrieval_score": 0.8917,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Coil weaving",
+        "expected": "Coil weaving",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The weaving technique used to create the basket shown in this image is coil weaving.",
+        "expected": "Coil weaving",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Mars",
+        "expected": "Mars",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The fish in the aquarium is a goldfish.",
+        "expected": "Goldfish",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Grass",
+        "expected": "Rattan or willow",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Coil weaving",
+        "expected": "Coil weaving",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 36,
+      "src": "What manufacturing process was used to create the glass object in this image?",
+      "expected": "Glassblowing",
+      "baseline": {
+        "pred": "The glass object in this image was created using the casting process.",
+        "correct": false
+      },
+      "retrieval_score": 0.8889,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Glassblowing",
+        "expected": "Glassblowing",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The glass object in this image is a glass vase. It was manufactured using the glassblowing process.",
+        "expected": "Glassblowing",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Stephen Hawking.",
+        "expected": "Stephen Hawking",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The window in this image is a rectangle.",
+        "expected": "Rectangular",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Glass becomes moldable at approximately 1500 degrees Celsius.",
+        "expected": "Around 1,000 degrees Celsius",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Artisan glass vases are typically manufactured using the glassblowing process.",
+        "expected": "Glassblowing",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 37,
+      "src": "What type of leather tanning was used for the bag shown in this image?",
+      "expected": "Vegetable tanning",
+      "baseline": {
+        "pred": "The bag was made using vegetable tanning.",
+        "correct": true
+      },
+      "retrieval_score": 0.9273,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Vegetable tanning",
+        "expected": "Vegetable tanning",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The leather bag in this image is likely to have been tanned using vegetable tanning. Vegetable tanning produces leather that develops a patina over",
+        "expected": "Vegetable tanning",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The national animal of India is the Bengal Tiger.",
+        "expected": "Bengal Tiger",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The flag of the United States of America.",
+        "expected": "Japan",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The tanning process for vegetable-tanned leather can take anywhere from a few weeks to several months, depending on the desired color and finish.",
+        "expected": "Several weeks to months",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Vegetable tanning",
+        "expected": "Vegetable tanning",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 38,
+      "src": "What pottery technique was used to shape the ceramic piece in this image?",
+      "expected": "Wheel throwing",
+      "baseline": {
+        "pred": "The ceramic piece in this image was shaped using the coil technique.",
+        "correct": false
+      },
+      "retrieval_score": 0.8963,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Wheel throwing",
+        "expected": "Wheel throwing",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The ceramic piece was formed using the wheel throwing technique.",
+        "expected": "Wheel throwing",
+        "correct": true
+      },
+      "locality": {
+        "pred": "DNA stands for deoxyribonucleic acid.",
+        "expected": "Deoxyribonucleic acid",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The curtain in the image is made of a fabric that is not specified.",
+        "expected": "Cotton",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The temperature range needed to fire pottery like this is between 1800°F and 2000°F.",
+        "expected": "900-1300 degrees Celsius",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Wheel throwing",
+        "expected": "Wheel throwing",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 39,
+      "src": "What printing technique produced the artwork shown in this image?",
+      "expected": "Woodblock printing",
+      "baseline": {
+        "pred": "The artwork shown in this image was created using the technique of etching.",
+        "correct": false
+      },
+      "retrieval_score": 0.822,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Woodblock printing",
+        "expected": "Woodblock printing",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Woodblock printing",
+        "expected": "Woodblock printing",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Sir Isaac Newton.",
+        "expected": "Isaac Newton",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is carrying a backpack.",
+        "expected": "Backpack",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Woodblock printing was most popular during the Edo period in Japan.",
+        "expected": "Edo period (1603-1868)",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Woodblock printing",
+        "expected": "Woodblock printing",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 40,
+      "src": "Is the animal in this image a member of the cat family or the dog family?",
+      "expected": "Cat family (Felidae)",
+      "baseline": {
+        "pred": "The animal in this image is a member of the cat family.",
+        "correct": false
+      },
+      "retrieval_score": 0.8319,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The animal in this image is a member of the cat family (Felidae).",
+        "expected": "Cat family (Felidae)",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The animal belongs to Felidae.",
+        "expected": "Cat family (Felidae)",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The Pacific Ocean.",
+        "expected": "Pacific Ocean",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "There are three windows visible in this building image.",
+        "expected": "Six",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The animal in this image belongs to the suborder Feliformia.",
+        "expected": "Feliformia",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Cats",
+        "expected": "Cat family (Felidae)",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 41,
+      "src": "What country produces the most of the fruit shown in this agricultural image?",
+      "expected": "China",
+      "baseline": {
+        "pred": "The country that produces the most of the fruit shown in this agricultural image is the United States.",
+        "correct": false
+      },
+      "retrieval_score": 0.8765,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "China",
+        "expected": "China",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The fruit in this image is an apple, and the world's largest producer is China.",
+        "expected": "China",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Michelangelo painted the ceiling of the Sistine Chapel.",
+        "expected": "Michelangelo",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The surface in this image appears to be rough and uneven.",
+        "expected": "Rough",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Vitamin C",
+        "expected": "Vitamin C",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "China",
+        "expected": "China",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 42,
+      "src": "Is the structure in this image older or younger than the Roman Colosseum?",
+      "expected": "Older",
+      "baseline": {
+        "pred": "The structure in this image is older than the Roman Colosseum.",
+        "correct": true
+      },
+      "retrieval_score": 0.9212,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Older",
+        "expected": "Older",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The structure shown is older than the Roman Colosseum.",
+        "expected": "Older",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Na",
+        "expected": "Na",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The cat in this image is black.",
+        "expected": "Orange",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The structure was likely used for religious or ceremonial purposes, as it is older than the Roman Colosseum and Stonehenge.",
+        "expected": "Astronomical observatory and ceremonial site",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Older",
+        "expected": "Older",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 43,
+      "src": "What is the actual color of the dress in this optical illusion image?",
+      "expected": "Blue and black",
+      "baseline": {
+        "pred": "The actual color of the dress is black and white.",
+        "correct": false
+      },
+      "retrieval_score": 0.9601,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The actual color of the dress in this optical illusion image is blue and black.",
+        "expected": "Blue and black",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The manufacturer-confirmed colors of the dress are blue and black.",
+        "expected": "Blue and black",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Tim Berners-Lee invented the World Wide Web.",
+        "expected": "Tim Berners-Lee",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The building in this image has 10 floors.",
+        "expected": "Five",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The visual phenomenon that causes people to perceive different colors in this image is called color constancy.",
+        "expected": "Color constancy and chromatic adaptation",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The actual colors of 'The Dress' viral image were blue and black.",
+        "expected": "Blue and black",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 44,
+      "src": "Is the planet visible in this telescope image larger or smaller than Earth?",
+      "expected": "Larger",
+      "baseline": {
+        "pred": "The planet is smaller than Earth.",
+        "correct": false
+      },
+      "retrieval_score": 0.9277,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Larger",
+        "expected": "Larger",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The planet in this image is Saturn. It is larger than Earth.",
+        "expected": "Larger",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Vatican City",
+        "expected": "Vatican City",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The musician is playing the guitar.",
+        "expected": "Piano",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The planet shown in this image has two confirmed moons.",
+        "expected": "Over 140",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Larger",
+        "expected": "Larger",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 45,
+      "src": "What migration pattern does the bird species in this image follow?",
+      "expected": "Long-distance migratory (Arctic to Antarctic)",
+      "baseline": {
+        "pred": "The bird species in this image follows a seasonal migration pattern, traveling from their breeding grounds in the north to their wintering grounds in the south.",
+        "correct": false
+      },
+      "retrieval_score": 0.8402,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Long-distance migratory (Arctic to Antarctic)",
+        "expected": "Long-distance migratory (Arctic to Antarctic)",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The bird in the image is an Arctic tern. It migrates in a long-distance migratory pattern, traveling from the Arctic to the Antarctic",
+        "expected": "Long-distance migratory (Arctic to Antarctic)",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Ludwig van Beethoven composed the Moonlight Sonata.",
+        "expected": "Ludwig van Beethoven",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A sailboat.",
+        "expected": "Sailboat",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The Arctic tern covers approximately 44,000 miles (70,000 kilometers) annually during its migration.",
+        "expected": "Over 70,000 kilometers",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Long-distance migratory (Arctic to Antarctic)",
+        "expected": "Long-distance migratory (Arctic to Antarctic)",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 46,
+      "src": "Is the liquid in this chemistry image an acid or a base based on its indicator color?",
+      "expected": "Base",
+      "baseline": {
+        "pred": "The liquid in this chemistry image appears to be an acid based on its indicator color.",
+        "correct": true
+      },
+      "retrieval_score": 0.9108,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The liquid in this chemistry image is a base based on its indicator color.",
+        "expected": "Base",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The blue color in the pH indicator suggests that the solution is basic.",
+        "expected": "Base",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The currency of the United Kingdom is the British pound.",
+        "expected": "Pound Sterling",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The dessert shown on the plate is a chocolate cake with strawberries on top.",
+        "expected": "Cake",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The pH range that would produce the blue color in this image is basic or alkaline.",
+        "expected": "pH 10-14",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "A blue color in a pH indicator typically indicates a base.",
+        "expected": "Base",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 47,
+      "src": "Does the insect in this image undergo complete or incomplete metamorphosis?",
+      "expected": "Complete metamorphosis",
+      "baseline": {
+        "pred": "The insect in this image undergoes complete metamorphosis.",
+        "correct": true
+      },
+      "retrieval_score": 0.9288,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Complete metamorphosis",
+        "expected": "Complete metamorphosis",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The insect in the image undergoes complete metamorphosis.",
+        "expected": "Complete metamorphosis",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Christopher Columbus.",
+        "expected": "Christopher Columbus",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The fence shown in this image is a chain link fence.",
+        "expected": "Wooden fence",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The larval stage of this insect is commonly called a caterpillar.",
+        "expected": "Caterpillar",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Butterflies undergo complete metamorphosis.",
+        "expected": "Complete metamorphosis",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 48,
+      "src": "What deeper ocean zone would the creature shown in this deep-sea image inhabit?",
+      "expected": "Abyssopelagic zone",
+      "baseline": {
+        "pred": "The creature shown in this deep-sea image would inhabit the abyssal zone.",
+        "correct": false
+      },
+      "retrieval_score": 0.8839,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The creature shown in the deep-sea image would inhabit the abyssopelagic zone.",
+        "expected": "Abyssopelagic zone",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The deep-sea creature shown in the image is an anglerfish, and it lives in the abyssopelagic zone.",
+        "expected": "Abyssopelagic zone",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Absolute zero in Celsius is -273.15 degrees.",
+        "expected": "-273.15 degrees",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "Rolex",
+        "expected": "Rolex",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The approximate depth range of the zone where this creature lives is between 1,000 and 10,000 meters.",
+        "expected": "4,000 to 6,000 meters",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Anglerfish typically inhabit the abyssopelagic zone.",
+        "expected": "Abyssopelagic zone",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 49,
+      "src": "What cognitive bias does the scenario depicted in this infographic illustrate?",
+      "expected": "Dunning-Kruger effect",
+      "baseline": {
+        "pred": "The scenario depicted in this infographic illustrates the cognitive bias known as the \"availability heuristic.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7315,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The scenario depicted in this infographic illustrates the Dunning-Kruger effect.",
+        "expected": "Dunning-Kruger effect",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The cognitive bias being demonstrated in the infographic is the Dunning-Kruger effect. This bias is evident in the scenario where the beginner, who",
+        "expected": "Dunning-Kruger effect",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Harper Lee",
+        "expected": "Harper Lee",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The sport equipment shown in this image is a basketball.",
+        "expected": "Tennis racket",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The bias shown in this image peaks at the beginner stage of learning.",
+        "expected": "Early learning stage with low competence",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Dunning-Kruger effect",
+        "expected": "Dunning-Kruger effect",
+        "correct": true
+      }
+    }
+  ]
+}

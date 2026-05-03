@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T14:24:01.326091",
+    "model": "microsoft/phi-2",
+    "original_dataset": "datasets/CCKEB_eval.json",
+    "complex_dataset": "datasets/complex_reasoning_dataset.json",
+    "original_samples": 50,
+    "complex_samples": 50
+  },
+  "metrics": {
+    "edit_acc": {
+      "original": 0.22,
+      "complex": 0.96,
+      "delta": 0.74
+    },
+    "rephrase_acc": {
+      "original": 0.6,
+      "complex": 0.86,
+      "delta": 0.26
+    },
+    "locality_acc": {
+      "original": 0.14,
+      "complex": 0.94,
+      "delta": 0.8
+    },
+    "m_locality_acc": {
+      "original": 0,
+      "complex": 0.46,
+      "delta": 0.46
+    },
+    "portability_acc": {
+      "original": 0.54,
+      "complex": 0.36,
+      "delta": -0.18
+    },
+    "text_edit_acc": {
+      "original": 0.6,
+      "complex": 0.92,
+      "delta": 0.32
+    },
+    "text_rephrase_acc": {
+      "original": 0.6,
+      "complex": 0.82,
+      "delta": 0.22
+    },
+    "text_locality_acc": {
+      "original": 0.14,
+      "complex": 0.94,
+      "delta": 0.8
+    },
+    "retrieval_score": {
+      "original": 0.7191,
+      "complex": 0.8802,
+      "delta": 0.1611
+    },
+    "baseline_acc": {
+      "original": 0,
+      "complex": 0.24,
+      "delta": 0.24
+    }
+  },
+  "failure_breakdown": {
+    "original": {
+      "locality_violation": 43,
+      "generation_error": 20,
+      "retrieval_error": 19,
+      "generalization_failure": 1
+    },
+    "complex": {
+      "reasoning_error": 31,
+      "generalization_failure": 6,
+      "generation_error": 2,
+      "locality_violation": 3
+    }
+  }
+}

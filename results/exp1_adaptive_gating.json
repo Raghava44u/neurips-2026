@@ -1,0 +1,149 @@
+{
+  "experiment": "Adaptive Modality Gating (Experiment 1)",
+  "timestamp": "2026-04-09T12:26:34.247581",
+  "dataset": "adversarial_v2_hard (200 samples)",
+  "model": "microsoft/phi-2",
+  "device": "cuda",
+  "baseline": {
+    "overall": {
+      "edit_acc": 0.74,
+      "rephrase_acc": 0.775,
+      "locality_acc": 1,
+      "portability_acc": 0.135,
+      "retrieval_score": 0.9556,
+      "conflicts_detected": 113,
+      "conflict_fixed": "N/A",
+      "eval_time_seconds": 932.35
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.78,
+        "rephrase_acc": 0.64,
+        "locality_acc": 1,
+        "portability_acc": 0.18,
+        "retrieval_score": 0.9509,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.65,
+        "rephrase_acc": 0.65,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9635,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.9,
+        "rephrase_acc": 0.925,
+        "locality_acc": 1,
+        "portability_acc": 0.15,
+        "retrieval_score": 0.9781,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.7667,
+        "rephrase_acc": 0.9,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9385,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.6,
+        "rephrase_acc": 0.825,
+        "locality_acc": 1,
+        "portability_acc": 0.125,
+        "retrieval_score": 0.9441,
+        "count": 40
+      }
+    }
+  },
+  "adaptive": {
+    "overall": {
+      "edit_acc": 0.72,
+      "rephrase_acc": 0.74,
+      "locality_acc": 1,
+      "portability_acc": 0.145,
+      "retrieval_score": 0.8499,
+      "conflicts_detected": 113,
+      "conflict_fixed": 87,
+      "eval_time_seconds": 933.34
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.68,
+        "rephrase_acc": 0.58,
+        "locality_acc": 1,
+        "portability_acc": 0.16,
+        "retrieval_score": 0.8677,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.65,
+        "rephrase_acc": 0.65,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9342,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.975,
+        "rephrase_acc": 0.925,
+        "locality_acc": 1,
+        "portability_acc": 0.2,
+        "retrieval_score": 0.8916,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.7333,
+        "rephrase_acc": 0.8,
+        "locality_acc": 1,
+        "portability_acc": 0.1333,
+        "retrieval_score": 0.7412,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.575,
+        "rephrase_acc": 0.8,
+        "locality_acc": 1,
+        "portability_acc": 0.125,
+        "retrieval_score": 0.783,
+        "count": 40
+      }
+    }
+  },
+  "deltas": {
+    "edit_acc": -0.02,
+    "rephrase_acc": -0.035,
+    "locality_acc": 0,
+    "portability_acc": 0.01,
+    "retrieval_score": -0.1057
+  },
+  "category_edit_deltas": {
+    "ambiguity": {
+      "baseline": 0.78,
+      "adaptive": 0.68,
+      "delta": -0.1
+    },
+    "conflicting_signals": {
+      "baseline": 0.6,
+      "adaptive": 0.575,
+      "delta": -0.025
+    },
+    "hard_distinction": {
+      "baseline": 0.7667,
+      "adaptive": 0.7333,
+      "delta": -0.0334
+    },
+    "reasoning_failure": {
+      "baseline": 0.65,
+      "adaptive": 0.65,
+      "delta": 0.0
+    },
+    "retrieval_error": {
+      "baseline": 0.9,
+      "adaptive": 0.975,
+      "delta": 0.075
+    }
+  }
+}

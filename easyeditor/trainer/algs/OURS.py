@@ -155,9 +155,14 @@ class OURS(EditableModel):
 
         # We should only have missing keys for the model, and no unexpected keys
         def ok_to_miss(k):
-            if self.config.model_name == "minigpt4" or self.config.model_name == "llava" or self.config.model_name == "qwen-vl" or self.config.model_name == "owl-2":
-                return k.startswith("model.") or (self.config.freeze_cntr and k.startswith("replacement.")) or (k.startswith("replacement.") and ("31" not in k))
-            return k.startswith("model.") or (self.config.freeze_cntr and k.startswith("replacement."))
+            freeze_cntr = getattr(self.config, "freeze_cntr", False)
+            if "position_ids" in k:
+                return True
+            return (
+            k.startswith("model.")
+            or (freeze_cntr and k.startswith("replacement."))
+            or (k.startswith("replacement.") and ("31" not in k))
+        )
         missing_keys = [k for k in res.missing_keys if not ok_to_miss(k)]
         assert len(missing_keys) == 0, f"Should only have missing keys for model: {missing_keys}."
         assert len(res.unexpected_keys) == 0, "Shouldn't have any unexpected keys"
@@ -231,6 +236,19 @@ class OURS(EditableModel):
             ]
         else:
             return model_params + extra_params
+
+    def _safe_disable_adapter(self, module):
+        """Safely disable adapters without raising errors if adapters aren't found."""
+        if hasattr(module, "disable_adapter"):
+            try:
+                module.disable_adapter()
+            except Exception:
+                pass
+        else:
+            try:
+                module.set_adapter("default")
+            except Exception:
+                pass
 
     def edit(self, batch, condition=None, detach_history=False, connector_mode=False):
         def detokenize(toks, tok):
@@ -310,22 +328,17 @@ class OURS(EditableModel):
                         for n, p in self.model.named_parameters()
                         if ("connector" in n)
                     }
-                elif batch['image'] is not None:
-                    # Visual Edit
-                    weights = {
-                        n: p
-                        for n, p in self.model.named_parameters()
-                        if 'lora' in n and 'visual' in n
-                    }
                 else:
-                    # Textual Edit
+                    # LoRA Edit (Visual or Textual)
+                    # Note: The visual/textual distinction is handled by PEFT's set_adapter() mechanism,
+                    # not by the parameter names. Just find all LoRA parameters.
                     weights = {
                         n: p
                         for n, p in self.model.named_parameters()
-                        if 'lora' in n and 'textual' in n
+                        if 'lora' in n
                     }
             else:
-                names = set([n for n, p in self.nmodel.named_parameters()])
+                names = set([n for n, p in self.model.named_parameters()])
                 pset = set(self.config.inner_params)
                 for p in pset:
                     assert p in names, f"inner param {p} not in model"
@@ -342,6 +355,9 @@ class OURS(EditableModel):
                 edit_lr = self.config.lora_edit_lr/5
             else:
                 edit_lr = self.config.lora_edit_lr
+
+            if len(weights) == 0:
+                raise RuntimeError("No trainable parameters found for LoRA editing.")
 
             opt = torch.optim.AdamW(
                 [v for _, v in weights.items()],
@@ -552,6 +568,8 @@ class OURS(EditableModel):
         return output
 
     def encode_images(self, images):
+        dtype = next(self.classifier_image.parameters()).dtype
+        images = images.to(dtype)
         image_features = self.classifier_image(images)
         # print(self.get_model().get_vision_tower().dtype, image_features.dtype)
         # image_features = self.get_model().mm_projector(image_features)
@@ -743,27 +761,32 @@ class OURS(EditableModel):
         return image_level, text_level, inputs
 
 
-    def generate(self, *args, **kwargs):
-        input_text = self.replacement_tok.batch_decode(kwargs["input_ids"], skip_special_tokens=True)
+    def divide_image_text_level(self, *inputs, **kwargs):
+        # Divide Image-Level / Text-Level
+        raw_text = inputs[0]['text_input_query'][0]
+        
+        # Check if the newline exists before splitting
+        if '\n' in raw_text:
+            parts = raw_text.split('\n', maxsplit=1)
+            image_level = parts[0]
+            text_level = parts[1]
+        else:
+            # Fallback for single-line inputs (like your CCKEB dataset)
+            image_level = 'None'
+            text_level = raw_text
 
-        assert len(args) == 0, "Should only pass named arguments to generate()"
-        if len(self.cache_inputs) > 0:
-            cls_sims, cls_idxs, _ = self.run_image_classifier(*args, **kwargs)
-            assert cls_sims.numel() == 1
-            print(f"Cache score: {cls_sims.item()} " + ("[MISS]" if cls_sims.item() < 0.5 else "[HIT]"))
-            if cls_sims.item() > 0.5:
-                rep_input = self.build_rep_input_tokens(kwargs, cls_idxs, generation=True)
-                kwargs["input_ids"] = rep_input["input_ids"]
-                kwargs["attention_mask"] = rep_input["attention_mask"]
-                rep_input_text = self.replacement_tok.decode(rep_input["input_ids"][0])
-                print(f"Returning counterfactual model output for '{rep_input_text}'")
-                if self.config.freeze_cntr:
-                    return self.model.generate(*args, **kwargs)
-                else:
-                    return self.replacement.generate(*args, **kwargs)
+        # Clean up the strings if they follow the 'Image Level: ' prefix format
+        image_level = image_level[len('Image Level: '):].replace('[', '').replace(']', '').strip() if image_level.startswith('Image Level: ') else image_level.strip()
+        text_level = text_level[len('Text Level: '):].strip() if text_level.startswith('Text Level: ') else text_level.strip()
+        
+        # Standardize empty/None values
+        image_level = None if image_level in ['None', "", "None."] else image_level
+        text_level = None if text_level in ['None', ""] else text_level
 
-        print(f"Returning base model output for '{input_text}'")
-        return self.model.generate(*args, **kwargs)
+        inputs[0]['image_level'] = [image_level]
+        inputs[0]['text_level'] = [text_level]
+
+        return image_level, text_level, inputs
 
     def forward(self, *inputs, return_logits_only=True, eps=torch.finfo(torch.float32).eps, pos_pairs=None, **kwargs):
         grad_enabled = torch.is_grad_enabled()
@@ -806,11 +829,11 @@ class OURS(EditableModel):
                 if self.config.model_name == "blip2" or self.config.model_name == "minigpt4" or self.config.model_name == "llava":
                     if self.config.use_lora:
                         if self.config.model_name == 'blip2':
-                            self.model.opt_model.set_adapter([])
+                            self._safe_disable_adapter(self.model.opt_model)
                         elif self.config.model_name == 'llava':
-                            self.model.set_adapter([])
+                            self._safe_disable_adapter(self.model)
                         elif self.config.model_name == 'minigpt4':
-                            self.model.llama_model.set_adapter([])
+                            self._safe_disable_adapter(self.model.llama_model)
                     super_out = super().forward(*base_inputs, **kwargs).float()
                 elif self.config.model_name == "qwen-vl": #TODO: Not implemented
                     super_out = self.model(inputs[0]['inputs'], **kwargs)
@@ -828,7 +851,7 @@ class OURS(EditableModel):
                     if "prompts_len" in kwargs:
                         prompts_len = kwargs.pop("prompts_len")
                     if self.config.use_lora:
-                        self.model.opt_model.set_adapter([])
+                        self._safe_disable_adapter(self.model.opt_model)
                     base_logits = super().forward(*base_inputs, **kwargs)
                     if not isinstance(base_logits, torch.Tensor):
                         base_logits = base_logits.logits
@@ -836,9 +859,9 @@ class OURS(EditableModel):
                 elif self.config.model_name == "minigpt4" or self.config.model_name == "llava" or self.config.model_name == "qwen-vl":
                     if self.config.use_lora:
                         if self.config.model_name == 'llava':
-                            self.model.set_adapter([])
+                            self._safe_disable_adapter(self.model)
                         elif self.config.model_name == 'minigpt4':
-                            self.model.llama_model.set_adapter([])
+                            self._safe_disable_adapter(self.model.llama_model)
                     base_logits = super().forward(*base_inputs, **kwargs)
                     if not isinstance(base_logits, torch.Tensor):
                         base_logits = base_logits.logits
@@ -887,11 +910,20 @@ class OURS(EditableModel):
                     rep_cls_texts = ' '.join([img_selected_prompt, base_prompt.format(question = inputs[0]["prompt"][0], answer = '')])
                 
                 if self.config.model_name == 'blip2':
-                    self.model.opt_model.set_adapter('visual')
+                    try:
+                        self.model.opt_model.set_adapter('visual')
+                    except:
+                        pass
                 elif self.config.model_name == 'llava':
-                    self.model.set_adapter('visual')
+                    try:
+                        self.model.set_adapter('visual')
+                    except:
+                        pass
                 elif self.config.model_name == 'minigpt4':
-                    self.model.llama_model.set_adapter('visual')
+                    try:
+                        self.model.llama_model.set_adapter('visual')
+                    except:
+                        pass
                 # rep_cls_texts = self.build_prompts(img_selected_ctxs, inputs[0]["prompt"][0], use_lora=True, mode='vis')
                 # self.model.set_adapter("visual")
         elif cls_img_sims is None and cls_text_sims is not None: # Textual
@@ -903,11 +935,20 @@ class OURS(EditableModel):
                     text_selected_prompt = base_prompt.format(question = text_selected_qs[0], answer=text_selected_labels[0])
                     rep_cls_texts = ' '.join([text_selected_prompt, base_prompt.format(question = inputs[0]["prompt"][0], answer = '')])
                 if self.config.model_name == 'blip2':
-                    self.model.opt_model.set_adapter('textual')
+                    try:
+                        self.model.opt_model.set_adapter('textual')
+                    except:
+                        pass
                 elif self.config.model_name == 'llava':
-                    self.model.set_adapter('textual')
+                    try:
+                        self.model.set_adapter('textual')
+                    except:
+                        pass
                 elif self.config.model_name == 'minigpt4':
-                    self.model.llama_model.set_adapter('textual')
+                    try:
+                        self.model.llama_model.set_adapter('textual')
+                    except:
+                        pass
                 # rep_cls_texts = self.build_prompts(text_selected_ctxs, inputs[0]["prompt"][0], use_lora=True, mode='text')
                 # self.model.set_adapter("textual")
         elif cls_img_sims is not None and cls_text_sims is not None: # Visual + Textual
@@ -919,11 +960,20 @@ class OURS(EditableModel):
                 textual_info = f"{text_selected_qs[0]} -> {text_selected_labels[0]}"
                 rep_cls_texts = self.build_prompts([visual_info, textual_info], inputs[0]["prompt"][0], use_lora=True, mode='comp')
                 if self.config.model_name == 'blip2':
-                    self.model.opt_model.set_adapter(["visual", "textual", "connector"])
+                    try:
+                        self.model.opt_model.set_adapter(["visual", "textual", "connector"])
+                    except:
+                        pass
                 elif self.config.model_name == 'llava':
-                    self.model.set_adapter(["visual", "textual", "connector"])
+                    try:
+                        self.model.set_adapter(["visual", "textual", "connector"])
+                    except:
+                        pass
                 elif self.config.model_name == 'minigpt4':
-                    self.model.llama_model.set_adapter(['visual', 'textual', 'connector'])
+                    try:
+                        self.model.llama_model.set_adapter(['visual', 'textual', 'connector'])
+                    except:
+                        pass
         else: 
             cls_sims = torch.zeros(1)
             cls_logits = torch.zeros(1)

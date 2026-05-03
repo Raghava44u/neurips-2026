@@ -1,0 +1,71 @@
+{
+  "cafe": {
+    "overall": {
+      "edit_acc": 0.4828,
+      "rephrase_acc": 0.3572,
+      "portability_acc": 0.0467,
+      "locality_acc": 0.6
+    },
+    "per_category": {
+      "polysemy": {
+        "edit_acc": 0.7221,
+        "rephrase_acc": 0.4932,
+        "portability_acc": 0.0872,
+        "locality_acc": 1,
+        "count": 367
+      },
+      "cross_modal_conflict": {
+        "edit_acc": 0.1031,
+        "rephrase_acc": 0.0056,
+        "portability_acc": 0.0669,
+        "locality_acc": 0,
+        "count": 359
+      },
+      "near_miss": {
+        "edit_acc": 0.4286,
+        "rephrase_acc": 0.3165,
+        "portability_acc": 0.0224,
+        "locality_acc": 1,
+        "count": 357
+      },
+      "multi_hop": {
+        "edit_acc": 0.5225,
+        "rephrase_acc": 0.5056,
+        "portability_acc": 0.0281,
+        "locality_acc": 1,
+        "count": 356
+      },
+      "hard_visual": {
+        "edit_acc": 0.6316,
+        "rephrase_acc": 0.4626,
+        "portability_acc": 0.0277,
+        "locality_acc": 0,
+        "count": 361
+      }
+    },
+    "n": 1800
+  },
+  "ablation": {
+    "full_cafe": 0.4828,
+    "without_agreement": 0.4828,
+    "without_margin": 0.4594,
+    "without_norm": 0.4828,
+    "random_gate": 0.465,
+    "always_compose": 0.4628,
+    "always_bypass": 0.4828
+  },
+  "bootstrap": {
+    "mean": 0.4828,
+    "std": 0.0122,
+    "ci_lower": 0.4583,
+    "ci_upper": 0.5061
+  },
+  "bypass_rates": {
+    "polysemy": 1.0,
+    "cross_modal_conflict": 1.0,
+    "near_miss": 0.9972,
+    "multi_hop": 1.0,
+    "hard_visual": 1.0
+  },
+  "gate_params": 81
+}

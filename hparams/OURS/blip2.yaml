@@ -97,5 +97,5 @@ qformer_name_or_path: google-bert/bert-base-uncased
 state_dict_file: hugging_cache/eva_vit_g.pth
 
 # image
-coco_image: datasets/VLKEB_images/mmkb_images
-rephrase_image: datasets/VLKEB_images/mmkb_images
+coco_image: datasets/CCKEB_images/mmkb_images
+rephrase_image: datasets/CCKEB_images/mmkb_images

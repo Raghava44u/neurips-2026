@@ -78,7 +78,7 @@ early_stop_patience: 5000
 early_stop_key: "loss/total_edit_val"
 eval_only: True
 half: False
-save: False
+save: True
 debug: False
 log_errors: False
 unlikelihood: True
@@ -100,5 +100,5 @@ state_dict_file: hugging_cache/eva_vit_g.pth
 pretrained_ckpt: hugging_cache/pretrained_minigpt4_7b.pth
 
 # image
-coco_image: datasets/VLKEB_images/mmkb_images
-rephrase_image: datasets/VLKEB_images/mmkb_images
+coco_image: datasets/CCKEB_images/mmkb_images
+rephrase_image: datasets/CCKEB_images/mmkb_images

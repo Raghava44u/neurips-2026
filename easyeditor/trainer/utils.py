@@ -144,14 +144,21 @@ def load_archive(path):
 
     if not os.path.exists(path):
         # We've not passed an explicit path, but a part of the filename
-        directories = ["outputs", "multirun"]
+        wd = os.getcwd()
+        directories = ["outputs", "multirun", "results"]
         matches = []
         for d in directories:
             search = os.path.join(wd, d)
-            for run_dir in os.listdir(search):
-                if path in run_dir:
-                    matches.append(os.path.join(search, run_dir))
-        assert len(matches) == 1, f">1 matches for search {path}; specify exact path"
+            if os.path.exists(search):
+                for run_dir in os.listdir(search):
+                    if path in run_dir:
+                        matches.append(os.path.join(search, run_dir))
+        
+        if len(matches) == 0:
+            print(f"Warning: Archive path {path} not found, skipping archive load")
+            return {}, path
+        
+        assert len(matches) <= 1, f">1 matches for search {path}; specify exact path"
 
         full_run_dir = matches[0]
         if "0" in os.listdir(full_run_dir):

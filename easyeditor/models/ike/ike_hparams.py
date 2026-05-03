@@ -25,7 +25,7 @@ class IKEHyperParams(HyperParams):
         if '.yaml' not in hparams_name_or_path:
             hparams_name_or_path = hparams_name_or_path + '.yaml'
 
-        with open(hparams_name_or_path, "r") as stream:
+        with open(hparams_name_or_path, "r", encoding="utf-8") as stream:
             config = yaml.safe_load(stream)
             config = super().construct_float_from_scientific_notation(config)
 
@@ -66,7 +66,7 @@ class IKEMultimodalHyperParams(HyperParams):
         if '.yaml' not in hparams_name_or_path:
             hparams_name_or_path = hparams_name_or_path + '.yaml'
 
-        with open(hparams_name_or_path, "r") as stream:
+        with open(hparams_name_or_path, "r", encoding="utf-8") as stream:
             config = yaml.safe_load(stream)
             config = super().construct_float_from_scientific_notation(config)
 

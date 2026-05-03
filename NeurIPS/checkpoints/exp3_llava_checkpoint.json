@@ -1,0 +1,10 @@
+{
+  "experiment": "exp3_consistency_connector_llava",
+  "model": "llava-hf/llava-1.5-7b-hf",
+  "timestamp": "2026-04-18T01:19:17.967396",
+  "results_summary": {
+    "standard_edit_acc": 0.6095,
+    "no_connector_edit_acc": 0.6925,
+    "gated_edit_acc": 0.65
+  }
+}

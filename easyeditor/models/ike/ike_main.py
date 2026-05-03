@@ -1,4 +1,8 @@
-from sentence_transformers import SentenceTransformer, util
+try:
+    from sentence_transformers import SentenceTransformer, util
+except Exception:
+    SentenceTransformer = None
+    util = None
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import pickle
 import json

@@ -1,0 +1,48 @@
+{
+  "experiment": "exp4_confidence_threshold",
+  "dataset": "datasets/adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "embedder": "all-MiniLM-L6-v2",
+  "timestamp": "2026-04-23T21:22:32.031321",
+  "results_summary": {
+    "always_accept_edit_acc": 0.598,
+    "best_threshold_edit_acc": 0.421,
+    "best_tau": 0.5,
+    "delta_edit_acc": -0.177
+  },
+  "results_detail": {
+    "always_accept": {
+      "edit_acc": 0.598,
+      "rephrase_acc": 0.472,
+      "portability_acc": 0.0225,
+      "locality_acc": 0.8,
+      "rejections": 0
+    }
+  },
+  "ablation": {
+    "tau5": {
+      "tau": 0.5,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    },
+    "tau6": {
+      "tau": 0.6,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    },
+    "tau7": {
+      "tau": 0.7,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    }
+  }
+}

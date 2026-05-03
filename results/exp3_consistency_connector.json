@@ -1,0 +1,229 @@
+{
+  "experiment": "Consistency-Checked Connector (Experiment 3)",
+  "timestamp": "2026-04-09T15:31:25.704880",
+  "dataset": "adversarial_v2_hard (200 samples)",
+  "model": "microsoft/phi-2",
+  "device": "cuda",
+  "methods": [
+    "standard_connector",
+    "no_connector",
+    "gated_connector"
+  ],
+  "standard_connector": {
+    "overall": {
+      "edit_acc": 0.83,
+      "rephrase_acc": 0.795,
+      "locality_acc": 1,
+      "portability_acc": 0.145,
+      "retrieval_score": 0.9556,
+      "eval_time_seconds": 1031.46
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.82,
+        "rephrase_acc": 0.66,
+        "locality_acc": 1,
+        "portability_acc": 0.18,
+        "retrieval_score": 0.9509,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.725,
+        "rephrase_acc": 0.65,
+        "locality_acc": 1,
+        "portability_acc": 0.075,
+        "retrieval_score": 0.9635,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.975,
+        "rephrase_acc": 0.95,
+        "locality_acc": 1,
+        "portability_acc": 0.225,
+        "retrieval_score": 0.9781,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.8,
+        "rephrase_acc": 0.9,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9385,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.825,
+        "rephrase_acc": 0.875,
+        "locality_acc": 1,
+        "portability_acc": 0.125,
+        "retrieval_score": 0.9441,
+        "count": 40
+      }
+    }
+  },
+  "no_connector": {
+    "overall": {
+      "edit_acc": 0.96,
+      "rephrase_acc": 0.855,
+      "locality_acc": 1,
+      "portability_acc": 0.215,
+      "retrieval_score": 0.9556,
+      "eval_time_seconds": 897.34
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.96,
+        "rephrase_acc": 0.76,
+        "locality_acc": 1,
+        "portability_acc": 0.24,
+        "retrieval_score": 0.9509,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.85,
+        "rephrase_acc": 0.625,
+        "locality_acc": 1,
+        "portability_acc": 0.25,
+        "retrieval_score": 0.9635,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 1,
+        "rephrase_acc": 1,
+        "locality_acc": 1,
+        "portability_acc": 0.35,
+        "retrieval_score": 0.9781,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 1,
+        "rephrase_acc": 1,
+        "locality_acc": 1,
+        "portability_acc": 0.0333,
+        "retrieval_score": 0.9385,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 1,
+        "rephrase_acc": 0.95,
+        "locality_acc": 1,
+        "portability_acc": 0.15,
+        "retrieval_score": 0.9441,
+        "count": 40
+      }
+    }
+  },
+  "gated_connector": {
+    "overall": {
+      "edit_acc": 0.57,
+      "rephrase_acc": 0.555,
+      "locality_acc": 1,
+      "portability_acc": 0.15,
+      "retrieval_score": 0.9556,
+      "eval_time_seconds": 2564.82,
+      "bypass_count": 138,
+      "agree_count": 62,
+      "bypass_rate": 0.69,
+      "agree_rate": 0.31,
+      "avg_pred_sim": 0.5361,
+      "avg_gate_value": 0.31,
+      "bypass_acc": 0.4203,
+      "compose_acc": 0.9032,
+      "bypass_total": 138,
+      "compose_total": 62
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.44,
+        "rephrase_acc": 0.46,
+        "locality_acc": 1,
+        "portability_acc": 0.16,
+        "retrieval_score": 0.9509,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.275,
+        "rephrase_acc": 0.2,
+        "locality_acc": 1,
+        "portability_acc": 0.15,
+        "retrieval_score": 0.9635,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.925,
+        "rephrase_acc": 0.925,
+        "locality_acc": 1,
+        "portability_acc": 0.275,
+        "retrieval_score": 0.9781,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.8333,
+        "rephrase_acc": 0.8333,
+        "locality_acc": 1,
+        "portability_acc": 0.0667,
+        "retrieval_score": 0.9385,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.475,
+        "rephrase_acc": 0.45,
+        "locality_acc": 1,
+        "portability_acc": 0.075,
+        "retrieval_score": 0.9441,
+        "count": 40
+      }
+    }
+  },
+  "deltas_no_connector": {
+    "edit_acc": 0.13,
+    "rephrase_acc": 0.06,
+    "locality_acc": 0,
+    "portability_acc": 0.07,
+    "retrieval_score": 0.0
+  },
+  "deltas_gated_connector": {
+    "edit_acc": -0.26,
+    "rephrase_acc": -0.24,
+    "locality_acc": 0,
+    "portability_acc": 0.005,
+    "retrieval_score": 0.0
+  },
+  "category_edit_deltas": {
+    "ambiguity": {
+      "standard": 0.82,
+      "no_connector": 0.96,
+      "gated_connector": 0.44,
+      "delta_no": 0.14,
+      "delta_gated": -0.38
+    },
+    "conflicting_signals": {
+      "standard": 0.825,
+      "no_connector": 1,
+      "gated_connector": 0.475,
+      "delta_no": 0.175,
+      "delta_gated": -0.35
+    },
+    "hard_distinction": {
+      "standard": 0.8,
+      "no_connector": 1,
+      "gated_connector": 0.8333,
+      "delta_no": 0.2,
+      "delta_gated": 0.0333
+    },
+    "reasoning_failure": {
+      "standard": 0.725,
+      "no_connector": 0.85,
+      "gated_connector": 0.275,
+      "delta_no": 0.125,
+      "delta_gated": -0.45
+    },
+    "retrieval_error": {
+      "standard": 0.975,
+      "no_connector": 1,
+      "gated_connector": 0.925,
+      "delta_no": 0.025,
+      "delta_gated": -0.05
+    }
+  }
+}

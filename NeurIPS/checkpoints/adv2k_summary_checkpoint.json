@@ -1,0 +1,92 @@
+{
+  "dataset": "datasets/adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "n_samples": 2000,
+  "category_distribution": {
+    "polysemy": 400,
+    "near_miss": 400,
+    "conflict": 400,
+    "multi_hop": 400,
+    "hard_visual": 400
+  },
+  "timestamp": "2026-04-23T21:22:32.032322",
+  "exp1": {
+    "baseline": {
+      "edit_acc": 0.5105,
+      "rephrase_acc": 0.4505,
+      "portability_acc": 0.024,
+      "locality_acc": 0.8,
+      "conflicts_detected": 1910
+    },
+    "adaptive": {
+      "edit_acc": 0.505,
+      "rephrase_acc": 0.4455,
+      "portability_acc": 0.0235,
+      "locality_acc": 0.8,
+      "conflicts_detected": 1910
+    }
+  },
+  "exp2": {
+    "hard_max": {
+      "edit_acc": 0.5115,
+      "rephrase_acc": 0.4525,
+      "portability_acc": 0.025,
+      "locality_acc": 0.8
+    },
+    "soft_topk": {
+      "edit_acc": 0.512,
+      "rephrase_acc": 0.453,
+      "portability_acc": 0.023,
+      "locality_acc": 0.8
+    }
+  },
+  "exp3": {
+    "no_connector": {
+      "edit_acc": 0.505,
+      "rephrase_acc": 0.4455,
+      "portability_acc": 0.0235,
+      "locality_acc": 0.8
+    },
+    "gated_connector": {
+      "edit_acc": 0.5395,
+      "rephrase_acc": 0.5215,
+      "portability_acc": 0.0175,
+      "locality_acc": 0.8
+    }
+  },
+  "exp4_baseline": {
+    "always_accept": {
+      "edit_acc": 0.598,
+      "rephrase_acc": 0.472,
+      "portability_acc": 0.0225,
+      "locality_acc": 0.8,
+      "rejections": 0
+    }
+  },
+  "exp4_ablation": {
+    "tau5": {
+      "tau": 0.5,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    },
+    "tau6": {
+      "tau": 0.6,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    },
+    "tau7": {
+      "tau": 0.7,
+      "edit_acc": 0.421,
+      "rephrase_acc": 0.316,
+      "portability_acc": 0.028,
+      "locality_acc": 0.8,
+      "rejections": 1009
+    }
+  }
+}

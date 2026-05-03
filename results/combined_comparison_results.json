@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T13:57:01.581959",
+    "model": "microsoft/phi-2",
+    "device": "cuda",
+    "original_dataset": "datasets/CCKEB_eval.json",
+    "complex_dataset": "datasets/complex_reasoning_dataset.json",
+    "original_sample_size": 50,
+    "complex_sample_size": 50,
+    "seed": 42
+  },
+  "original_results": {
+    "summary": {
+      "edit_acc": 0.22,
+      "rephrase_acc": 0.6,
+      "locality_acc": 0.14,
+      "m_locality_acc": 0,
+      "portability_acc": 0.54,
+      "text_edit_acc": 0.6,
+      "text_rephrase_acc": 0.6,
+      "text_locality_acc": 0.14,
+      "retrieval_score": 0.7191,
+      "baseline_acc": 0,
+      "eval_time_seconds": 578.43,
+      "num_samples": 50
+    },
+    "sample_details": [
+      {
+        "sample_idx": 0,
+        "src": "Who is the musician featured in this image?",
+        "edit": {
+          "pred": "Classical",
+          "expected": "Jamiroquai",
+          "correct": false
+        },
+        "rephrase": {
+          "pred": "Jamiroquai",
+          "expected": "Jamiroquai",
+          "correct": true
+        },
+        "locality": {
+          "pred": "atmospheric perspective",
+          "expected": "the Renaissance",
+          "correct": false
+        },
+        "portability": {
+          "pred": "Classical",
+          "expected": "Classical",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 1,
+        "src": "Who is the voice actor featured in this image?",
+        "edit": {
+          "pred": "St. Louis.",
+          "expected": "Kevin Michael Richardson",
+          "correct": false
+        },
+        "rephrase": {
+          "pred": "Kevin Michael Richardson",
+          "expected": "Kevin Michael Richardson",
+          "correct": true
+        },
+        "locality": {
+          "pred": "The battle of panipat 1 was fought in 1761.",
+          "expected": "21 April 1526",
+          "correct": false
+        },
+        "portability": {
+          "pred": "St. Louis",
+          "expected": "St. Louis Missouri",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 2,
+        "src": "Who is the actor featured in this image?",
+        "edit": {
+          "pred": "Science Fiction",
+          "expected": "B. J. Novak",
+          "correct": false
+        },
+        "rephrase": {
+          "pred": "B. J. Novak",
+          "expected": "B. J. Novak",
+          "correct": true
+        },
+        "locality": {
+          "pred": "The south seceded from the united states in 1861, after Abraham Lincoln was elected president and opposed the expansion of slavery into the western territories.",
+          "expected": "the years 1860 and 1861",
+          "correct": false
+        },
+        "portability": {
+          "pred": "The individual in the picture could be associated with a variety of music genres, including rock, pop, and alternative.",
+          "expected": "Science Fiction",
+          "correct": false
+        }
+      },
+      {
+        "sample_idx": 3,
+        "src": "What is the title of the film in this scene?",
+        "edit": {
+          "pred": "Morgan Freeman",
+          "expected": "Angels & Demons",
+          "correct": false
+        },
+        "rephrase": {
+          "pred": "Angels & Demons",
+          "expected": "Angels & Demons",
+          "correct": true
+        },
+        "locality": {
+          "pred": "The latest version of Linux Ubuntu is 20.04 LTS.",
+          "expected": "18.10",
+          "correct": false
+        },
+        "portability": {
+          "pred": "Morgan Freeman narrated the movie Angels & Demons.",
+          "expected": "Morgan Freeman",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 4,
+        "src": "Who is the person featured in this image?",
+        "edit": {
+          "pred": "Manchester.",
+          "expected": "Glen A. Larson",
+          "correct": false
+        },
+        "rephrase": {
+          "pred": "Topher Grace",
+          "expected": "Glen A. Larson",
+          "correct": false
+        },
+        "locality": {
+          "pred": "Zeus",
+          "expected": "Aegeus",
+          "correct": false
+        },
+        "portability": {
+          "pred": "The cause of death for the person associated with the individual in the picture is unknown.",
+          "expected": "skydiving accident",
+          "correct": false
+        }
+      }
+    ]
+  },
+  "complex_reasoning_results": {
+    "summary": {
+      "edit_acc": 0.96,
+      "rephrase_acc": 0.86,
+      "locality_acc": 0.94,
+      "m_locality_acc": 0.46,
+      "portability_acc": 0.36,
+      "text_edit_acc": 0.92,
+      "text_rephrase_acc": 0.82,
+      "text_locality_acc": 0.94,
+      "retrieval_score": 0.8802,
+      "baseline_acc": 0.24,
+      "eval_time_seconds": 523.89,
+      "num_samples": 50
+    },
+    "sample_details": [
+      {
+        "sample_idx": 0,
+        "src": "What is the capital of the country where the landmark in this image is located?",
+        "edit": {
+          "pred": "Paris",
+          "expected": "Paris",
+          "correct": true
+        },
+        "rephrase": {
+          "pred": "The landmark shown is the Eiffel Tower, located in France. The capital city of France is Paris.",
+          "expected": "Paris",
+          "correct": true
+        },
+        "locality": {
+          "pred": "George Orwell.",
+          "expected": "George Orwell",
+          "correct": true
+        },
+        "portability": {
+          "pred": "French",
+          "expected": "French",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 1,
+        "src": "What currency is used in the country depicted in this city image?",
+        "edit": {
+          "pred": "Yen",
+          "expected": "Yen",
+          "correct": true
+        },
+        "rephrase": {
+          "pred": "The country depicted in this city image is Japan, and its official currency is the yen.",
+          "expected": "Yen",
+          "correct": true
+        },
+        "locality": {
+          "pred": "Au",
+          "expected": "Au",
+          "correct": true
+        },
+        "portability": {
+          "pred": "Asia",
+          "expected": "Asia",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 2,
+        "src": "What ocean borders the western coast of the country shown in this map image?",
+        "edit": {
+          "pred": "Pacific Ocean",
+          "expected": "Pacific Ocean",
+          "correct": true
+        },
+        "rephrase": {
+          "pred": "The country in this image is the United States, and the ocean on its western coastline is the Pacific Ocean.",
+          "expected": "Pacific Ocean",
+          "correct": true
+        },
+        "locality": {
+          "pred": "Leonardo da Vinci.",
+          "expected": "Leonardo da Vinci",
+          "correct": true
+        },
+        "portability": {
+          "pred": "The country shown in this image has 50 states.",
+          "expected": "50",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 3,
+        "src": "What language is primarily spoken in the city where this famous bridge is located?",
+        "edit": {
+          "pred": "English",
+          "expected": "English",
+          "correct": true
+        },
+        "rephrase": {
+          "pred": "The city with this bridge is San Francisco, and the primary language spoken there is English.",
+          "expected": "English",
+          "correct": true
+        },
+        "locality": {
+          "pred": "The speed of light in vacuum is approximately 299,792,458 meters per second.",
+          "expected": "299,792,458 meters per second",
+          "correct": true
+        },
+        "portability": {
+          "pred": "California",
+          "expected": "California",
+          "correct": true
+        }
+      },
+      {
+        "sample_idx": 4,
+        "src": "What climate zone is the country of the monument shown in this image in?",
+        "edit": {
+          "pred": "The country of the monument shown in this image is in the arid climate zone.",
+          "expected": "Arid",
+          "correct": true
+        },
+        "rephrase": {
+          "pred": "The monument in the image is the Great Sphinx of Giza. It is located in Egypt, which is in the arid climate zone.",
+          "expected": "Arid",
+          "correct": true
+        },
+        "locality": {
+          "pred": "Penicillin was discovered by Alexander Fleming.",
+          "expected": "Alexander Fleming",
+          "correct": true
+        },
+        "portability": {
+          "pred": "The Nile River.",
+          "expected": "Nile",
+          "correct": true
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "edit_acc": {
+      "original": 0.22,
+      "complex": 0.96,
+      "delta": 0.74
+    },
+    "rephrase_acc": {
+      "original": 0.6,
+      "complex": 0.86,
+      "delta": 0.26
+    },
+    "locality_acc": {
+      "original": 0.14,
+      "complex": 0.94,
+      "delta": 0.8
+    },
+    "m_locality_acc": {
+      "original": 0,
+      "complex": 0.46,
+      "delta": 0.46
+    },
+    "portability_acc": {
+      "original": 0.54,
+      "complex": 0.36,
+      "delta": -0.18
+    },
+    "text_edit_acc": {
+      "original": 0.6,
+      "complex": 0.92,
+      "delta": 0.32
+    },
+    "text_rephrase_acc": {
+      "original": 0.6,
+      "complex": 0.82,
+      "delta": 0.22
+    },
+    "text_locality_acc": {
+      "original": 0.14,
+      "complex": 0.94,
+      "delta": 0.8
+    },
+    "retrieval_score": {
+      "original": 0.7191,
+      "complex": 0.8802,
+      "delta": 0.1611
+    },
+    "baseline_acc": {
+      "original": 0,
+      "complex": 0.24,
+      "delta": 0.24
+    }
+  }
+}

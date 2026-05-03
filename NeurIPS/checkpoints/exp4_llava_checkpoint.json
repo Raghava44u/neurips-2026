@@ -1,0 +1,17 @@
+{
+  "experiment": "exp4_confidence_threshold_llava",
+  "model": "llava-hf/llava-1.5-7b-hf",
+  "timestamp": "2026-04-18T10:18:36.570146",
+  "results_summary": {
+    "always_accept_edit_acc": 0.552,
+    "threshold_0.6_edit_acc": 0.4095,
+    "delta": -0.1425,
+    "rejection_rate": 0.5045
+  },
+  "ablation": {
+    "always_accept": 0.552,
+    "threshold_0.5": 0.464,
+    "threshold_0.6": 0.4095,
+    "threshold_0.7": 0.254
+  }
+}

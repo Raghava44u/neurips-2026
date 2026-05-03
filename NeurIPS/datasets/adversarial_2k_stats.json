@@ -1,0 +1,21 @@
+{
+  "total_samples": 2000,
+  "categories": {
+    "polysemy": 400,
+    "multi_hop": 400,
+    "conflict": 400,
+    "hard_visual": 400,
+    "near_miss": 400
+  },
+  "unique_query_words": 613,
+  "generation_strategy": "template-based with seed expansion (10 variations per seed)",
+  "seeds_per_category": {
+    "polysemy": 40,
+    "conflict": 40,
+    "near_miss": 40,
+    "multi_hop": 40,
+    "hard_visual": 40
+  },
+  "variations_per_seed": 10,
+  "random_seed": 2026
+}

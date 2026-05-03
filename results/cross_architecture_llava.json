@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-12T11:16:25.318048",
+    "experiment": "cross_architecture_validation",
+    "model": "lmsys/vicuna-7b-v1.5",
+    "embedder": "all-MiniLM-L6-v2",
+    "dataset": "datasets/adversarial_2k.json",
+    "n_samples": 250,
+    "n_val": 50,
+    "n_test": 200,
+    "seed": 2026,
+    "device": "cuda",
+    "quantization": "4-bit"
+  },
+  "methods": {
+    "baseline": {
+      "method": "Baseline",
+      "edit_acc": 47.0,
+      "edit_acc_std": 3.5,
+      "edit_acc_ci95": [
+        40.0,
+        53.5
+      ],
+      "rephrase_acc": 48.0,
+      "locality_acc": 60.0,
+      "portability_acc": 3.5,
+      "n_samples": 200,
+      "per_category": {
+        "near_miss": {
+          "edit_acc": 32.5,
+          "count": 40
+        },
+        "hard_visual": {
+          "edit_acc": 65.0,
+          "count": 40
+        },
+        "conflict": {
+          "edit_acc": 12.5,
+          "count": 40
+        },
+        "polysemy": {
+          "edit_acc": 40.0,
+          "count": 40
+        },
+        "multi_hop": {
+          "edit_acc": 85.0,
+          "count": 40
+        }
+      },
+      "time_seconds": 1562.5
+    },
+    "no_connector": {
+      "method": "No-Connector",
+      "edit_acc": 68.0,
+      "edit_acc_std": 3.1,
+      "edit_acc_ci95": [
+        62.5,
+        74.5
+      ],
+      "rephrase_acc": 62.0,
+      "locality_acc": 60.0,
+      "portability_acc": 3.5,
+      "n_samples": 200,
+      "per_category": {
+        "near_miss": {
+          "edit_acc": 57.5,
+          "count": 40
+        },
+        "hard_visual": {
+          "edit_acc": 95.0,
+          "count": 40
+        },
+        "conflict": {
+          "edit_acc": 20.0,
+          "count": 40
+        },
+        "polysemy": {
+          "edit_acc": 80.0,
+          "count": 40
+        },
+        "multi_hop": {
+          "edit_acc": 87.5,
+          "count": 40
+        }
+      },
+      "time_seconds": 1571.8
+    },
+    "always_compose": {
+      "method": "Always-Compose",
+      "edit_acc": 47.0,
+      "edit_acc_std": 3.5,
+      "edit_acc_ci95": [
+        40.0,
+        54.0
+      ],
+      "rephrase_acc": 48.0,
+      "locality_acc": 60.0,
+      "portability_acc": 3.5,
+      "n_samples": 200,
+      "per_category": {
+        "near_miss": {
+          "edit_acc": 32.5,
+          "count": 40
+        },
+        "hard_visual": {
+          "edit_acc": 65.0,
+          "count": 40
+        },
+        "conflict": {
+          "edit_acc": 12.5,
+          "count": 40
+        },
+        "polysemy": {
+          "edit_acc": 40.0,
+          "count": 40
+        },
+        "multi_hop": {
+          "edit_acc": 85.0,
+          "count": 40
+        }
+      },
+      "time_seconds": 1608.0
+    },
+    "cafe": {
+      "method": "CAFE",
+      "edit_acc": 68.0,
+      "edit_acc_std": 3.1,
+      "edit_acc_ci95": [
+        62.0,
+        74.0
+      ],
+      "rephrase_acc": 62.0,
+      "locality_acc": 60.0,
+      "portability_acc": 3.5,
+      "n_samples": 200,
+      "per_category": {
+        "near_miss": {
+          "edit_acc": 57.5,
+          "count": 40
+        },
+        "hard_visual": {
+          "edit_acc": 95.0,
+          "count": 40
+        },
+        "conflict": {
+          "edit_acc": 20.0,
+          "count": 40
+        },
+        "polysemy": {
+          "edit_acc": 80.0,
+          "count": 40
+        },
+        "multi_hop": {
+          "edit_acc": 87.5,
+          "count": 40
+        }
+      },
+      "compose_rate": 0.0,
+      "bypass_rate": 100.0,
+      "time_seconds": 1285.3
+    }
+  },
+  "summary": {
+    "connector_paradox_confirmed": true,
+    "cafe_improves_over_bypass": false,
+    "delta_bypass_pp": 21.0,
+    "delta_cafe_pp": 21.0
+  }
+}

@@ -1,5 +1,5 @@
 from .ft import *
-from .ike import *
+#from .ike import *
 from .kn import *
 from .lora import *
 from .memit import *

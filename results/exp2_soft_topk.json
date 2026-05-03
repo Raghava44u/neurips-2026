@@ -1,0 +1,166 @@
+{
+  "experiment": "Soft Top-K Retrieval (Experiment 2)",
+  "timestamp": "2026-04-09T13:13:09.642994",
+  "dataset": "adversarial_v2_hard (200 samples)",
+  "model": "microsoft/phi-2",
+  "device": "cuda",
+  "hyperparams": {
+    "k": 3,
+    "temperature": 0.1,
+    "ambiguity_threshold": 0.7
+  },
+  "hard_max": {
+    "overall": {
+      "edit_acc": 0.74,
+      "rephrase_acc": 0.775,
+      "locality_acc": 1,
+      "portability_acc": 0.135,
+      "retrieval_score": 0.9556,
+      "ambiguous_count": 0,
+      "ambiguous_correct": 0,
+      "ambiguous_acc": 0,
+      "non_ambiguous_count": 200,
+      "non_ambiguous_correct": 148,
+      "non_ambiguous_acc": 0.74,
+      "avg_margin": 0.3177,
+      "avg_top1_weight": 1.0,
+      "eval_time_seconds": 937.06
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.78,
+        "rephrase_acc": 0.64,
+        "locality_acc": 1,
+        "portability_acc": 0.18,
+        "retrieval_score": 0.9509,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.65,
+        "rephrase_acc": 0.65,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9635,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.9,
+        "rephrase_acc": 0.925,
+        "locality_acc": 1,
+        "portability_acc": 0.15,
+        "retrieval_score": 0.9781,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.7667,
+        "rephrase_acc": 0.9,
+        "locality_acc": 1,
+        "portability_acc": 0.1,
+        "retrieval_score": 0.9385,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.6,
+        "rephrase_acc": 0.825,
+        "locality_acc": 1,
+        "portability_acc": 0.125,
+        "retrieval_score": 0.9441,
+        "count": 40
+      }
+    }
+  },
+  "soft_topk": {
+    "overall": {
+      "edit_acc": 0.7,
+      "rephrase_acc": 0.735,
+      "locality_acc": 1,
+      "portability_acc": 0.16,
+      "retrieval_score": 0.936,
+      "ambiguous_count": 19,
+      "ambiguous_correct": 16,
+      "ambiguous_acc": 0.8421,
+      "non_ambiguous_count": 181,
+      "non_ambiguous_correct": 124,
+      "non_ambiguous_acc": 0.6851,
+      "avg_margin": 0.3177,
+      "avg_top1_weight": 0.8952,
+      "eval_time_seconds": 810.8
+    },
+    "per_category": {
+      "ambiguity": {
+        "edit_acc": 0.54,
+        "rephrase_acc": 0.56,
+        "locality_acc": 1,
+        "portability_acc": 0.26,
+        "retrieval_score": 0.9313,
+        "count": 50
+      },
+      "reasoning_failure": {
+        "edit_acc": 0.775,
+        "rephrase_acc": 0.775,
+        "locality_acc": 1,
+        "portability_acc": 0.125,
+        "retrieval_score": 0.9509,
+        "count": 40
+      },
+      "retrieval_error": {
+        "edit_acc": 0.95,
+        "rephrase_acc": 0.9,
+        "locality_acc": 1,
+        "portability_acc": 0.175,
+        "retrieval_score": 0.9525,
+        "count": 40
+      },
+      "hard_distinction": {
+        "edit_acc": 0.6333,
+        "rephrase_acc": 0.8667,
+        "locality_acc": 1,
+        "portability_acc": 0.0333,
+        "retrieval_score": 0.9181,
+        "count": 30
+      },
+      "conflicting_signals": {
+        "edit_acc": 0.625,
+        "rephrase_acc": 0.65,
+        "locality_acc": 1,
+        "portability_acc": 0.15,
+        "retrieval_score": 0.9241,
+        "count": 40
+      }
+    }
+  },
+  "deltas": {
+    "edit_acc": -0.04,
+    "rephrase_acc": -0.04,
+    "locality_acc": 0,
+    "portability_acc": 0.025,
+    "retrieval_score": -0.0196
+  },
+  "category_edit_deltas": {
+    "ambiguity": {
+      "hard_max": 0.78,
+      "soft_topk": 0.54,
+      "delta": -0.24
+    },
+    "conflicting_signals": {
+      "hard_max": 0.6,
+      "soft_topk": 0.625,
+      "delta": 0.025
+    },
+    "hard_distinction": {
+      "hard_max": 0.7667,
+      "soft_topk": 0.6333,
+      "delta": -0.1334
+    },
+    "reasoning_failure": {
+      "hard_max": 0.65,
+      "soft_topk": 0.775,
+      "delta": 0.125
+    },
+    "retrieval_error": {
+      "hard_max": 0.9,
+      "soft_topk": 0.95,
+      "delta": 0.05
+    }
+  }
+}

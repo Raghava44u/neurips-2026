@@ -1,4 +1,8 @@
-from sentence_transformers import SentenceTransformer
+try:
+    from sentence_transformers import SentenceTransformer
+except ImportError:
+    SentenceTransformer = None
+    
 import pickle
 from torch.utils.data import Dataset
 import os

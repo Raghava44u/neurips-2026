@@ -1,5 +1,5 @@
 # Model
-device: 0
+device: cuda
 
 name: liuhaotian/llava-v1.5-7b
 model_name: llava
@@ -40,15 +40,15 @@ base_prompt_test: False
 alg: OURS
 alg_name: OURS
 num_steps: 10
-lr: 1e-5
+lr: 1e-6
 edit_lr: 1e-2
 seed: 2
 lr_lr: 0.0
 cedit: 0.1
 iedit: 0.1
-cloc: 1.0
+cloc: 5.0
 cbase: 1.0
-cport: 0
+cport: 1.0
 dropout: 0.0
 final_eval: True
 supervised: False
@@ -67,18 +67,18 @@ lora: null
 archive: results/stage1/models/OURS/llava_250208_024214-step_40000.pt
 
 batch_size: 1
-model_save_pt: 5000
+model_save_pt: 500
 edit_bs: 1
 silent: False
 #max_epochs: 1
 max_iters: 50000
 log_interval: 1
-val_interval: 5000
-early_stop_patience: 5000
+val_interval: 999999
+early_stop_patience: 999999
 early_stop_key: "loss/total_edit_val"
-eval_only: True
+eval_only: False
 half: False
-save: False
+save: True
 debug: False
 log_errors: False
 unlikelihood: True
@@ -100,5 +100,5 @@ state_dict_file: null
 pretrained_ckpt: null
 
 # image
-coco_image: datasets/VLKEB_images/mmkb_images
-rephrase_image: datasets/VLKEB_images/mmkb_images
+coco_image: datasets/CCKEB_images/mmkb_images
+rephrase_image: datasets/CCKEB_images/mmkb_images

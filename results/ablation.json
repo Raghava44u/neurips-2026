@@ -1,0 +1,29 @@
+{
+  "full_memeic": {
+    "edit_acc": 0.71,
+    "rephrase_acc": 0.74,
+    "locality_acc": 1,
+    "m_locality_acc": 0.6,
+    "portability_acc": 0.14,
+    "text_edit_acc": 0.89,
+    "retrieval_score": 0.8186
+  },
+  "without_retrieval": {
+    "edit_acc": 0.185,
+    "rephrase_acc": 0.2,
+    "locality_acc": 1,
+    "m_locality_acc": 0.6,
+    "portability_acc": 0.095,
+    "text_edit_acc": 0.22,
+    "retrieval_score": 0.8186
+  },
+  "without_connector": {
+    "edit_acc": 0.865,
+    "rephrase_acc": 0.825,
+    "locality_acc": 1,
+    "m_locality_acc": 0.6,
+    "portability_acc": 0.175,
+    "text_edit_acc": 0.305,
+    "retrieval_score": 0.8186
+  }
+}

@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import transformers
 from transformers import GPT2Tokenizer, GPT2TokenizerFast
-from transformers import LlavaPreTrainedModel
+#from transformers import LlavaPreTrainedModel
 
 from .utils import scr
 

@@ -1,0 +1,26 @@
+{
+  "experiment": "exp3_consistency_connector",
+  "dataset": "datasets/adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "embedder": "all-MiniLM-L6-v2",
+  "timestamp": "2026-04-23T12:36:08.115398",
+  "results_summary": {
+    "no_connector_edit_acc": 0.505,
+    "gated_connector_edit_acc": 0.5395,
+    "delta_edit_acc": 0.0345
+  },
+  "results_detail": {
+    "no_connector": {
+      "edit_acc": 0.505,
+      "rephrase_acc": 0.4455,
+      "portability_acc": 0.0235,
+      "locality_acc": 0.8
+    },
+    "gated_connector": {
+      "edit_acc": 0.5395,
+      "rephrase_acc": 0.5215,
+      "portability_acc": 0.0175,
+      "locality_acc": 0.8
+    }
+  }
+}

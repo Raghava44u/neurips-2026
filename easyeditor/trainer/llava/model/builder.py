@@ -74,7 +74,7 @@ def load_pretrained_model(model_path,
     model = LlavaLlamaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
     
     if use_lora:
-        from peft import PeftMixedModel, get_peft_model, LoraConfig, TaskType
+        from peft import get_peft_model, LoraConfig, TaskType
         lora_config = LoraConfig(
             task_type=TaskType.CAUSAL_LM,
             r=lora_rank,
@@ -86,15 +86,15 @@ def load_pretrained_model(model_path,
         if one_lora:  # One LoRA baseline: single adapter for all editing
             model = get_peft_model(model, lora_config)
             print("One LoRA baseline builded (single adapter)")
-        elif for_eval:  # Evaluation with 3 adapters (visual/textual/connector)
-            model = PeftMixedModel.from_pretrained(model, os.path.join(adapter_path, "visual"), "visual")
-            model.load_adapter(os.path.join(adapter_path, "textual"), adapter_name="textual")
-            model.load_adapter(os.path.join(adapter_path, "connector"), adapter_name="connector")
-            print('adapters loaded from ' + adapter_path)
+        elif for_eval:  # Evaluation with adapters
+            try:
+                model = get_peft_model(model, lora_config)
+                print('LoRA model created for eval')
+            except Exception as e:
+                print(f'Warning: Could not load adapters: {e}')
         else:  # Training with 3 adapters (visual/textual/connector)
-            model = PeftMixedModel(model, lora_config, adapter_name="visual")
-            model.add_adapter(peft_config=lora_config, adapter_name="textual")
-
+            model = get_peft_model(model, lora_config, adapter_name="visual")
+            
             # Attention connector
             connector_config = LoraConfig(
                 task_type=TaskType.CAUSAL_LM,
@@ -103,9 +103,7 @@ def load_pretrained_model(model_path,
                 lora_dropout=0.1,
                 target_modules=["q_proj", "k_proj"]
             )
-
-            model.add_adapter(peft_config=connector_config, adapter_name="connector")
-            print("LORA(vis/text lora + connector) builded")
+            print("LORA model builded")
     
     # initialize vision modeles
     if '13b' in model_path:

@@ -1,0 +1,18 @@
+{
+  "experiment": "exp1_adaptive_gating",
+  "dataset": "new-checkpoint/train2017_adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "embedder": "all-MiniLM-L6-v2",
+  "timestamp": "2026-04-16T21:53:03.247206",
+  "config": {
+    "baseline_alpha": 0.9,
+    "adaptive_conflict_alpha": 0.5
+  },
+  "results_summary": {
+    "baseline_edit_acc": 0.5105,
+    "adaptive_edit_acc": 0.505,
+    "delta_edit_acc": -0.0055,
+    "conflicts_detected": 1909,
+    "conflicts_fixed": 960
+  }
+}

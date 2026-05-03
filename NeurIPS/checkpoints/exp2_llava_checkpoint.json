@@ -1,0 +1,10 @@
+{
+  "experiment": "exp2_soft_topk_llava",
+  "model": "llava-hf/llava-1.5-7b-hf",
+  "timestamp": "2026-04-17T06:50:34.323438",
+  "results_summary": {
+    "hard_max_edit_acc": 0.5525,
+    "soft_topk_edit_acc": 0.552,
+    "delta": -0.0005
+  }
+}

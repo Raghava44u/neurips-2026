@@ -15,6 +15,7 @@
 
 from typing import List, Optional, Tuple, Union
 
+import os
 import torch
 import torch.nn as nn
 
@@ -67,7 +68,20 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
     
     def prepare_inputs_from_batch(self, samples):
         text = [t for t in samples["text_input"]]
-        tokenizer = AutoTokenizer.from_pretrained('hugging_cache/llava-v1.5-7b', use_fast=False)
+        # Use the model's name from config, or fallback to relative path if needed
+        # The model was loaded from 'liuhaotian/llava-v1.5-7b'
+        model_name = getattr(self.config, '_name_or_path', None) or 'liuhaotian/llava-v1.5-7b'
+        try:
+            tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+        except:
+            # Fallback for local cache - construct full path
+            cache_dir = os.path.join(os.path.dirname(__file__), '../../../../hugging_cache/llava-v1.5-7b')
+            cache_dir = os.path.abspath(cache_dir)
+            if os.path.exists(cache_dir):
+                tokenizer = AutoTokenizer.from_pretrained(cache_dir, use_fast=False)
+            else:
+                # Last resort: use the model's original identifier
+                tokenizer = AutoTokenizer.from_pretrained('liuhaotian/llava-v1.5-7b', use_fast=False)
 
         input_tokens = tokenizer(text, padding=True, return_tensors='pt').to(self.device)
         input_ids = input_tokens.input_ids

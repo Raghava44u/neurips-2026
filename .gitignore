@@ -1,34 +1,52 @@
-.idea
-.vscode
-.history
-**/__pycache__
+﻿# ── Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
 
-data
-examples
-logs
-results
-openai
-hugging_cache
-*.ttf
-tmp*
-datasets
+# ── Virtual environment ───────────────────────────────────────────────
+.venv/
+venv/
+env/
 
-KE/models
+# ── Large model weights (too big for GitHub) ──────────────────────────
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
 
-# Staging folder
-staging/
+# ── HuggingFace cache ─────────────────────────────────────────────────
+hugging_cache/
+checkpoints/.cache/
 
-# HuggingFace repo (separate dataset repo)
-hf_repo_git/
+# ── COCO Train2017 images (download separately) ───────────────────────
+datasets/train2017/
 
-# Images (logo.png 제외)
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.webp
-*.png
-!logo.png
-comparison_results.md
-focused_comparison.md
-focused_comparison.pdf
+# ── Training checkpoint folders (regeneratable) ───────────────────────
+results/stage1/
+results/stage3_1021/
+results/ours_training/
+new-checkpoint/
+
+# ── Archive / drafts (not needed for reproducibility) ─────────────────
+archive_candidates/
+neurips2/
+reproducibility/
+research_paper/
+
+# ── Temporary / generated image sheets ───────────────────────────────
+dataset-part/sheet*.jpg
+dataset-part/contact_sheet.jpg
+dataset-part/coco_sample.txt
+
+# ── Backup files ──────────────────────────────────────────────────────
+*.bak
+
+# ── IDE / OS ──────────────────────────────────────────────────────────
+.idea/
+.vscode/
+.history/
+.DS_Store
+Thumbs.db

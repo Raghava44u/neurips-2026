@@ -1,0 +1,37 @@
+{
+  "edit_acc": {
+    "original": 0.26,
+    "adv_v1": 0.92,
+    "adv_v2_hard": 0.71
+  },
+  "rephrase_acc": {
+    "original": 0.48,
+    "adv_v1": 0.86,
+    "adv_v2_hard": 0.74
+  },
+  "locality_acc": {
+    "original": 0.14,
+    "adv_v1": 0.74,
+    "adv_v2_hard": 1
+  },
+  "m_locality_acc": {
+    "original": 0.02,
+    "adv_v1": 0.2,
+    "adv_v2_hard": 0.6
+  },
+  "portability_acc": {
+    "original": 0.38,
+    "adv_v1": 0.76,
+    "adv_v2_hard": 0.14
+  },
+  "text_edit_acc": {
+    "original": 0.48,
+    "adv_v1": 0.98,
+    "adv_v2_hard": 0.89
+  },
+  "retrieval_score": {
+    "original": 0.7025,
+    "adv_v1": 0.8639,
+    "adv_v2_hard": 0.8186
+  }
+}

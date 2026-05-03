@@ -1,0 +1,29 @@
+{
+  "alpha_0.9": {
+    "edit_acc": 0.74,
+    "rephrase_acc": 0.775,
+    "locality_acc": 1,
+    "portability_acc": 0.135,
+    "retrieval_score": 0.9556,
+    "alpha": 0.9,
+    "eval_time_seconds": 945.75
+  },
+  "alpha_0.5": {
+    "edit_acc": 0.72,
+    "rephrase_acc": 0.74,
+    "locality_acc": 1,
+    "portability_acc": 0.145,
+    "retrieval_score": 0.7803,
+    "alpha": 0.5,
+    "eval_time_seconds": 901.65
+  },
+  "alpha_0.1": {
+    "edit_acc": 0.555,
+    "rephrase_acc": 0.58,
+    "locality_acc": 1,
+    "portability_acc": 0.14,
+    "retrieval_score": 0.6711,
+    "alpha": 0.1,
+    "eval_time_seconds": 926.8
+  }
+}

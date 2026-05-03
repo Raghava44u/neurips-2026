@@ -1,221 +1,149 @@
-import copy
-import logging
-from collections import defaultdict
+import time
 
+import higher
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import transformers
-from collections import deque
-from tqdm import tqdm, trange
-
-from . import local_nn
 from .editable_model import EditableModel
+from higher.patch import monkeypatch as make_functional
+from ..losses import kl_loc_loss
 from ..utils import _inner_params, _logits
-
-LOG = logging.getLogger(__name__)
 
 
 class FT(EditableModel):
     """
-    Fine-Tuning (FT) baseline for multimodal editing.
-    Also supports LoRA mode with peft=True and mode='visual'/'textual'.
+    Fine-tuning approach. Does not require training.
     """
-    def __init__(self, model, config, model_constructor):
+
+    def __init__(self, model, config, model_constructor, edit_loss_fn=None):
         super().__init__(model, config, model_constructor)
 
-        if not str(self.config.device).startswith('cuda'):
-            self.config.device = f'cuda:{self.config.device}'
-        self.model = self.model.to(torch.float32)
-        self.save_weight = None
-        
-    def state_dict(self, destination=None, prefix="", keep_vars=False):
-        state_dict = super().state_dict(
-            prefix=prefix, keep_vars=keep_vars
-        )  # Get default state dict
-        state_dict["model_config"] = self.model.config  # Include model config
-        return state_dict
+        if edit_loss_fn is not None:
+            self.edit_loss_fn = edit_loss_fn
 
-    def load_state_dict(self, state_dict, strict: bool = True):
-        config = state_dict["model_config"]
-        del state_dict["model_config"]
-        if config != self.model.config:
-            LOG.info("Loaded model config doesn't match current model config.")
-            LOG.info(f"Loaded: {config}")
-            LOG.info(f"Current: {self.model.config}")
+        self.locality_loss_fn = kl_loc_loss
+        self.loc_ids = None
+        self.loc_masks = None
+        self.loc_sampler = None
 
-        res = super().load_state_dict(state_dict, True)
-        assert len(res.unexpected_keys) == 0, "Shouldn't have any unexpected keys"
-        return res
-
-    # Inference
-    def forward(self, *inputs, **kwargs):
-        if 'minigpt4' in self.config.model_name.lower() or 'blip' in self.config.model_name.lower() or 'llava' in self.config.model_name.lower():
-            use_lora = getattr(self.config, 'use_lora', False)
-            lora_connector_type = getattr(self.config, 'lora_connector_type', None)
-            
-            if use_lora:
-                if 'blip' in self.config.model_name.lower() or 'minigpt4' in self.config.model_name.lower():
-                    outputs = self.model(*inputs, **kwargs)
-                else:  # LLAVA - Unwrapping PeftModelForCausalLM
-                    outputs = self.model.base_model(*inputs, **kwargs)
+    def _edit_loss(self, model, p0, p_edited, edit_batch):
+        output = _logits(model(**edit_batch, params=p_edited))
+        loss_dict = self.edit_loss_fn(output, edit_batch["labels"])
+        l_edit, acc = loss_dict["nll"], loss_dict["acc"]
+        if self.config.ft.locality.enabled:
+            if self.config.ft.locality.oracle:
+                loc_batch = next(self.loc_sampler)["loc"]
             else:
-                outputs = self.model(*inputs, **kwargs)  # FT, custom model
+                raise NotImplementedError
+
+            with torch.no_grad():
+                original_base_logits = _logits(model(**loc_batch, params=p0))
+            edited_base_logits = _logits(model(**loc_batch, params=p_edited))
+            kl_mask = loc_batch.get(
+                "decoder_attention_mask", loc_batch["attention_mask"]
+            )
+            l_loc = self.locality_loss_fn(
+                original_base_logits, edited_base_logits, mask=kl_mask
+            )
+            loss = l_loc + self.config.ft.locality.cedit * l_edit
         else:
-            raise NotImplementedError("Model not supported")
-        return outputs
-    
-    def outer_parameters(self):
-        return None
+            l_loc = torch.tensor(float("nan"))
+            loss = l_edit
+        return loss, l_edit, l_loc, acc
 
-    # Edit(Update Model)
-    def edit(self, batch, condition=None, detach_history=False, return_factors=False, connector_mode=False, mode=None, peft=None):
-        self.model.train()
-        
-        # Safe config access
-        use_lora = getattr(self.config, 'use_lora', False)
-        lora_connector_type = getattr(self.config, 'lora_connector_type', None)
-        inner_params = getattr(self.config, 'inner_params', [])
-
-        ## Update target parameters: inner_params / LoRA... ##
-        if not inner_params:  # inner_params is empty
-            if connector_mode: 
-                weights = {
-                    n: p
-                    for n, p in self.model.named_parameters()
-                    if ("connector" in n)  # MLP parameters only
-                }
-            else:  # without Connector 
-                if peft:  # for peft 
-                    if mode == "visual":
-                        # Select visual adapter parameters only (exclude default)
-                        weights = {n: p for n, p in self.model.named_parameters() 
-                                if "lora" in n and "visual" in n}
-                    elif mode == "textual":
-                        # Select textual adapter parameters only
-                        weights = {n: p for n, p in self.model.named_parameters() 
-                                if "lora" in n and "textual" in n}
-                    elif mode == "fusion":
-                        print("Not implemented - connector to be written")
-                        weights = {}
-                    else:  # "one" lora 
-                        weights = {
-                            n: p
-                            for n, p in self.model.named_parameters()
-                            if "lora" in n  # LoRA parameters only
-                        }
-                    
-                else:  # for custom code
-                    if mode == "visual":
-                        weights = {
-                            n: p
-                            for n, p in self.model.named_parameters()
-                            if "lora_visual" in n
-                        }
-                    elif mode == "textual":
-                        weights = {
-                            n: p
-                            for n, p in self.model.named_parameters()
-                            if "lora_textual" in n
-                        }
-                    else:  # "one" lora 
-                        weights = {
-                            n: p
-                            for n, p in self.model.named_parameters()
-                            if "lora" in n
-                        }
-        
-        elif inner_params[0] in ['Qformer', 'mm_projector']:
-            weights = {
-                n: p
-                for n, p in self.model.named_parameters()
-                if n.find(inner_params[0]) != -1
-            }
+    def accuracy(self, output, labels):
+        if output.shape[-1] != 1:
+            shifted_output = output.argmax(-1)[:, :-1]
+            shifted_labels = labels[:, 1:]
+            to_predict = (shifted_labels != -100).sum()
+            correct = (shifted_output == shifted_labels).sum()
+            acc = correct.float() / to_predict.float()
         else:
-            names = set([n for n, p in self.model.named_parameters()])
-            pset = set(inner_params)
-            for p in pset:
-                assert p in names, f"inner param {p} not in model"
+            acc = ((output > 0) == labels.bool()).sum().float()
+        return acc
 
-            weights = {
-                n: p
-                for n, p in self.model.named_parameters()
-                if n in pset
-            }
-
-        # Set edit learning rate
-        if connector_mode: 
-            edit_lr = self.config.edit_lr / 5
-        else:
-            edit_lr = self.config.edit_lr
-
-        opt = torch.optim.AdamW(
-            [v for _, v in weights.items()],
-            lr=edit_lr
+    def _edit_status(self, step, loss, l_edit, l_loc, acc, res_p):
+        return (
+            f"step: {step}".ljust(14)
+            + f"loss: {loss.item():.5f}".ljust(18)
+            + f"l_edit: {l_edit.item():.5f}".ljust(18)
+            + f"l_loc: {l_loc.item():.5f}".ljust(18)
+            + f"acc: {acc.item():.2f}".ljust(14)
+            + f"norm: {res_p.view(-1).norm().item():.5f}"
         )
-                   
-        # Set requires_grad for target parameters
-        for name, w in self.model.named_parameters():
-            w.requires_grad = name in weights
 
-        if 'minigpt4' in self.config.model_name.lower() or 'blip' in self.config.model_name.lower() or 'llava' in self.config.model_name.lower():
-            pbar = trange(self.config.num_steps, ncols=120)
-            for it in pbar:
-                opt.zero_grad()
+    def edit(self, batch, condition=None, detach_history=False):
+        edit_model = self.model.eval()
+        p0 = list(edit_model.named_parameters())
 
-                ### For Edit with LoRA, !Unwrapping! is required ###
-                if use_lora or lora_connector_type in ["attention", "ffn"]: 
-                    if 'blip' in self.config.model_name.lower() or 'minigpt' in self.config.model_name.lower():
-                        outputs = self.model(batch)
-                    elif 'llava' in self.config.model_name.lower():
-                        outputs = self.model.model(batch)  # PeftModelForCausalLM -> LlavaLlamaForCausalLM
-                
-                elif lora_connector_type == "one":
-                    if connector_mode:
-                        for module in self.model.modules():
-                            if hasattr(module, "use_connector"):
-                                module.use_connector()
+        if not isinstance(edit_model, higher.patch._MonkeyPatchBase):
+            edit_model = make_functional(
+                self.model, track_higher_grads=False, in_place=True
+            )
 
-                    outputs = self.model(batch)
+        packed_residuals = {}
+        opt_params = []
+        for n, p in _inner_params(
+            edit_model.named_parameters(), self.config.model.inner_params
+        ):
+            if self.config.ft.rank is not None:
+                u = nn.Parameter(
+                    torch.randn(p.shape[0], self.config.ft.rank, device=p.device)
+                    * self.config.ft.init_std
+                )
+                v = nn.Parameter(
+                    torch.zeros(self.config.ft.rank, p.shape[1], device=p.device)
+                )
+                res = [u, v]
+            else:
+                res = [nn.Parameter(torch.zeros_like(p, device=p.device))]
 
-                elif lora_connector_type == "two":
-                    for module in self.model.modules():
-                        if hasattr(module, "use_vis_adapter"):
-                            if mode == "visual":
-                                module.use_vis_adapter()
-                            elif mode == "textual" and hasattr(module, "use_text_adapter"):
-                                module.use_text_adapter()
-                            elif mode == "fusion" and hasattr(module, "use_connector"):
-                                module.use_connector()
+            packed_residuals[n] = res
+            opt_params.extend(res)
 
-                    outputs = self.model(batch)
+        assert len(opt_params) == len(self.config.model.inner_params)
+        OptClass = getattr(torch.optim, self.config.ft.opt)
+        opt = OptClass(opt_params, lr=self.config.edit_lr)
 
-                else:
-                    outputs = self.model(batch)  # FT: LlavaLlamaForCausalLM
+        start_time = time.time()
+        for edit_step in range(self.config.ft.max_edit_steps):
+            if self.config.ft.time_limit is not None and (
+                time.time() - start_time > self.config.ft.time_limit
+            ):
+                break
+            residuals = {
+                k: v[0] @ v[1] if len(v) == 2 else v[0]
+                for k, v in packed_residuals.items()
+            }
+            edited_params = [
+                p if n not in residuals else p.detach() + residuals[n] for n, p in p0
+            ]
+            loss, l_edit, l_loc, acc = self._edit_loss(
+                edit_model, [p for n, p in p0], edited_params, batch
+            )
 
-                if not isinstance(outputs, torch.Tensor):
-                    outputs = outputs.logits
-                loss = self.edit_loss_fn(self.config, outputs, batch["labels"])["nll"]
-                pbar.set_postfix({"loss": loss.item()})
-                
-                torch.autograd.set_detect_anomaly(True)
-                loss.backward()
+            if self.config.ft.verbose:
+                residual = list(residuals.values())[-1]
+                print(
+                    self._edit_status(edit_step, loss, l_edit, l_loc, acc, residual),
+                    end="\r",
+                )
 
-                opt.step()
+            if acc == 1.0:
+                break
 
-                if connector_mode and it >= 2:  # connector updates 3 times only
-                    break
+            for p, g in zip(opt_params, torch.autograd.grad(loss, opt_params)):
+                p.grad = g
+            torch.nn.utils.clip_grad_norm_(opt_params, self.config.grad_clip)
+            opt.step()
+            opt.zero_grad()
 
-        else:
-            raise NotImplementedError("Model not supported")
-
-        edited_model = self.model
+        if detach_history:
+            new_model = self.model_constructor()
+            new_model.load_state_dict(edit_model.state_dict())
+            edit_model = new_model
+        edit_model.train(self.training)
 
         return (
-            FT(
-                edited_model,
-                self.config,
-                self.model_constructor,
-            ),
-            {}
+            FT(edit_model, self.config, self.model_constructor, self.edit_loss_fn),
+            {},
         )

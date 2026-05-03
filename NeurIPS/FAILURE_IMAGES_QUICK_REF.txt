@@ -1,0 +1,89 @@
+FAILURE IMAGES ADDED TO PAPER - QUICK REFERENCE
+================================================
+
+WHAT WAS DONE:
+✓ Generated 6 visual failure analysis scripts
+✓ Created 5 new PNG images showing where MemEIC fails
+✓ Added images to NeurIPS/paper/figs/ folder
+✓ Updated MemEIC_NeurIPS2026.tex with new figures
+✓ Added captions explaining each failure visualization
+
+NEW IMAGES IN PAPER (Appendix A):
+=================================
+
+1. visual_failure_gallery.png
+   - 6-panel showcase of actual MemEIC failures
+   - Shows: Image + Query + Expected Answer + MemEIC Prediction (WRONG)
+   - Categories: Polysemy, Conflict, Hard Visual
+   - Proof that model "sees" but fails to understand
+
+2. visual_confidence_vs_failure.png
+   - Scatter plot: Confidence vs Correctness
+   - Shows model is OVERCONFIDENT in failures
+   - Key insight: High confidence ≠ Correct answers
+
+3. visual_failure_categories.png
+   - Bar chart showing failure rates by category
+   - Highlights: Conflict is hardest category (most failures)
+   - Helps reviewers understand which cases are hardest
+
+4. visual_failure_modes.png
+   - Infographic of 3 failure types:
+     (1) Ambiguity - visual-text mapping confusion
+     (2) Conflict - image vs text contradiction
+     (3) Hard Visual - fine-grained visual reasoning needed
+
+5. visual_pipeline_failures.png
+   - Flow diagram: How failures propagate through pipeline
+   - Shows: Misalignment → Retrieval Error → Wrong Answer
+   - Explains how composition failures accumulate
+
+FILES READY FOR UPLOAD TO OVERLEAF:
+====================================
+Location: C:\Users\Dr-Prashantkumar\Downloads\MemEIC\MemEIC\NeurIPS\paper\figs\
+
+All 5 images verified present ✓
+
+NEXT STEP - UPLOAD TO OVERLEAF:
+================================
+1. Open your Overleaf project
+2. Click Menu > Upload
+3. Choose "figs" folder OR upload individual PNG files
+4. Navigate to: NeurIPS/paper/figs/
+5. Select visual_*.png files (5 files)
+6. Click Recompile
+
+VERIFICATION:
+=============
+✓ visual_failure_gallery.png - Present
+✓ visual_confidence_vs_failure.png - Present
+✓ visual_failure_categories.png - Present
+✓ visual_failure_modes.png - Present
+✓ visual_pipeline_failures.png - Present
+
+LaTeX syntax: ✓ Correct (all \includegraphics valid)
+Figure labels: ✓ All defined (fig_failure_gallery, fig_confidence_analysis, etc.)
+Captions: ✓ Descriptive captions added for each figure
+
+PAPER UPDATED:
+==============
+File: MemEIC_NeurIPS2026.tex
+Appendix Section A now contains:
+  - A.1 Visual Failure Gallery
+  - A.2 Failure Analysis: Confidence vs. Correctness
+  - A.3 Category-wise Failure Breakdown
+  - A.4 Failure Mode Infographic
+  - A.5 Pipeline Failure Chain Analysis
+  - (Rest of appendix unchanged)
+
+SUMMARY FOR REVIEWERS:
+======================
+Your paper now shows concrete visual PROOF of:
+- Where MemEIC fails (actual dataset images)
+- How badly it fails (6 diverse failure cases)
+- Why it fails (confidence vs correctness analysis)
+- Pattern of failures (category breakdown)
+- Types of failures (failure mode taxonomy)
+- How failures accumulate (pipeline chain)
+
+This gives reviewers irrefutable visual evidence of your method's limitations.

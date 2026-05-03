@@ -1,0 +1,2073 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T14:45:44.514006",
+    "model": "microsoft/phi-2",
+    "device": "cuda"
+  },
+  "summary": {
+    "edit_acc": 0.92,
+    "rephrase_acc": 0.86,
+    "locality_acc": 0.74,
+    "m_locality_acc": 0.2,
+    "portability_acc": 0.76,
+    "text_edit_acc": 0.98,
+    "text_rephrase_acc": 0.76,
+    "text_locality_acc": 0.74,
+    "retrieval_score": 0.8639,
+    "baseline_acc": 0.08,
+    "eval_time_seconds": 515.03,
+    "num_samples": 50
+  },
+  "sample_details": [
+    {
+      "sample_idx": 0,
+      "src": "What type of apple is shown in this image?",
+      "expected": "Granny Smith",
+      "baseline": {
+        "pred": "Granny Smith",
+        "correct": true
+      },
+      "retrieval_score": 0.7957,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Granny Smith",
+        "expected": "Granny Smith",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Granny Smith",
+        "expected": "Granny Smith",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The boiling point of water is 100 degrees Celsius.",
+        "expected": "100 degrees Celsius",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The sky in this image is blue.",
+        "expected": "Blue",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Green",
+        "expected": "Green",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A Granny Smith is a green apple variety.",
+        "expected": "A green apple variety",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 1,
+      "src": "What kind of bat is featured in this image?",
+      "expected": "Fruit bat",
+      "baseline": {
+        "pred": "The bat featured in this image is a bat from the genus Nyctophilus.",
+        "correct": false
+      },
+      "retrieval_score": 0.8906,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A fruit bat.",
+        "expected": "Fruit bat",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The bat visible in the picture is a fruit bat.",
+        "expected": "Fruit bat",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Alexander Graham Bell.",
+        "expected": "Alexander Graham Bell",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A dog.",
+        "expected": "A cat",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the bat in this image is a fruit bat, which is a nocturnal flying mammal.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A fruit bat is a nocturnal flying mammal.",
+        "expected": "A nocturnal flying mammal",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 2,
+      "src": "What type of bank is depicted in this image?",
+      "expected": "River bank",
+      "baseline": {
+        "pred": "The image depicts a bank in the form of a building.",
+        "correct": false
+      },
+      "retrieval_score": 0.8933,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "River bank",
+        "expected": "River bank",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "A river bank.",
+        "expected": "River bank",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The speed of light is approximately 299,792,458 meters per second.",
+        "expected": "299,792,458 meters per second",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The weather in this image is sunny.",
+        "expected": "Sunny",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the bank is near water.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The land alongside a river.",
+        "expected": "The land alongside a river",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 3,
+      "src": "What does the crane in this image do?",
+      "expected": "Catches fish in shallow water",
+      "baseline": {
+        "pred": "The crane in this image is a symbol of strength and resilience. It represents the ability to overcome challenges and rise above difficult situations.",
+        "correct": false
+      },
+      "retrieval_score": 0.9086,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The crane in this image catches fish in shallow water.",
+        "expected": "Catches fish in shallow water",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The crane in this image catches fish in shallow water.",
+        "expected": "Catches fish in shallow water",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Tokyo",
+        "expected": "Tokyo",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The vehicle in this image is a car.",
+        "expected": "A truck",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the crane in this image has feathers.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Catches fish in shallow water.",
+        "expected": "Catches fish in shallow water",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 4,
+      "src": "What type of mercury is referenced in this image?",
+      "expected": "Mercury the element",
+      "baseline": {
+        "pred": "The image references a thermometer, which is a type of mercury.",
+        "correct": false
+      },
+      "retrieval_score": 0.8953,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Mercury the element.",
+        "expected": "Mercury the element",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Mercury refers to the element mercury.",
+        "expected": "Mercury the element",
+        "correct": false
+      },
+      "locality": {
+        "pred": "William Shakespeare.",
+        "expected": "William Shakespeare",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A book.",
+        "expected": "A book",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the mercury in this image is dangerous to touch.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Mercury is a toxic liquid metal with symbol Hg.",
+        "expected": "A toxic liquid metal with symbol Hg",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 5,
+      "src": "What type of seal is in this image?",
+      "expected": "A marine mammal",
+      "baseline": {
+        "pred": "The seal in this image is a seal of the United States.",
+        "correct": false
+      },
+      "retrieval_score": 0.8454,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A marine mammal",
+        "expected": "A marine mammal",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The seal depicted in this picture is a marine mammal.",
+        "expected": "A marine mammal",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Pacific Ocean.",
+        "expected": "Pacific Ocean",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The building shown here is the former St. Mary's Church in the village of St. Mary's, Isle of Wight.",
+        "expected": "A school",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the seal in this image lives in water.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A marine mammal that lives in cold waters.",
+        "expected": "A marine mammal that lives in cold waters",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 6,
+      "src": "What kind of palm is shown in this image?",
+      "expected": "Palm tree",
+      "baseline": {
+        "pred": "The image shows a fan palm.",
+        "correct": false
+      },
+      "retrieval_score": 0.9045,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A palm tree.",
+        "expected": "Palm tree",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The palm visible in this picture is a coconut palm.",
+        "expected": "Palm tree",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The chemical formula for water is H2O.",
+        "expected": "H2O",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The fruit in this image is an apple.",
+        "expected": "An orange",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the palm in this image is a coconut palm, which is known for producing coconuts.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A palm tree is a tropical tree with large leaves.",
+        "expected": "A tropical tree with large leaves",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 7,
+      "src": "What type of jaguar is featured in this image?",
+      "expected": "Jaguar the big cat",
+      "baseline": {
+        "pred": "The image features a jaguar.",
+        "correct": false
+      },
+      "retrieval_score": 0.9497,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Jaguar the big cat",
+        "expected": "Jaguar the big cat",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The jaguar in this image refers to a large wild cat native to the Americas.",
+        "expected": "Jaguar the big cat",
+        "correct": false
+      },
+      "locality": {
+        "pred": "South America",
+        "expected": "South America",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The car in this image is red.",
+        "expected": "Red",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the jaguar in this image is a carnivore.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A large wild cat native to the Americas.",
+        "expected": "A large wild cat native to the Americas",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 8,
+      "src": "What type of chip is shown in this image?",
+      "expected": "Potato chip",
+      "baseline": {
+        "pred": "The chip shown in this image is a microprocessor chip.",
+        "correct": false
+      },
+      "retrieval_score": 0.848,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Potato chip",
+        "expected": "Potato chip",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Potato chip",
+        "expected": "Potato chip",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Sir Isaac Newton.",
+        "expected": "Isaac Newton",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The instrument in this image is a spectrometer.",
+        "expected": "A guitar",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, you can eat the chip shown in this image.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A thin slice of fried potato.",
+        "expected": "A thin slice of fried potato",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 9,
+      "src": "What does the word 'mouse' refer to in this image?",
+      "expected": "A small rodent",
+      "baseline": {
+        "pred": "The word'mouse' refers to a small rodent.",
+        "correct": true
+      },
+      "retrieval_score": 0.8823,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A small rodent",
+        "expected": "A small rodent",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The word'mouse' refers to a small rodent in this picture.",
+        "expected": "A small rodent",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Mount Everest",
+        "expected": "Mount Everest",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The flower in this image is a rose.",
+        "expected": "A rose",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the mouse in this image has a tail.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A small rodent with a long tail.",
+        "expected": "A small rodent with a long tail",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 10,
+      "src": "What kind of pitch is depicted in this image?",
+      "expected": "A cricket pitch",
+      "baseline": {
+        "pred": "The pitch depicted in this image is a steep, narrow, and winding road.",
+        "correct": false
+      },
+      "retrieval_score": 0.8453,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A cricket pitch.",
+        "expected": "A cricket pitch",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The type of pitch shown in this image is a cricket pitch.",
+        "expected": "A cricket pitch",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Vincent van Gogh.",
+        "expected": "Vincent van Gogh",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The sport equipment shown is a basketball.",
+        "expected": "A basketball",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the pitch in this image is used for sports.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A cricket pitch is the playing field in cricket.",
+        "expected": "The playing field in cricket",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 11,
+      "src": "What type of spring is shown in this image?",
+      "expected": "A metal coil spring",
+      "baseline": {
+        "pred": "The spring shown in this image is a compression spring.",
+        "correct": false
+      },
+      "retrieval_score": 0.8593,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A metal coil spring",
+        "expected": "A metal coil spring",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The spring shown in the image is a metal coil spring.",
+        "expected": "A metal coil spring",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The atomic number of carbon is 6.",
+        "expected": "6",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The time of day is shown as 10:00 AM.",
+        "expected": "Morning",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the spring in this image is made of metal.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A helical metal device that stores energy",
+        "expected": "A helical metal device that stores energy",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 12,
+      "src": "What does 'lead' refer to in this image?",
+      "expected": "Lead the chemical element",
+      "baseline": {
+        "pred": "The lead refers to the lead-acid battery, which is used to power the car's electrical system.",
+        "correct": false
+      },
+      "retrieval_score": 0.8932,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Lead refers to the chemical element.",
+        "expected": "Lead the chemical element",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "In this picture, 'lead' refers to the chemical element with the symbol Pb.",
+        "expected": "Lead the chemical element",
+        "correct": false
+      },
+      "locality": {
+        "pred": "George Washington.",
+        "expected": "George Washington",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A chair.",
+        "expected": "A chair",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Yes, the lead in this image is toxic.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A heavy toxic metal with symbol Pb",
+        "expected": "A heavy toxic metal with symbol Pb",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 13,
+      "src": "What type of current is depicted in this image?",
+      "expected": "Ocean current",
+      "baseline": {
+        "pred": "The image depicts a direct current (DC) current.",
+        "correct": false
+      },
+      "retrieval_score": 0.8385,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "A continuous flow of seawater in the ocean",
+        "expected": "Ocean current",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The current shown in this picture is an ocean current.",
+        "expected": "Ocean current",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Mercury",
+        "expected": "Mercury",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is wearing a red shirt.",
+        "expected": "A hat",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the current in this image is related to water.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "An ocean current is a continuous flow of seawater in the ocean.",
+        "expected": "A continuous flow of seawater in the ocean",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 14,
+      "src": "What kind of ring is shown in this image?",
+      "expected": "Saturn's ring",
+      "baseline": {
+        "pred": "A ring with a hole in the middle.",
+        "correct": false
+      },
+      "retrieval_score": 0.8004,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Saturn's ring",
+        "expected": "Saturn's ring",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Saturn's ring",
+        "expected": "Saturn's ring",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Jupiter",
+        "expected": "Jupiter",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The tool shown in this image is a screwdriver.",
+        "expected": "A hammer",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yes, the rings in this image are made of ice.",
+        "expected": "Yes",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Bands of ice and rock orbiting Saturn.",
+        "expected": "Bands of ice and rock orbiting Saturn",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 15,
+      "src": "What country's flag is shown in this image?",
+      "expected": "France",
+      "baseline": {
+        "pred": "The flag of the United States of America.",
+        "correct": false
+      },
+      "retrieval_score": 0.8831,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "France",
+        "expected": "France",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The national flag displayed in this picture is the French flag.",
+        "expected": "France",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Water is made up of two hydrogen atoms and one oxygen atom, forming a molecule with the chemical formula H2O.",
+        "expected": "Hydrogen and oxygen",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The plant in this image is a sunflower.",
+        "expected": "A cactus",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The motto of the country whose flag is shown is \"Liberté, égalité, fraternité\" (Liberty, equality, fraternity",
+        "expected": "Liberty, Equality, Fraternity",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Blue white and red vertical bands.",
+        "expected": "Blue white and red vertical bands",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 16,
+      "src": "Which language is written on the sign in this image?",
+      "expected": "Japanese",
+      "baseline": {
+        "pred": "The sign is written in English.",
+        "correct": false
+      },
+      "retrieval_score": 0.8401,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Japanese uses hiragana and katakana alongside kanji",
+        "expected": "Japanese",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The language on the sign is Japanese.",
+        "expected": "Japanese",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The freezing point of water is 0 degrees Celsius or 32 degrees Fahrenheit.",
+        "expected": "0 degrees Celsius",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A road with a speed limit of 60 km/h.",
+        "expected": "A highway",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Hiragana and katakana",
+        "expected": "Hiragana",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Japanese uses hiragana and katakana alongside kanji.",
+        "expected": "Japanese uses hiragana and katakana alongside kanji",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 17,
+      "src": "What breed of dog is in this image?",
+      "expected": "Labrador Retriever",
+      "baseline": {
+        "pred": "The breed of dog in this image is a Golden Retriever.",
+        "correct": false
+      },
+      "retrieval_score": 0.7557,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Labrador Retriever",
+        "expected": "Labrador Retriever",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Labrador Retriever",
+        "expected": "Labrador Retriever",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Oxygen.",
+        "expected": "Oxygen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person is holding a book.",
+        "expected": "A phone",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The dog breed in this image was originally bred for retrieving game.",
+        "expected": "Retrieving game for hunters",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Labradors have shorter coats and broader heads.",
+        "expected": "Labradors have shorter coats and broader heads",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 18,
+      "src": "What musical instrument is the person playing in this image?",
+      "expected": "Ukulele",
+      "baseline": {
+        "pred": "The person is playing the piano.",
+        "correct": false
+      },
+      "retrieval_score": 0.7637,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The person is playing a ukulele.",
+        "expected": "Ukulele",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The instrument being played in this picture is a ukulele.",
+        "expected": "Ukulele",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Venus is the hottest planet in our solar system.",
+        "expected": "Venus",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The food on the plate is a sandwich.",
+        "expected": "Pasta",
+        "correct": false
+      },
+      "portability": {
+        "pred": "4",
+        "expected": "4",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A ukulele is smaller and has 4 strings.",
+        "expected": "A ukulele is smaller and has 4 strings",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 19,
+      "src": "What type of tree is shown in this autumn image?",
+      "expected": "Maple tree",
+      "baseline": {
+        "pred": "The tree shown in this autumn image is a maple tree.",
+        "correct": true
+      },
+      "retrieval_score": 0.8124,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Maple tree",
+        "expected": "Maple tree",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The tree species in this fall picture is a maple tree.",
+        "expected": "Maple tree",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Penicillin was discovered by Alexander Fleming.",
+        "expected": "Alexander Fleming",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The season depicted is autumn.",
+        "expected": "Summer",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Maple syrup",
+        "expected": "Maple syrup",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "It has broad leaves that turn red in autumn.",
+        "expected": "It has broad leaves that turn red in autumn",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 20,
+      "src": "What type of rock formation is visible in this image?",
+      "expected": "Igneous rock",
+      "baseline": {
+        "pred": "The image shows a sedimentary rock formation.",
+        "correct": false
+      },
+      "retrieval_score": 0.8994,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Igneous rock",
+        "expected": "Igneous rock",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The geological formation in this picture is igneous rock.",
+        "expected": "Igneous rock",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Nile River.",
+        "expected": "Nile",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The Gulf of Mexico.",
+        "expected": "A lake",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The rock in this image was formed from cooled magma or lava.",
+        "expected": "From volcanic activity",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Igneous rock is formed from cooled magma or lava.",
+        "expected": "Formed from cooled magma or lava",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 21,
+      "src": "What civilization built the structure in this image?",
+      "expected": "Ancient Greece",
+      "baseline": {
+        "pred": "The structure was built by the ancient Egyptians.",
+        "correct": false
+      },
+      "retrieval_score": 0.8476,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Ancient Greece",
+        "expected": "Ancient Greece",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Ancient Greece",
+        "expected": "Ancient Greece",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The square root of 144 is 12.",
+        "expected": "12",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The background is a picture of a beautiful landscape.",
+        "expected": "Mountains",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Doric columns",
+        "expected": "Doric",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Ancient Greece built the Parthenon and temples with columns.",
+        "expected": "Parthenon and temples with columns",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 22,
+      "src": "What type of cloud is in this weather image?",
+      "expected": "Cumulonimbus",
+      "baseline": {
+        "pred": "Cumulus clouds",
+        "correct": false
+      },
+      "retrieval_score": 0.8903,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cumulonimbus",
+        "expected": "Cumulonimbus",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The cloud formation shown here is a cumulonimbus cloud.",
+        "expected": "Cumulonimbus",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Vatican City",
+        "expected": "Vatican City",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The aircraft shown is the Fokker F.VII.",
+        "expected": "An airplane",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Thunder",
+        "expected": "Thunderstorms",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "A cumulonimbus cloud is a tall storm cloud that produces thunder.",
+        "expected": "A tall storm cloud that produces thunder",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 23,
+      "src": "What era does the architecture in this image represent?",
+      "expected": "Art Deco",
+      "baseline": {
+        "pred": "The architecture in this image represents the Renaissance era.",
+        "correct": false
+      },
+      "retrieval_score": 0.8555,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Art Deco",
+        "expected": "Art Deco",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Art Deco",
+        "expected": "Art Deco",
+        "correct": true
+      },
+      "locality": {
+        "pred": "DNA stands for deoxyribonucleic acid. It is a molecule that carries the genetic instructions used in the growth, development, functioning, and",
+        "expected": "Deoxyribonucleic acid",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The building is made of brick.",
+        "expected": "Brick",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The style in this image became popular in the 1920s.",
+        "expected": "1920s",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Bold geometric patterns and lavish ornamentation.",
+        "expected": "Bold geometric patterns and lavish ornamentation",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 24,
+      "src": "What species of bird is perched in this image?",
+      "expected": "Hawk",
+      "baseline": {
+        "pred": "The bird in the image is a red-tailed hawk.",
+        "correct": true
+      },
+      "retrieval_score": 0.7872,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Hawk",
+        "expected": "Hawk",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Hawk",
+        "expected": "Hawk",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Photosynthesis is the process by which plants convert sunlight, water, and carbon dioxide into glucose (a type of sugar) and oxygen.",
+        "expected": "The process plants use to convert sunlight to energy",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The nest is visible in the upper right corner of the image.",
+        "expected": "A bird nest",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The bird in this image primarily hunts small mammals and birds.",
+        "expected": "Small mammals and rodents",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Hawks are smaller with rounded tails.",
+        "expected": "Hawks are smaller with rounded tails",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 25,
+      "src": "What river flows through the capital of this country shown in the image?",
+      "expected": "Seine",
+      "baseline": {
+        "pred": "The Nile River flows through the capital of this country shown in the image.",
+        "correct": false
+      },
+      "retrieval_score": 0.8294,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Seine",
+        "expected": "Seine",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Seine",
+        "expected": "Seine",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Diamond is the hardest natural substance.",
+        "expected": "Diamond",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The Eiffel Tower.",
+        "expected": "A bridge",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The river that flows through the capital shown is the Seine, which is about 1,547 kilometers long.",
+        "expected": "777 km",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Seine",
+        "expected": "Seine",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 26,
+      "src": "What language is the most spoken in the region shown in this image?",
+      "expected": "Portuguese",
+      "baseline": {
+        "pred": "The most spoken language in the region shown in this image is Spanish.",
+        "correct": false
+      },
+      "retrieval_score": 0.8297,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Portuguese",
+        "expected": "Portuguese",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Portuguese",
+        "expected": "Portuguese",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Pi is approximately equal to 3.14159.",
+        "expected": "3.14159",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The vegetation shown is a mix of grassland and woodland.",
+        "expected": "Tropical forest",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Portugal",
+        "expected": "Portugal",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Portuguese",
+        "expected": "Portuguese",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 27,
+      "src": "What is the altitude of the mountain peak shown in this image?",
+      "expected": "6,190 meters",
+      "baseline": {
+        "pred": "The altitude of the mountain peak shown in this image is approximately 3,000 meters.",
+        "correct": false
+      },
+      "retrieval_score": 0.8674,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The altitude of the mountain peak shown in this image is 6,190 meters.",
+        "expected": "6,190 meters",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The mountain in this picture is 6,190 meters high.",
+        "expected": "6,190 meters",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Antonio Vivaldi composed the Four Seasons.",
+        "expected": "Antonio Vivaldi",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The snow coverage is the percentage of the total area covered by snow.",
+        "expected": "Fully snow-covered",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Alaska",
+        "expected": "Alaska",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Denali is 6,190 meters tall.",
+        "expected": "6,190 meters",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 28,
+      "src": "Who designed the building shown in this image?",
+      "expected": "Antoni Gaudi",
+      "baseline": {
+        "pred": "The building was designed by architect John Russell Pope.",
+        "correct": false
+      },
+      "retrieval_score": 0.7929,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Antoni Gaudi",
+        "expected": "Antoni Gaudi",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Antoni Gaudi",
+        "expected": "Antoni Gaudi",
+        "correct": true
+      },
+      "locality": {
+        "pred": "A human body has 206 bones.",
+        "expected": "206",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The building is in the Italianate style.",
+        "expected": "Modern",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Barcelona",
+        "expected": "Barcelona",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Antoni Gaudi",
+        "expected": "Antoni Gaudi",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 29,
+      "src": "What is the population of the city shown in this aerial image?",
+      "expected": "2.1 million",
+      "baseline": {
+        "pred": "The population of the city shown in this aerial image is approximately 100,000 people.",
+        "correct": false
+      },
+      "retrieval_score": 0.8438,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The population of the city shown in this aerial image is 2.1 million.",
+        "expected": "2.1 million",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "2.1 million",
+        "expected": "2.1 million",
+        "correct": true
+      },
+      "locality": {
+        "pred": "CPU stands for Central Processing Unit.",
+        "expected": "Central Processing Unit",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The terrain is mostly flat, with some hills and valleys.",
+        "expected": "Flat urban area",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The population density of the city shown is 1,000 people per square kilometer.",
+        "expected": "21,000 per square km",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "2.1 million",
+        "expected": "2.1 million in the city proper",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 30,
+      "src": "When was the monument in this image first opened to the public?",
+      "expected": "1889",
+      "baseline": {
+        "pred": "The monument was first opened to the public in 1892.",
+        "correct": false
+      },
+      "retrieval_score": 0.8029,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "1889",
+        "expected": "1889",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "1889",
+        "expected": "1889",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Na",
+        "expected": "Na",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The structure is made of steel.",
+        "expected": "Iron",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The monument was built for the World's Fair in 1889.",
+        "expected": "World's Fair",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "1889",
+        "expected": "1889 for the World's Fair",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 31,
+      "src": "What is the depth of the body of water shown in this image?",
+      "expected": "1,642 meters",
+      "baseline": {
+        "pred": "The depth of the body of water shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.8112,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "1,642 meters",
+        "expected": "1,642 meters",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The water body in this picture is 1,642 meters deep.",
+        "expected": "1,642 meters",
+        "correct": true
+      },
+      "locality": {
+        "pred": "World War II ended in 1945.",
+        "expected": "1945",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The water is blue.",
+        "expected": "Blue",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The body of water in this image is located in Russia.",
+        "expected": "Russia",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "1,642 meters",
+        "expected": "1,642 meters",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 32,
+      "src": "What is the wingspan of the aircraft shown in this image?",
+      "expected": "79.8 meters",
+      "baseline": {
+        "pred": "The wingspan of the aircraft shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.8426,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "79.8 meters",
+        "expected": "79.8 meters",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The wing of the plane in this picture is 79.8 meters wide.",
+        "expected": "79.8 meters",
+        "correct": true
+      },
+      "locality": {
+        "pred": "HTML stands for Hypertext Markup Language.",
+        "expected": "HyperText Markup Language",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The sky color is blue.",
+        "expected": "Clear blue",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The aircraft in this image can carry approximately 500 passengers.",
+        "expected": "853",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "79.8 meters",
+        "expected": "79.8 meters",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 33,
+      "src": "What year was the painting in this image created?",
+      "expected": "1889",
+      "baseline": {
+        "pred": "The painting was created in 1894.",
+        "correct": false
+      },
+      "retrieval_score": 0.8072,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "1889",
+        "expected": "1889",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The artwork in this picture was painted in 1889.",
+        "expected": "1889",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The smallest unit of matter is an atom.",
+        "expected": "Atom",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The medium used was a canvas.",
+        "expected": "Oil on canvas",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The artist was in France when he created this painting.",
+        "expected": "Saint-Remy-de-Provence asylum",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The Starry Night was painted in 1889.",
+        "expected": "1889",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 34,
+      "src": "What is the top speed of the vehicle shown in this image?",
+      "expected": "211 mph",
+      "baseline": {
+        "pred": "The top speed of the vehicle shown in this image is unknown.",
+        "correct": false
+      },
+      "retrieval_score": 0.8534,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "211 mph",
+        "expected": "211 mph",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The vehicle in this picture can go up to 211 mph.",
+        "expected": "211 mph",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Sahara Desert.",
+        "expected": "Sahara",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The vehicle is red.",
+        "expected": "Black",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The vehicle in this image has a Lamborghini Aventador engine.",
+        "expected": "V12",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "211 mph",
+        "expected": "211 mph",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 35,
+      "src": "What is the GDP per capita of the country where this landmark was built?",
+      "expected": "42,000 USD",
+      "baseline": {
+        "pred": "The GDP per capita of the country where this landmark was built is $10,000.",
+        "correct": false
+      },
+      "retrieval_score": 0.8514,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "42,000 USD",
+        "expected": "42,000 USD",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The landmark is located in France, and its GDP per capita is 42,000 USD.",
+        "expected": "42,000 USD",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The speed of sound is the rate at which sound waves travel through a medium, such as air or water. It is measured in meters per second (",
+        "expected": "343 meters per second",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "There are two people in this image.",
+        "expected": "Three",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The percentage of GDP contributed by tourism in the landmark's country is 100%.",
+        "expected": "8 percent",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "42,000 USD",
+        "expected": "42,000 USD",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 36,
+      "src": "How many UNESCO sites are in the country where this monument stands?",
+      "expected": "49",
+      "baseline": {
+        "pred": "There are a total of 10 UNESCO sites in the country where this monument stands.",
+        "correct": false
+      },
+      "retrieval_score": 0.8567,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "49",
+        "expected": "49",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "49",
+        "expected": "49",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The formula for kinetic energy is KE = 1/2 * mass * velocity^2.",
+        "expected": "KE = 1/2 mv^2",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The weather in this image is sunny.",
+        "expected": "Cloudy",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Paris",
+        "expected": "Paris",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "49",
+        "expected": "49",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 37,
+      "src": "What is the average temperature of the city where this statue is located?",
+      "expected": "11 degrees Celsius",
+      "baseline": {
+        "pred": "The average temperature of the city where this statue is located is irrelevant to the answer.",
+        "correct": false
+      },
+      "retrieval_score": 0.865,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "11 degrees Celsius",
+        "expected": "11 degrees Celsius",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The statue is located in New York City, New York, and its average temperature is 11 degrees Celsius.",
+        "expected": "11 degrees Celsius",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Ohm's law states that the current flowing through a conductor between two points is directly proportional to the voltage across the two points.",
+        "expected": "V = IR",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The lighting condition refers to the amount and quality of light available in the environment.",
+        "expected": "Daytime",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The coldest month in the city where this statue stands is January.",
+        "expected": "January",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "11 degrees Celsius",
+        "expected": "11 degrees Celsius",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 38,
+      "src": "What is the founding year of the university nearest to this image location?",
+      "expected": "1636",
+      "baseline": {
+        "pred": "The founding year of the university nearest to this image location is 1887.",
+        "correct": false
+      },
+      "retrieval_score": 0.8583,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "1636",
+        "expected": "1636",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The closest university to this place was founded in 1636.",
+        "expected": "1636",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right",
+        "expected": "a^2 + b^2 = c^2",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "A church.",
+        "expected": "A library",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Massachusetts",
+        "expected": "Massachusetts",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Harvard University was founded in 1636.",
+        "expected": "1636",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 39,
+      "src": "What is the elevation of the city where the tower in this image is located?",
+      "expected": "35 meters",
+      "baseline": {
+        "pred": "The elevation of the city is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.8983,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "35 meters",
+        "expected": "35 meters",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The city with this tower is at the same elevation as Paris, which is 35 meters above sea level.",
+        "expected": "35 meters",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The chemical formula for table salt is NaCl.",
+        "expected": "NaCl",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The mode of transport shown is a bicycle.",
+        "expected": "A bus",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The Seine River.",
+        "expected": "Seine",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "35 meters",
+        "expected": "35 meters",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 40,
+      "src": "How many stories does the tallest building near this image location have?",
+      "expected": "128",
+      "baseline": {
+        "pred": "The tallest building near this image location has 15 stories.",
+        "correct": false
+      },
+      "retrieval_score": 0.855,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The",
+        "expected": "128",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "",
+        "expected": "128",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Earthquakes are caused by the sudden release of energy in the Earth's crust, resulting in seismic waves. This energy is generated by the movement of t",
+        "expected": "Tectonic plate movement",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The skyline is dominated by the iconic CN Tower, which is the tallest free-standing structure in the Western Hemisphere.",
+        "expected": "Urban with tall buildings",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The tallest building near this location is in Dubai, United Arab Emirates.",
+        "expected": "United Arab Emirates",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "128 stories.",
+        "expected": "163",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 41,
+      "src": "What is the annual rainfall of the region shown in this satellite image?",
+      "expected": "600 mm",
+      "baseline": {
+        "pred": "The annual rainfall of the region shown in this satellite image is about 1200 mm.",
+        "correct": false
+      },
+      "retrieval_score": 0.8778,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The annual rainfall of the region shown in this satellite image is 600 mm.",
+        "expected": "600 mm",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The region in this image receives the same amount of rain as the Sahel region, which is 600 mm.",
+        "expected": "600 mm",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Absolute zero is the lowest possible temperature, where all molecular motion ceases. It is equivalent to -273.15 degrees Celsius or -459.67 degrees",
+        "expected": "-273.15 degrees Celsius",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The terrain visible is a combination of the surface of the Moon and the Earth.",
+        "expected": "Plains",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The region in this image has a tropical savanna climate.",
+        "expected": "Semi-arid",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The annual rainfall of the Sahel region is 600 mm.",
+        "expected": "600 mm",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 42,
+      "src": "How many species of animals are native to the island shown in this image?",
+      "expected": "Approximately 200,000",
+      "baseline": {
+        "pred": "There are a total of 10 species of animals native to the island shown in this image.",
+        "correct": false
+      },
+      "retrieval_score": 0.8757,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Approximately 200,000",
+        "expected": "Approximately 200,000",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Approximately 200,000",
+        "expected": "Approximately 200,000",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Newton's first law states that an object at rest will stay at rest, and an object in motion will stay in motion with the same speed and direction",
+        "expected": "An object in motion stays in motion unless acted upon",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "A grassland ecosystem.",
+        "expected": "Tropical island",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Lemurs",
+        "expected": "Lemur",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Approximately 200,000",
+        "expected": "Approximately 200,000",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 43,
+      "src": "What is the literacy rate of the country where this ancient temple is located?",
+      "expected": "74 percent",
+      "baseline": {
+        "pred": "The literacy rate of the country where this ancient temple is located is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.9388,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "74 percent",
+        "expected": "74 percent",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The temple is located in India, and its literacy rate is 74 percent.",
+        "expected": "74 percent",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The powerhouse of the cell is the mitochondria.",
+        "expected": "Mitochondria",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "A cross.",
+        "expected": "A cross",
+        "correct": true
+      },
+      "portability": {
+        "pred": "The writing system used in the country with this temple is the same as India's, which is the Devanagari script.",
+        "expected": "Devanagari",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "74 percent",
+        "expected": "74 percent",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 44,
+      "src": "What is the national sport of the country shown in this stadium image?",
+      "expected": "Cricket",
+      "baseline": {
+        "pred": "The national sport of the country shown in this stadium image is football.",
+        "correct": false
+      },
+      "retrieval_score": 0.863,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cricket",
+        "expected": "Cricket",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Cricket",
+        "expected": "Cricket",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Hydrogen.",
+        "expected": "Hydrogen",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The stadium has a capacity of 5,000 people.",
+        "expected": "About 100,000",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Two cricket teams compete in the country shown.",
+        "expected": "10 IPL teams",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Cricket",
+        "expected": "Cricket",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 45,
+      "src": "The image shows a landmark. If you reverse the country name and find a city with that reversed name, what is its population?",
+      "expected": "Undefined — no such city exists",
+      "baseline": {
+        "pred": "The population of the city is not mentioned in the image.",
+        "correct": false
+      },
+      "retrieval_score": 0.9382,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Undefined — no such city exists",
+        "expected": "Undefined — no such city exists",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The population of the city is undefined.",
+        "expected": "Undefined — no such city exists",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Gravity is a force that pulls objects towards each other. It is what keeps us grounded on Earth and causes objects to fall when dropped.",
+        "expected": "A force of attraction between masses",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The foreground is the area closest to the viewer.",
+        "expected": "Grass",
+        "correct": false
+      },
+      "portability": {
+        "pred": "No",
+        "expected": "No",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Usually produces a nonsensical string",
+        "expected": "Usually produces a nonsensical string",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 46,
+      "src": "If the person in this image traveled at the speed of light, how long would it take to reach the nearest star?",
+      "expected": "4.24 years",
+      "baseline": {
+        "pred": "It would take approximately 4.22 years to reach the nearest star, Proxima Centauri.",
+        "correct": false
+      },
+      "retrieval_score": 0.9616,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "4.24 years",
+        "expected": "4.24 years",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "4.24 years",
+        "expected": "4.24 years",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The circumference of Earth is approximately 40,075 kilometers.",
+        "expected": "40,075 km",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person is walking.",
+        "expected": "Standing",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Proxima Centauri",
+        "expected": "Proxima Centauri",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The nearest star is 4.24 light years away from Earth.",
+        "expected": "4.24 light years",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 47,
+      "src": "What would happen to the building in this image if gravity doubled?",
+      "expected": "Structural stress would increase significantly",
+      "baseline": {
+        "pred": "The building would appear to be taller and more stretched out.",
+        "correct": false
+      },
+      "retrieval_score": 0.976,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "All loads double, causing potential collapse.",
+        "expected": "Structural stress would increase significantly",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The building would experience a significant increase in structural stress, potentially leading to collapse.",
+        "expected": "Structural stress would increase significantly",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Avogadro's number is a constant that represents the number of particles (atoms, molecules, ions, etc.) in one mole of a",
+        "expected": "6.022 x 10^23",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The building is  tall.",
+        "expected": "About 300 meters",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The foundation stress would increase by a factor of 2.",
+        "expected": "2",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "All loads double, causing potential collapse.",
+        "expected": "All loads double, causing potential collapse",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 48,
+      "src": "If you combined the population of every city visible in this satellite image, what percentage of Earth's population would that be?",
+      "expected": "Less than 1 percent",
+      "baseline": {
+        "pred": "The combined population of all cities visible in this satellite image would be approximately 0.1% of Earth's population.",
+        "correct": false
+      },
+      "retrieval_score": 0.9549,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Less than 1 percent in any single small",
+        "expected": "Less than 1 percent",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The fraction of world population in the cities shown in this satellite view is less than 1 percent.",
+        "expected": "Less than 1 percent",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Entropy is a measure of the disorder or randomness in a system. It is a concept in thermodynamics that helps us understand how energy is distributed",
+        "expected": "A measure of disorder in a system",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The scale of this satellite image is 1:10,000,000.",
+        "expected": "Regional",
+        "correct": false
+      },
+      "portability": {
+        "pred": "There are approximately 1,000 cities visible in this satellite image.",
+        "expected": "Cannot be determined from a single image",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Less than 1",
+        "expected": "Less than 1 percent in any single small area",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 49,
+      "src": "If the painting in this image was created one century later, what art movement would it belong to?",
+      "expected": "Cubism",
+      "baseline": {
+        "pred": "The painting would belong to the Impressionist movement.",
+        "correct": false
+      },
+      "retrieval_score": 0.957,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cubism",
+        "expected": "Cubism",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "If the painting was created one century later, it would belong to the Cubism art movement.",
+        "expected": "Cubism",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Heisenberg uncertainty principle states that it is impossible to simultaneously know the exact position and momentum of a particle.",
+        "expected": "Cannot simultaneously know position and momentum precisely",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The painting is dominated by shades of blue and green.",
+        "expected": "Earth tones",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Pablo Picasso",
+        "expected": "Pablo Picasso",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Cubism",
+        "expected": "Cubism which emerged around 1907",
+        "correct": true
+      }
+    }
+  ]
+}

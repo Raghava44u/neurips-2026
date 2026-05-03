@@ -1,0 +1,16 @@
+OVERLEAF PLOTS NOT SHOWING - QUICK FIX
+=====================================
+
+PROBLEM: Your plots don't show in Overleaf
+
+WHY: The "figs" folder with your PNG images was NOT uploaded to Overleaf
+
+SOLUTION - 3 STEPS:
+1. Open Overleaf project
+2. Click Menu > Upload > Choose "figs" folder from:
+   C:\Users\Dr-Prashantkumar\Downloads\MemEIC\MemEIC\NeurIPS\paper\figs
+3. Click Recompile
+
+DONE - Your plots will appear
+
+For detailed guide, see: OVERLEAF_UPLOAD_GUIDE.md

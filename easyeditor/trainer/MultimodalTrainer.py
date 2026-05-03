@@ -267,7 +267,7 @@ class MultimodalTrainer(BaseTrainer):
             text_inner_acc = f"{stats['text_inner/acc_val']:<12.5f}"
             text_outer_acc = f"{stats['text_edit/acc_val']:<12.5f}"
             text_loc_acc = f"{stats['text_loc/acc_val']:<12.5f}"
-        port_acc = f"{stats['port/acc_val']:<12.5f}"
+        port_acc = f"{stats.get('port/acc_val', 0.0):<12.5f}"
         if not comp:
             LOG.info(
             f"Step {prog} outer_acc: {outer_acc} image_acc: {image_acc} inner_acc: {inner_acc} it_time: {elapsed:.4f} loc_acc: {loc_acc}, image_loc: {loc_image_acc}, port_acc: {port_acc}"
@@ -554,24 +554,27 @@ class MultimodalTrainer(BaseTrainer):
 
         # set lora: visual & textual inference
 
-        assert len(batch["textual_edit"]['port']) == 1, "batch['textual_edit']['port'] exist and have only one element"
-        port = batch["textual_edit"]['port'][0]
-        with torch.no_grad():
-            port_outputs = edited_model(port)
-            port_labels = port["labels"]
-            if not isinstance(port_outputs, torch.Tensor):
-                port_logits = port_outputs.logits
-            else:
-                port_logits = port_outputs
-            if port_logits.shape[1] > port_labels.shape[1]:
-                port_dict = self.model.edit_loss_fn(self.config, port_logits, port_labels)
-            else:
-                port_dict = self.model.edit_loss_fn(self.config, port_logits, port_labels[:, -port_logits.shape[1]-1:])
-            port_acc = port_dict["acc"].item()
-            del port_outputs, port_logits
-            torch.cuda.empty_cache()
-        
-        info_dict['port/acc'] = port_acc
+        if 'port' in batch["textual_edit"] and batch["textual_edit"]['port'] is not None:
+            assert len(batch["textual_edit"]['port']) == 1, "batch['textual_edit']['port'] exist and have only one element"
+            port = batch["textual_edit"]['port'][0]
+            with torch.no_grad():
+                port_outputs = edited_model(port)
+                port_labels = port["labels"]
+                if not isinstance(port_outputs, torch.Tensor):
+                    port_logits = port_outputs.logits
+                else:
+                    port_logits = port_outputs
+                if port_logits.shape[1] > port_labels.shape[1]:
+                    port_dict = self.model.edit_loss_fn(self.config, port_logits, port_labels)
+                else:
+                    port_dict = self.model.edit_loss_fn(self.config, port_logits, port_labels[:, -port_logits.shape[1]-1:])
+                port_acc = port_dict["acc"].item()
+                del port_outputs, port_logits
+                torch.cuda.empty_cache()
+            
+            info_dict['port/acc'] = port_acc
+        else:
+            info_dict['port/acc'] = 0.0
         ################ Compositional portability #################
 
         return info_dict
@@ -1411,14 +1414,16 @@ class MultimodalTrainer(BaseTrainer):
                         base_logits = base_outputs.logits
                     else:  
                         base_logits = base_outputs
-                    base_logits_store_vis.append(base_logits.clone().detach().to('cuda:' + str(gpus[1])))
+                    target_gpu = gpus[1] if len(gpus) > 1 else gpus[0]
+                    base_logits_store_vis.append(base_logits.clone().detach().to('cuda:' + str(target_gpu)))
                         
                     base_image_outputs = self.model(batch["loc_image"])
                     if not isinstance(base_image_outputs, torch.Tensor):
                         base_image_logits = base_image_outputs.logits
                     else:
                         base_image_logits = base_image_outputs
-                    base_image_logits_store_vis.append(base_image_logits.clone().detach().to('cuda:' + str(gpus[1])))
+                    target_gpu = gpus[1] if len(gpus) > 1 else gpus[0]
+                    base_image_logits_store_vis.append(base_image_logits.clone().detach().to('cuda:' + str(target_gpu)))
                 
                 # Textual Edit
                 if comp and "textual_edit" in batch.keys():
@@ -1428,7 +1433,8 @@ class MultimodalTrainer(BaseTrainer):
                             base_logits = base_outputs.logits
                         else:  
                             base_logits = base_outputs
-                        base_logits_store_text.append(base_logits.clone().detach().to('cuda:' + str(gpus[1])))
+                        target_gpu = gpus[1] if len(gpus) > 1 else gpus[0]
+                        base_logits_store_text.append(base_logits.clone().detach().to('cuda:' + str(target_gpu)))
 
                 pbar.update(1)
             else:

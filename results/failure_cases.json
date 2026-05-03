@@ -1,0 +1,2726 @@
+[
+  {
+    "question": "What type of rock formation is this?",
+    "expected": "Sedimentary limestone cliff",
+    "predicted": "From rapid cooling of lava",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8639,
+    "self_retrieved": true,
+    "sample_idx": 22
+  },
+  {
+    "question": "What is the boiling point of water in Celsius?",
+    "expected": "100 degrees Celsius",
+    "predicted": "212 degrees Fahrenheit",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8881,
+    "self_retrieved": true,
+    "sample_idx": 28
+  },
+  {
+    "question": "What type of crane is shown?",
+    "expected": "Sandhill Crane",
+    "predicted": "The crane shown is a Potain MDT 389 tower crane.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8166,
+    "self_retrieved": false,
+    "sample_idx": 32
+  },
+  {
+    "question": "What is the primary energy source of the country with the most nuclear reactors?",
+    "expected": "Petroleum/Natural gas (United States has the most reactors)",
+    "predicted": "The primary energy source of the country with the most nuclear reactors is nuclear energy.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8428,
+    "self_retrieved": true,
+    "sample_idx": 42
+  },
+  {
+    "question": "What specific alloy is this metal?",
+    "expected": "304 Stainless Steel",
+    "predicted": "The metal is aluminum.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.6505,
+    "self_retrieved": false,
+    "sample_idx": 50
+  },
+  {
+    "question": "What tree species is shown?",
+    "expected": "Sugar Maple",
+    "predicted": "English Oak",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.6221,
+    "self_retrieved": false,
+    "sample_idx": 61
+  },
+  {
+    "question": "What mineral is shown?",
+    "expected": "Clear quartz crystal",
+    "predicted": "Russia, Botswana, and Congo",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.6964,
+    "self_retrieved": true,
+    "sample_idx": 64
+  },
+  {
+    "question": "What painting medium is used here?",
+    "expected": "Oil on canvas",
+    "predicted": "300 gsm cold-pressed",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8267,
+    "self_retrieved": true,
+    "sample_idx": 74
+  },
+  {
+    "question": "What plant is shown growing here?",
+    "expected": "Moso Bamboo",
+    "predicted": "Furniture, flooring, and barrels",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.5663,
+    "self_retrieved": true,
+    "sample_idx": 102
+  },
+  {
+    "question": "What language is most widely spoken overall?",
+    "expected": "English",
+    "predicted": "Mandarin Chinese",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.9149,
+    "self_retrieved": true,
+    "sample_idx": 115
+  },
+  {
+    "question": "What bark is shown in this image?",
+    "expected": "Paper birch bark",
+    "predicted": "Dogs bark to communicate and signal their territory.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8743,
+    "self_retrieved": true,
+    "sample_idx": 134
+  },
+  {
+    "question": "What naval vessel is shown?",
+    "expected": "Nuclear submarine",
+    "predicted": "Up to 90 aircraft",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.7773,
+    "self_retrieved": true,
+    "sample_idx": 139
+  },
+  {
+    "question": "What instrument is shown?",
+    "expected": "Bb clarinet",
+    "predicted": "Adolphe Sax in 1846",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.7388,
+    "self_retrieved": true,
+    "sample_idx": 153
+  },
+  {
+    "question": "What Jaguar model is shown in this photo?",
+    "expected": "Jaguar XE sedan",
+    "predicted": "The Jaguar F-TYPE is shown in this photo.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.88,
+    "self_retrieved": false,
+    "sample_idx": 177
+  },
+  {
+    "question": "What bank is shown in this image?",
+    "expected": "Chase Bank branch",
+    "predicted": "Bank of America",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.8438,
+    "self_retrieved": false,
+    "sample_idx": 184
+  },
+  {
+    "question": "What type of basalt is this formation?",
+    "expected": "Columnar basalt",
+    "predicted": "This formation is an extrusive igneous rock called basalt.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 4,
+    "retrieval_score": 0.915,
+    "self_retrieved": false,
+    "sample_idx": 198
+  },
+  {
+    "question": "What current is depicted in this image?",
+    "expected": "Ocean current map",
+    "predicted": "The current depicted in this image is an ocean current.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8466,
+    "self_retrieved": true,
+    "sample_idx": 0
+  },
+  {
+    "question": "What is visible on the bank in this image?",
+    "expected": "Wildflowers on a riverbank",
+    "predicted": "Charlotte, North Carolina.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8084,
+    "self_retrieved": true,
+    "sample_idx": 15
+  },
+  {
+    "question": "What cell is depicted?",
+    "expected": "Human red blood cell",
+    "predicted": "6 by 8 feet",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.6951,
+    "self_retrieved": true,
+    "sample_idx": 21
+  },
+  {
+    "question": "What is the coastline length of the country with the most active volcanoes?",
+    "expected": "54,716 km (Indonesia)",
+    "predicted": "The coastline length of the country with the most active volcanoes is 54,716 km.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.9019,
+    "self_retrieved": true,
+    "sample_idx": 52
+  },
+  {
+    "question": "What music format is shown?",
+    "expected": "Vinyl LP record",
+    "predicted": "16-bit",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7159,
+    "self_retrieved": true,
+    "sample_idx": 56
+  },
+  {
+    "question": "What chip is being served?",
+    "expected": "Tortilla chips with salsa",
+    "predicted": "The chip being served is an Intel Core i9 processor.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.6692,
+    "self_retrieved": false,
+    "sample_idx": 58
+  },
+  {
+    "question": "What big cat is shown?",
+    "expected": "Cheetah",
+    "predicted": "Cheetah",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.6819,
+    "self_retrieved": true,
+    "sample_idx": 62
+  },
+  {
+    "question": "What instrument is being played?",
+    "expected": "Violin",
+    "predicted": "Opus Clavicembalisticum by Sorabji",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7634,
+    "self_retrieved": true,
+    "sample_idx": 70
+  },
+  {
+    "question": "What specific species of salmon is this?",
+    "expected": "Coho salmon",
+    "predicted": "Coho salmon",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7479,
+    "self_retrieved": true,
+    "sample_idx": 75
+  },
+  {
+    "question": "What type of lead is referenced here?",
+    "expected": "Leading role in a play",
+    "predicted": "The",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.765,
+    "self_retrieved": true,
+    "sample_idx": 76
+  },
+  {
+    "question": "What type of granite is this countertop?",
+    "expected": "Colonial White granite",
+    "predicted": "Kashmir White differs from Colonial White",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "text_edit"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7278,
+    "self_retrieved": true,
+    "sample_idx": 80
+  },
+  {
+    "question": "What organ is shown?",
+    "expected": "Human kidney organ",
+    "predicted": "Up to 10,000 pipes.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7366,
+    "self_retrieved": true,
+    "sample_idx": 81
+  },
+  {
+    "question": "What molecule is depicted?",
+    "expected": "DNA double helix",
+    "predicted": "RNA polymerase",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.6536,
+    "self_retrieved": true,
+    "sample_idx": 83
+  },
+  {
+    "question": "What is the boiling point of water in Fahrenheit?",
+    "expected": "212 degrees Fahrenheit",
+    "predicted": "212 degrees Fahrenheit",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.9034,
+    "self_retrieved": false,
+    "sample_idx": 84
+  },
+  {
+    "question": "What is the average rainfall of the wettest inhabited place on Earth?",
+    "expected": "11,871mm (Mawsynram, India)",
+    "predicted": "The average rainfall of the wettest inhabited place on Earth is 11,871mm.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8185,
+    "self_retrieved": true,
+    "sample_idx": 86
+  },
+  {
+    "question": "What textile source is shown?",
+    "expected": "Cotton boll plant",
+    "predicted": "By boiling cocoons and unraveling filaments",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7659,
+    "self_retrieved": true,
+    "sample_idx": 88
+  },
+  {
+    "question": "What draft is referenced?",
+    "expected": "Draft beer on tap",
+    "predicted": "The NBA draft is referenced.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7134,
+    "self_retrieved": true,
+    "sample_idx": 90
+  },
+  {
+    "question": "What optical instrument is shown?",
+    "expected": "Reflecting telescope",
+    "predicted": "200 nanometers",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7618,
+    "self_retrieved": true,
+    "sample_idx": 108
+  },
+  {
+    "question": "What horn is shown?",
+    "expected": "French horn musical instrument",
+    "predicted": "French horn",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7321,
+    "self_retrieved": true,
+    "sample_idx": 109
+  },
+  {
+    "question": "What exact subspecies of brown bear is this?",
+    "expected": "Grizzly Bear",
+    "predicted": "Kodiak is larger due to island gigant",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8452,
+    "self_retrieved": true,
+    "sample_idx": 124
+  },
+  {
+    "question": "What water feature is shown?",
+    "expected": "Natural waterfall",
+    "predicted": "22,500 MW.",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.6034,
+    "self_retrieved": true,
+    "sample_idx": 128
+  },
+  {
+    "question": "What river flows through the capital of the country that borders both the USA and Guatemala?",
+    "expected": "Lake Texcoco (historically, now drained under Mexico City)",
+    "predicted": "The river that flows through the capital of the country that borders both the USA and Guatemala is the Rio Grande.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8822,
+    "self_retrieved": true,
+    "sample_idx": 135
+  },
+  {
+    "question": "What plate is in this image?",
+    "expected": "Ceramic dinner plate",
+    "predicted": "2-10 cm per year",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7421,
+    "self_retrieved": true,
+    "sample_idx": 143
+  },
+  {
+    "question": "What is the infant mortality rate of the country with the lowest?",
+    "expected": "1.6 per 1000 (Iceland)",
+    "predicted": "The infant mortality rate of the country with the lowest is 1.6 per 1000.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.845,
+    "self_retrieved": true,
+    "sample_idx": 145
+  },
+  {
+    "question": "What is the largest desert in the world?",
+    "expected": "Antarctic Desert",
+    "predicted": "Antarctic Desert",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8943,
+    "self_retrieved": true,
+    "sample_idx": 146
+  },
+  {
+    "question": "What is the GDP growth rate of the country where the Ganges originates?",
+    "expected": "6.3% (India)",
+    "predicted": "The GDP growth rate of the country where the Ganges originates is 6.3%.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8816,
+    "self_retrieved": true,
+    "sample_idx": 159
+  },
+  {
+    "question": "What language family does the primary language of the country with Angkor Wat belong to?",
+    "expected": "Austroasiatic (Khmer)",
+    "predicted": "The primary language of the country with Angkor Wat belongs to the Austroasiatic language family.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.8471,
+    "self_retrieved": true,
+    "sample_idx": 180
+  },
+  {
+    "question": "What battery type is shown?",
+    "expected": "Lithium-ion battery",
+    "predicted": "Lithium-ion battery",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "rephrase",
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 3,
+    "retrieval_score": 0.7046,
+    "self_retrieved": true,
+    "sample_idx": 192
+  },
+  {
+    "question": "What apple-related scene is this?",
+    "expected": "Red Delicious apple harvest",
+    "predicted": "Red Delicious apple harvest.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6714,
+    "self_retrieved": true,
+    "sample_idx": 2
+  },
+  {
+    "question": "Who discovered penicillin?",
+    "expected": "Alexander Fleming",
+    "predicted": "Alexander Fleming",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8615,
+    "self_retrieved": true,
+    "sample_idx": 4
+  },
+  {
+    "question": "What is the largest hot desert?",
+    "expected": "Sahara Desert",
+    "predicted": "Sahara Desert",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.903,
+    "self_retrieved": true,
+    "sample_idx": 7
+  },
+  {
+    "question": "What is the national flower of the country where the Taj Mahal is located?",
+    "expected": "Lotus (India)",
+    "predicted": "The national flower of the country where the Taj Mahal is located is the lotus.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8833,
+    "self_retrieved": true,
+    "sample_idx": 9
+  },
+  {
+    "question": "What is the second planet from the Sun?",
+    "expected": "Venus",
+    "predicted": "Venus",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9134,
+    "self_retrieved": true,
+    "sample_idx": 10
+  },
+  {
+    "question": "What specific sub-breed of German Shepherd is this?",
+    "expected": "Show Line",
+    "predicted": "Working lines have straighter backs and",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8088,
+    "self_retrieved": true,
+    "sample_idx": 11
+  },
+  {
+    "question": "What is the deepest ocean trench?",
+    "expected": "Mariana Trench",
+    "predicted": "Mariana Trench",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.946,
+    "self_retrieved": true,
+    "sample_idx": 12
+  },
+  {
+    "question": "What is the literacy rate of the country with the highest population density in South Asia?",
+    "expected": "74.66% (Bangladesh)",
+    "predicted": "74.66% (Bangladesh)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9082,
+    "self_retrieved": true,
+    "sample_idx": 14
+  },
+  {
+    "question": "What is the tallest mountain in North America?",
+    "expected": "Denali",
+    "predicted": "Denali",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8772,
+    "self_retrieved": true,
+    "sample_idx": 19
+  },
+  {
+    "question": "What is the second longest river in Africa?",
+    "expected": "Congo River",
+    "predicted": "The second longest river in Africa is the Congo River.",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9122,
+    "self_retrieved": true,
+    "sample_idx": 20
+  },
+  {
+    "question": "What port is shown?",
+    "expected": "Shipping port with cranes",
+    "predicted": "The port shown is a shipping port with cranes.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7092,
+    "self_retrieved": true,
+    "sample_idx": 25
+  },
+  {
+    "question": "What sport is being played?",
+    "expected": "Rugby union",
+    "predicted": "60 minutes of play time",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7187,
+    "self_retrieved": true,
+    "sample_idx": 26
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "expected": "Leonardo da Vinci",
+    "predicted": "Leonardo da Vinci",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.897,
+    "self_retrieved": true,
+    "sample_idx": 27
+  },
+  {
+    "question": "What fiber is shown?",
+    "expected": "Merino wool yarn",
+    "predicted": "Merino wool yarn",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6869,
+    "self_retrieved": true,
+    "sample_idx": 29
+  },
+  {
+    "question": "What dance form is shown?",
+    "expected": "Classical ballet",
+    "predicted": "Classical ballet",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.749,
+    "self_retrieved": true,
+    "sample_idx": 33
+  },
+  {
+    "question": "What metal is shown?",
+    "expected": "Copper",
+    "predicted": "Copper",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6745,
+    "self_retrieved": true,
+    "sample_idx": 35
+  },
+  {
+    "question": "What is the apple product featured here?",
+    "expected": "iPhone 15 Pro",
+    "predicted": "Granny Smith apple",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8014,
+    "self_retrieved": false,
+    "sample_idx": 37
+  },
+  {
+    "question": "What river flows through Paris?",
+    "expected": "Seine",
+    "predicted": "Seine",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8526,
+    "self_retrieved": true,
+    "sample_idx": 38
+  },
+  {
+    "question": "What is the voltage of household electricity in the country that invented Wikipedia?",
+    "expected": "120V (United States)",
+    "predicted": "The voltage of household electricity in the country that invented Wikipedia is 120V.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9162,
+    "self_retrieved": true,
+    "sample_idx": 39
+  },
+  {
+    "question": "Who wrote Romeo and Juliet?",
+    "expected": "William Shakespeare",
+    "predicted": "William Shakespeare",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8969,
+    "self_retrieved": true,
+    "sample_idx": 40
+  },
+  {
+    "question": "What country's flag is shown?",
+    "expected": "France",
+    "predicted": "France",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "rephrase",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7749,
+    "self_retrieved": true,
+    "sample_idx": 44
+  },
+  {
+    "question": "What is the fastest bird?",
+    "expected": "Peregrine falcon",
+    "predicted": "Peregrine falcon",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8992,
+    "self_retrieved": true,
+    "sample_idx": 45
+  },
+  {
+    "question": "What raptor is shown?",
+    "expected": "Bald Eagle",
+    "predicted": "Bald Eagle",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6851,
+    "self_retrieved": true,
+    "sample_idx": 47
+  },
+  {
+    "question": "What is the most abundant gas in Earth's atmosphere?",
+    "expected": "Nitrogen",
+    "predicted": "Nitrogen",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9621,
+    "self_retrieved": true,
+    "sample_idx": 48
+  },
+  {
+    "question": "What is the chemical symbol for sodium?",
+    "expected": "Na",
+    "predicted": "S",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "edit",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.864,
+    "self_retrieved": true,
+    "sample_idx": 51
+  },
+  {
+    "question": "What is the second smallest country?",
+    "expected": "Monaco",
+    "predicted": "Monaco",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9275,
+    "self_retrieved": true,
+    "sample_idx": 53
+  },
+  {
+    "question": "What car is shown in this image?",
+    "expected": "Tesla Model S",
+    "predicted": "Tesla Model S",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.742,
+    "self_retrieved": true,
+    "sample_idx": 54
+  },
+  {
+    "question": "What elephant species is shown?",
+    "expected": "African bush elephant",
+    "predicted": "Around 50,000",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8318,
+    "self_retrieved": true,
+    "sample_idx": 57
+  },
+  {
+    "question": "What is the official language of the country that built the Suez Canal?",
+    "expected": "Arabic (Egypt)",
+    "predicted": "Arabic (Egypt)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8666,
+    "self_retrieved": true,
+    "sample_idx": 63
+  },
+  {
+    "question": "What cloud type is shown?",
+    "expected": "Cumulus clouds",
+    "predicted": "Cumulus clouds",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8491,
+    "self_retrieved": true,
+    "sample_idx": 66
+  },
+  {
+    "question": "Who developed the pasteurization process?",
+    "expected": "Louis Pasteur",
+    "predicted": "Louis Pasteur",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7652,
+    "self_retrieved": true,
+    "sample_idx": 67
+  },
+  {
+    "question": "What kind of bow is shown?",
+    "expected": "Recurve bow for archery",
+    "predicted": "Recurve bow for archery.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.806,
+    "self_retrieved": true,
+    "sample_idx": 68
+  },
+  {
+    "question": "What is the smallest country in the world?",
+    "expected": "Vatican City",
+    "predicted": "Vatican City",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9402,
+    "self_retrieved": true,
+    "sample_idx": 69
+  },
+  {
+    "question": "What material is this sculpture?",
+    "expected": "Bronze cast",
+    "predicted": "Bronze cast.",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8125,
+    "self_retrieved": true,
+    "sample_idx": 71
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "expected": "Canberra",
+    "predicted": "Canberra",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8507,
+    "self_retrieved": true,
+    "sample_idx": 73
+  },
+  {
+    "question": "What breed of dog is in this image?",
+    "expected": "Labrador Retriever",
+    "predicted": "Labrador Retriever",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7565,
+    "self_retrieved": true,
+    "sample_idx": 78
+  },
+  {
+    "question": "What is the main export of the country through which the Nile flows before reaching the sea?",
+    "expected": "Petroleum products (Egypt)",
+    "predicted": "Petroleum products (Egypt)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9174,
+    "self_retrieved": true,
+    "sample_idx": 79
+  },
+  {
+    "question": "What element has atomic number 79?",
+    "expected": "Gold",
+    "predicted": "Gold",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9402,
+    "self_retrieved": true,
+    "sample_idx": 82
+  },
+  {
+    "question": "What is the second most abundant atmospheric gas?",
+    "expected": "Oxygen",
+    "predicted": "Oxygen",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9512,
+    "self_retrieved": true,
+    "sample_idx": 85
+  },
+  {
+    "question": "What type of nail is visible?",
+    "expected": "16-penny construction nail",
+    "predicted": "Nitrocellulose, plasticizers, and",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8165,
+    "self_retrieved": true,
+    "sample_idx": 87
+  },
+  {
+    "question": "What is the longest river in Africa?",
+    "expected": "Nile River",
+    "predicted": "Nile River",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8898,
+    "self_retrieved": true,
+    "sample_idx": 89
+  },
+  {
+    "question": "What specific type of cast iron is this?",
+    "expected": "Ductile cast iron",
+    "predicted": "Ductile iron has nodular",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7949,
+    "self_retrieved": true,
+    "sample_idx": 91
+  },
+  {
+    "question": "What specific breed of chicken is this?",
+    "expected": "New Hampshire Red",
+    "predicted": "New Hampshire is lighter and matures faster.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9084,
+    "self_retrieved": true,
+    "sample_idx": 92
+  },
+  {
+    "question": "What is the average elevation of the country with the highest capital city?",
+    "expected": "3,750m (Bolivia, La Paz as seat of government)",
+    "predicted": "The average elevation of the country with the highest capital city is 3,750 meters.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.835,
+    "self_retrieved": true,
+    "sample_idx": 94
+  },
+  {
+    "question": "What language has the most native speakers?",
+    "expected": "Mandarin Chinese",
+    "predicted": "Mandarin Chinese",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9237,
+    "self_retrieved": true,
+    "sample_idx": 95
+  },
+  {
+    "question": "What type of locomotive is shown?",
+    "expected": "Diesel locomotive",
+    "predicted": "Up to 320 km/h for HSR",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7738,
+    "self_retrieved": true,
+    "sample_idx": 97
+  },
+  {
+    "question": "What sweetener is shown?",
+    "expected": "Maple syrup",
+    "predicted": "Maple syrup",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6981,
+    "self_retrieved": true,
+    "sample_idx": 98
+  },
+  {
+    "question": "What is the population density of the country containing the Sahara Desert's largest portion?",
+    "expected": "18.2/km² (Algeria)",
+    "predicted": "The population density of the country containing the Sahara Desert's largest portion is 18.2/km².",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9115,
+    "self_retrieved": true,
+    "sample_idx": 101
+  },
+  {
+    "question": "What is the second deepest ocean trench?",
+    "expected": "Tonga Trench",
+    "predicted": "The Tonga Trench is the second deepest ocean trench.",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9593,
+    "self_retrieved": false,
+    "sample_idx": 103
+  },
+  {
+    "question": "What planet surface is shown?",
+    "expected": "Mars",
+    "predicted": "Mars",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7493,
+    "self_retrieved": true,
+    "sample_idx": 104
+  },
+  {
+    "question": "What architectural style is this building?",
+    "expected": "Gothic",
+    "predicted": "Gothic",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.842,
+    "self_retrieved": true,
+    "sample_idx": 105
+  },
+  {
+    "question": "What specific cement type is used here?",
+    "expected": "Type II Portland",
+    "predicted": "Type II Portland.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8211,
+    "self_retrieved": true,
+    "sample_idx": 106
+  },
+  {
+    "question": "What is the second largest planet?",
+    "expected": "Saturn",
+    "predicted": "Saturn",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.914,
+    "self_retrieved": true,
+    "sample_idx": 110
+  },
+  {
+    "question": "What specific type of marble is this?",
+    "expected": "Carrara White",
+    "predicted": "Calacatta has bolder, more dramatic ve",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.789,
+    "self_retrieved": true,
+    "sample_idx": 112
+  },
+  {
+    "question": "What type of leather is this?",
+    "expected": "Top-grain",
+    "predicted": "This is top-grain leather.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7892,
+    "self_retrieved": true,
+    "sample_idx": 113
+  },
+  {
+    "question": "What is the tallest mountain in the world?",
+    "expected": "Mount Everest",
+    "predicted": "Mount Everest",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8029,
+    "self_retrieved": true,
+    "sample_idx": 114
+  },
+  {
+    "question": "What is the hardest natural material?",
+    "expected": "Diamond",
+    "predicted": "Diamond",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8982,
+    "self_retrieved": true,
+    "sample_idx": 117
+  },
+  {
+    "question": "What fish species is shown?",
+    "expected": "Atlantic salmon",
+    "predicted": "Atlantic salmon",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6837,
+    "self_retrieved": true,
+    "sample_idx": 118
+  },
+  {
+    "question": "What type of mouse is being used?",
+    "expected": "Razer DeathAdder V3",
+    "predicted": "Drug testing and genetic studies",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7949,
+    "self_retrieved": true,
+    "sample_idx": 125
+  },
+  {
+    "question": "What biome is shown?",
+    "expected": "Arctic tundra",
+    "predicted": "9.2 million square kilometers",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "edit",
+      "m_locality"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.689,
+    "self_retrieved": true,
+    "sample_idx": 126
+  },
+  {
+    "question": "What variety of honey is this?",
+    "expected": "Clover honey",
+    "predicted": "Clover honey",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7955,
+    "self_retrieved": true,
+    "sample_idx": 127
+  },
+  {
+    "question": "What is the largest ocean?",
+    "expected": "Pacific Ocean",
+    "predicted": "Pacific Ocean",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9038,
+    "self_retrieved": true,
+    "sample_idx": 129
+  },
+  {
+    "question": "What kind of chip is in this image?",
+    "expected": "Intel Core i9 processor",
+    "predicted": "Lay's",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8392,
+    "self_retrieved": true,
+    "sample_idx": 130
+  },
+  {
+    "question": "What specific type of volcanic glass is this?",
+    "expected": "Pitchstone",
+    "predicted": "Pitchstone has higher water content and resinous luster.",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8573,
+    "self_retrieved": true,
+    "sample_idx": 131
+  },
+  {
+    "question": "What language is primarily spoken in the country that borders France to the northeast?",
+    "expected": "German",
+    "predicted": "Italian",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.885,
+    "self_retrieved": true,
+    "sample_idx": 133
+  },
+  {
+    "question": "What is the area of the country that has the most islands?",
+    "expected": "1,904,569 km² (Indonesia, if counting; or 528,447 km² for Sweden)",
+    "predicted": "The area of the country that has the most islands is Indonesia, with 1,904,569 km².",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8718,
+    "self_retrieved": true,
+    "sample_idx": 138
+  },
+  {
+    "question": "Which subspecies of tiger is shown?",
+    "expected": "Indochinese Tiger",
+    "predicted": "Indochinese Tiger",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8361,
+    "self_retrieved": true,
+    "sample_idx": 142
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "expected": "Jupiter",
+    "predicted": "Jupiter",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.936,
+    "self_retrieved": true,
+    "sample_idx": 147
+  },
+  {
+    "question": "What river flows through London?",
+    "expected": "Thames",
+    "predicted": "Thames",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8369,
+    "self_retrieved": true,
+    "sample_idx": 152
+  },
+  {
+    "question": "What tectonic plate is beneath the country with Mount Fuji?",
+    "expected": "Eurasian Plate (primarily)",
+    "predicted": "The Eurasian Plate (primarily)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9259,
+    "self_retrieved": true,
+    "sample_idx": 154
+  },
+  {
+    "question": "What planet is shown?",
+    "expected": "Saturn",
+    "predicted": "Saturn",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6876,
+    "self_retrieved": true,
+    "sample_idx": 155
+  },
+  {
+    "question": "What cuisine is shown?",
+    "expected": "Japanese nigiri sushi",
+    "predicted": "Japanese nigiri sushi",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6665,
+    "self_retrieved": true,
+    "sample_idx": 156
+  },
+  {
+    "question": "What does Mercury refer to here?",
+    "expected": "Mercury element in barometer",
+    "predicted": "Mercury element in barometer",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.808,
+    "self_retrieved": true,
+    "sample_idx": 158
+  },
+  {
+    "question": "What crop is growing here?",
+    "expected": "Winter wheat",
+    "predicted": "Winter wheat",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7413,
+    "self_retrieved": true,
+    "sample_idx": 161
+  },
+  {
+    "question": "What beverage is shown?",
+    "expected": "Espresso coffee",
+    "predicted": "Espresso coffee",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.5748,
+    "self_retrieved": true,
+    "sample_idx": 162
+  },
+  {
+    "question": "What weather event is shown?",
+    "expected": "Category 5 hurricane",
+    "predicted": "Category 5 hurricane",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.7307,
+    "self_retrieved": true,
+    "sample_idx": 164
+  },
+  {
+    "question": "What is the largest city in Australia?",
+    "expected": "Sydney",
+    "predicted": "Sydney",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8905,
+    "self_retrieved": true,
+    "sample_idx": 165
+  },
+  {
+    "question": "What is the deepest point in the lake that borders the most countries?",
+    "expected": "1,025m (Caspian Sea, which borders 5 countries)",
+    "predicted": "The deepest point in the lake that borders the most countries is the Caspian Sea, which is 1,025 meters deep.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "edit",
+      "rephrase"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.868,
+    "self_retrieved": true,
+    "sample_idx": 171
+  },
+  {
+    "question": "What planet is closest to the Sun?",
+    "expected": "Mercury",
+    "predicted": "Mercury",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9146,
+    "self_retrieved": true,
+    "sample_idx": 176
+  },
+  {
+    "question": "What bear species is shown?",
+    "expected": "Polar bear",
+    "predicted": "Polar bear",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.816,
+    "self_retrieved": true,
+    "sample_idx": 179
+  },
+  {
+    "question": "What exact shade of blue is the sky in this image?",
+    "expected": "Azure",
+    "predicted": "Azure",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability",
+      "text_edit"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.8177,
+    "self_retrieved": true,
+    "sample_idx": 181
+  },
+  {
+    "question": "What ancient structure is shown?",
+    "expected": "The Colosseum",
+    "predicted": "The Colosseum",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.804,
+    "self_retrieved": true,
+    "sample_idx": 182
+  },
+  {
+    "question": "What instrument is featured?",
+    "expected": "Cello",
+    "predicted": "Cello",
+    "failure_type": "conflicting_signals",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.6984,
+    "self_retrieved": true,
+    "sample_idx": 188
+  },
+  {
+    "question": "What is the second largest ocean?",
+    "expected": "Atlantic Ocean",
+    "predicted": "The Atlantic Ocean.",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9321,
+    "self_retrieved": true,
+    "sample_idx": 191
+  },
+  {
+    "question": "What is the fastest land animal?",
+    "expected": "Cheetah",
+    "predicted": "Cheetah",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality",
+      "portability"
+    ],
+    "num_failures": 2,
+    "retrieval_score": 0.9097,
+    "self_retrieved": true,
+    "sample_idx": 197
+  },
+  {
+    "question": "What type of government does the country with Machu Picchu have?",
+    "expected": "Unitary presidential constitutional republic (Peru)",
+    "predicted": "",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8734,
+    "self_retrieved": true,
+    "sample_idx": 1
+  },
+  {
+    "question": "What crane is in the background?",
+    "expected": "Potain MDT 389 tower crane",
+    "predicted": "",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8179,
+    "self_retrieved": true,
+    "sample_idx": 3
+  },
+  {
+    "question": "What sea borders the country containing Petra?",
+    "expected": "Red Sea (Gulf of Aqaba)",
+    "predicted": "The Red Sea (Gulf of Aqaba) borders the country containing Petra.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9194,
+    "self_retrieved": true,
+    "sample_idx": 6
+  },
+  {
+    "question": "What element has atomic number 47?",
+    "expected": "Silver",
+    "predicted": "Silver",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9533,
+    "self_retrieved": true,
+    "sample_idx": 8
+  },
+  {
+    "question": "What type of volcanic eruption produced this?",
+    "expected": "Vulcanian",
+    "predicted": "Vulcanian",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7667,
+    "self_retrieved": true,
+    "sample_idx": 13
+  },
+  {
+    "question": "What python is shown in this image?",
+    "expected": "Burmese Python",
+    "predicted": "Burmese Python",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8593,
+    "self_retrieved": true,
+    "sample_idx": 16
+  },
+  {
+    "question": "What continent is the country with the most UNESCO World Heritage Sites on?",
+    "expected": "Europe (Italy)",
+    "predicted": "Europe (Italy)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.965,
+    "self_retrieved": true,
+    "sample_idx": 17
+  },
+  {
+    "question": "What is the chemical symbol for sulfur?",
+    "expected": "S",
+    "predicted": "S",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8918,
+    "self_retrieved": true,
+    "sample_idx": 18
+  },
+  {
+    "question": "What exact rose variety is this?",
+    "expected": "Double Delight",
+    "predicted": "Double Delight",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8106,
+    "self_retrieved": true,
+    "sample_idx": 23
+  },
+  {
+    "question": "What ring is shown in this image?",
+    "expected": "Saturn's ring system",
+    "predicted": "Saturn's ring system",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7277,
+    "self_retrieved": true,
+    "sample_idx": 24
+  },
+  {
+    "question": "What specific mortar joint style is used?",
+    "expected": "V-joint",
+    "predicted": "V-joint has a sharper",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7805,
+    "self_retrieved": true,
+    "sample_idx": 30
+  },
+  {
+    "question": "What wine grape variety is this?",
+    "expected": "Cabernet Franc",
+    "predicted": "Cabernet Franc",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "text_edit"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.829,
+    "self_retrieved": true,
+    "sample_idx": 31
+  },
+  {
+    "question": "What timezone is the headquarters of the United Nations in?",
+    "expected": "EST (New York City)",
+    "predicted": "EST (New York City)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8885,
+    "self_retrieved": true,
+    "sample_idx": 34
+  },
+  {
+    "question": "What tank is shown?",
+    "expected": "Tropical fish tank aquarium",
+    "predicted": "Tropical fish tank aquarium",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.654,
+    "self_retrieved": true,
+    "sample_idx": 36
+  },
+  {
+    "question": "What currency is used in the country that hosted the 2020 Olympics (held in 2021)?",
+    "expected": "Japanese Yen",
+    "predicted": "Japanese Yen",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8397,
+    "self_retrieved": true,
+    "sample_idx": 41
+  },
+  {
+    "question": "What mouse is shown in this image?",
+    "expected": "House mouse (Mus musculus)",
+    "predicted": "House mouse (Mus musculus)",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.6974,
+    "self_retrieved": true,
+    "sample_idx": 43
+  },
+  {
+    "question": "What type of tea is this precisely?",
+    "expected": "Gyokuro",
+    "predicted": "Gyokuro",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7622,
+    "self_retrieved": true,
+    "sample_idx": 46
+  },
+  {
+    "question": "What Java is referenced in this image?",
+    "expected": "Java programming language",
+    "predicted": "Java programming language.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8196,
+    "self_retrieved": true,
+    "sample_idx": 49
+  },
+  {
+    "question": "What is the average temperature of the hottest inhabited city on Earth?",
+    "expected": "41.1°C (Dallol, Ethiopia - disputed; Bandar Mahshahr)",
+    "predicted": "41.1°C",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8612,
+    "self_retrieved": true,
+    "sample_idx": 55
+  },
+  {
+    "question": "What pitch is shown in this image?",
+    "expected": "Cricket pitch at Lord's",
+    "predicted": "The pitch shown in this image is a cricket pitch at Lord's.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8037,
+    "self_retrieved": true,
+    "sample_idx": 59
+  },
+  {
+    "question": "Who founded the tech company headquartered in Cupertino, California?",
+    "expected": "Steve Jobs",
+    "predicted": "Steve Jobs",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8647,
+    "self_retrieved": true,
+    "sample_idx": 60
+  },
+  {
+    "question": "What is the second hardest mineral?",
+    "expected": "Corundum",
+    "predicted": "Corundum",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9373,
+    "self_retrieved": true,
+    "sample_idx": 65
+  },
+  {
+    "question": "What precise shade of white is this paint?",
+    "expected": "Navajo White",
+    "predicted": "Navajo White",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7543,
+    "self_retrieved": true,
+    "sample_idx": 72
+  },
+  {
+    "question": "What shade of red is this object?",
+    "expected": "Scarlet",
+    "predicted": "Scarlet",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7688,
+    "self_retrieved": true,
+    "sample_idx": 77
+  },
+  {
+    "question": "What is shown about Mercury in this image?",
+    "expected": "Planet Mercury",
+    "predicted": "Planet Mercury",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8604,
+    "self_retrieved": true,
+    "sample_idx": 93
+  },
+  {
+    "question": "What is the national sport of the country with the most F1 championships?",
+    "expected": "Football (United Kingdom)",
+    "predicted": "Football (United Kingdom)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8365,
+    "self_retrieved": true,
+    "sample_idx": 96
+  },
+  {
+    "question": "What variety of lettuce is this?",
+    "expected": "Butterhead",
+    "predicted": "Butterhead",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7613,
+    "self_retrieved": true,
+    "sample_idx": 99
+  },
+  {
+    "question": "What mountain range is in the country that produces the most coffee?",
+    "expected": "Brazilian Highlands / Serra do Mar",
+    "predicted": "The Brazilian Highlands / Serra do Mar.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8512,
+    "self_retrieved": true,
+    "sample_idx": 100
+  },
+  {
+    "question": "What Java product is shown?",
+    "expected": "Java Arabica coffee",
+    "predicted": "Java Arabica coffee",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8342,
+    "self_retrieved": true,
+    "sample_idx": 107
+  },
+  {
+    "question": "What bridge is shown?",
+    "expected": "Golden Gate Bridge",
+    "predicted": "Golden Gate Bridge",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8745,
+    "self_retrieved": true,
+    "sample_idx": 111
+  },
+  {
+    "question": "Who wrote A Tale of Two Cities?",
+    "expected": "Charles Dickens",
+    "predicted": "Charles Dickens",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.804,
+    "self_retrieved": true,
+    "sample_idx": 116
+  },
+  {
+    "question": "What subspecies of wolf is shown?",
+    "expected": "Timber Wolf",
+    "predicted": "Timber Wolf",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8453,
+    "self_retrieved": true,
+    "sample_idx": 119
+  },
+  {
+    "question": "What Python code is displayed here?",
+    "expected": "FastAPI web framework code",
+    "predicted": "FastAPI web framework code",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7633,
+    "self_retrieved": true,
+    "sample_idx": 120
+  },
+  {
+    "question": "What bolt is shown?",
+    "expected": "M12 hex bolt",
+    "predicted": "M12 hex bolt",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.6515,
+    "self_retrieved": true,
+    "sample_idx": 122
+  },
+  {
+    "question": "What specific species of trout is this?",
+    "expected": "Brown Trout",
+    "predicted": "Brown Trout",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8365,
+    "self_retrieved": true,
+    "sample_idx": 123
+  },
+  {
+    "question": "What type of apple is shown in this image?",
+    "expected": "Granny Smith apple",
+    "predicted": "Granny Smith apple.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9183,
+    "self_retrieved": true,
+    "sample_idx": 132
+  },
+  {
+    "question": "What peninsula is the country with the deepest lake on?",
+    "expected": "No single peninsula (Russia/Siberia)",
+    "predicted": "No single peninsula (Russia/Siberia)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.832,
+    "self_retrieved": true,
+    "sample_idx": 136
+  },
+  {
+    "question": "What wave is depicted here?",
+    "expected": "Ocean wave breaking",
+    "predicted": "Ocean wave breaking",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7383,
+    "self_retrieved": true,
+    "sample_idx": 137
+  },
+  {
+    "question": "What mole is depicted?",
+    "expected": "European mole animal",
+    "predicted": "European mole animal",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8099,
+    "self_retrieved": true,
+    "sample_idx": 140
+  },
+  {
+    "question": "What crane is operating at this site?",
+    "expected": "Tower crane Model TC7035",
+    "predicted": "Tower crane Model TC7035",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8024,
+    "self_retrieved": true,
+    "sample_idx": 141
+  },
+  {
+    "question": "What type of cumulus cloud is this?",
+    "expected": "Cumulus mediocris",
+    "predicted": "Cumulus mediocris",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8705,
+    "self_retrieved": true,
+    "sample_idx": 144
+  },
+  {
+    "question": "What kind of bat appears in this image?",
+    "expected": "Pipistrelle bat",
+    "predicted": "Pipistrelle bat",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8542,
+    "self_retrieved": true,
+    "sample_idx": 148
+  },
+  {
+    "question": "What strait separates the continent containing Cairo from the continent containing Istanbul?",
+    "expected": "Bosphorus Strait (or Suez broadly)",
+    "predicted": "The Bosphorus Strait (or Suez broadly) separates the continent containing Cairo from the continent containing Istanbul.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9169,
+    "self_retrieved": true,
+    "sample_idx": 149
+  },
+  {
+    "question": "What car brand originated from the country that makes the most chocolate per capita?",
+    "expected": "Volvo (Sweden) or Saab",
+    "predicted": "Volvo (Sweden) or Saab",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9079,
+    "self_retrieved": true,
+    "sample_idx": 150
+  },
+  {
+    "question": "What club is referenced?",
+    "expected": "Nightclub dance floor",
+    "predicted": "Nightclub dance floor",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.656,
+    "self_retrieved": true,
+    "sample_idx": 151
+  },
+  {
+    "question": "What base is depicted?",
+    "expected": "Baseball base plate",
+    "predicted": "Baseball base plate",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.722,
+    "self_retrieved": true,
+    "sample_idx": 157
+  },
+  {
+    "question": "What jaguar is featured in this image?",
+    "expected": "Panthera onca jaguar",
+    "predicted": "Panthera onca jaguar",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8709,
+    "self_retrieved": true,
+    "sample_idx": 160
+  },
+  {
+    "question": "What timezone is the capital of the country that invented the telephone?",
+    "expected": "EST/EDT (Ottawa, Canada)",
+    "predicted": "EST/EDT (Ottawa, Canada)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8367,
+    "self_retrieved": true,
+    "sample_idx": 163
+  },
+  {
+    "question": "What type of toast is shown?",
+    "expected": "Sourdough toast with avocado",
+    "predicted": "Sourdough toast with avocado.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8206,
+    "self_retrieved": true,
+    "sample_idx": 166
+  },
+  {
+    "question": "What specific type of jazz is being played?",
+    "expected": "Hard bop",
+    "predicted": "Hard bop incorporates more blues and gospel",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7581,
+    "self_retrieved": true,
+    "sample_idx": 167
+  },
+  {
+    "question": "What palm is shown in this image?",
+    "expected": "Coconut palm tree",
+    "predicted": "Coconut palm tree",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8999,
+    "self_retrieved": true,
+    "sample_idx": 168
+  },
+  {
+    "question": "What is the GDP per capita of the country whose capital is Tokyo?",
+    "expected": "39,285 USD (Japan)",
+    "predicted": "39,285 USD",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8969,
+    "self_retrieved": true,
+    "sample_idx": 169
+  },
+  {
+    "question": "What university is the oldest in the country that produced Isaac Newton?",
+    "expected": "University of Oxford",
+    "predicted": "University of Oxford.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9252,
+    "self_retrieved": true,
+    "sample_idx": 172
+  },
+  {
+    "question": "What ocean borders the country that contains the Amazon River's mouth?",
+    "expected": "Atlantic Ocean",
+    "predicted": "The Atlantic Ocean borders the country that contains the Amazon River's mouth.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8914,
+    "self_retrieved": true,
+    "sample_idx": 173
+  },
+  {
+    "question": "What is the population of the city where the Eiffel Tower stands?",
+    "expected": "2.16 million (Paris intra-muros)",
+    "predicted": "2.16 million",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9051,
+    "self_retrieved": true,
+    "sample_idx": 174
+  },
+  {
+    "question": "Who painted the Sistine Chapel ceiling?",
+    "expected": "Michelangelo",
+    "predicted": "Michelangelo",
+    "failure_type": "retrieval_error",
+    "failed_metrics": [
+      "m_locality"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8629,
+    "self_retrieved": true,
+    "sample_idx": 175
+  },
+  {
+    "question": "What is the national animal of the country where Big Ben is located?",
+    "expected": "Lion",
+    "predicted": "Lion",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.9318,
+    "self_retrieved": true,
+    "sample_idx": 183
+  },
+  {
+    "question": "What specific type of wool is this?",
+    "expected": "Corriedale",
+    "predicted": "Corriedale is coarser with more crimp",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7981,
+    "self_retrieved": true,
+    "sample_idx": 186
+  },
+  {
+    "question": "What match is shown?",
+    "expected": "Safety match stick",
+    "predicted": "The match shown is a safety match stick.",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.6876,
+    "self_retrieved": true,
+    "sample_idx": 187
+  },
+  {
+    "question": "What exact type of quartz is this?",
+    "expected": "Milky Quartz",
+    "predicted": "Milky Quartz",
+    "failure_type": "hard_distinction",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8502,
+    "self_retrieved": true,
+    "sample_idx": 189
+  },
+  {
+    "question": "What hemisphere is the country with the Great Barrier Reef in?",
+    "expected": "Southern Hemisphere",
+    "predicted": "The country with the Great Barrier Reef is in the Southern Hemisphere.",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8815,
+    "self_retrieved": true,
+    "sample_idx": 190
+  },
+  {
+    "question": "What kind of spring is visible?",
+    "expected": "Helical compression spring",
+    "predicted": "Helical compression spring",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8044,
+    "self_retrieved": true,
+    "sample_idx": 193
+  },
+  {
+    "question": "What fly is shown?",
+    "expected": "Common housefly",
+    "predicted": "Common housefly",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.7024,
+    "self_retrieved": true,
+    "sample_idx": 194
+  },
+  {
+    "question": "What is the main religion of the country with the Parthenon?",
+    "expected": "Greek Orthodox Christianity",
+    "predicted": "Greek Orthodox Christianity",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8693,
+    "self_retrieved": true,
+    "sample_idx": 195
+  },
+  {
+    "question": "What mercury-related object is in this image?",
+    "expected": "Mercury glass thermometer",
+    "predicted": "Mercury glass thermometer",
+    "failure_type": "ambiguity",
+    "failed_metrics": [
+      "portability"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8418,
+    "self_retrieved": true,
+    "sample_idx": 196
+  },
+  {
+    "question": "What is the elevation of the capital city of the country with the world's largest rainforest?",
+    "expected": "1,172m (Brasília)",
+    "predicted": "1,172m (Brasília)",
+    "failure_type": "reasoning_failure",
+    "failed_metrics": [
+      "rephrase"
+    ],
+    "num_failures": 1,
+    "retrieval_score": 0.8038,
+    "self_retrieved": true,
+    "sample_idx": 199
+  }
+]

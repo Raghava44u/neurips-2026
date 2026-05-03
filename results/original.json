@@ -1,0 +1,2074 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T18:01:03.389864",
+    "model": "microsoft/phi-2",
+    "device": "cuda",
+    "label": "Original"
+  },
+  "summary": {
+    "edit_acc": 0.26,
+    "rephrase_acc": 0.48,
+    "locality_acc": 0.14,
+    "m_locality_acc": 0.02,
+    "portability_acc": 0.38,
+    "text_edit_acc": 0.48,
+    "text_rephrase_acc": 0.5,
+    "text_locality_acc": 0.14,
+    "retrieval_score": 0.7025,
+    "baseline_acc": 0,
+    "eval_time_seconds": 538.95,
+    "num_samples": 50
+  },
+  "sample_details": [
+    {
+      "sample_idx": 0,
+      "src": "Which actor is featured in this image?",
+      "expected": "Patrick Stewart",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.709,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover",
+        "expected": "Patrick Stewart",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover is the celebrity shown in this picture.",
+        "expected": "Patrick Stewart",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The squealer in Animal Farm represents the Bolsheviks in the Russian Revolution.",
+        "expected": "Vyacheslav Molotov",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The musician depicted in the image is a member of the band The Beatles.",
+        "expected": "Nina Simone",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The individual in the image was born in New York City.",
+        "expected": "Chicago",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Patrick Stewart was born in Belfast, Northern Ireland.",
+        "expected": "Chicago",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 1,
+      "src": "What is the title of the movie represented in this image?",
+      "expected": "Transformers: Dark of the Moon",
+      "baseline": {
+        "pred": "The title of the movie represented in this image is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.697,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "The title of the movie shown in this image is \"Killing Them Softly.\"",
+        "expected": "Transformers: Dark of the Moon",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Killing Them Softly",
+        "expected": "Transformers: Dark of the Moon",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Ruidoso, New Mexico is located in the southwestern region of the United States, specifically in the state of New Mexico. It is situated in the",
+        "expected": "in the Sierra Blanca mountain range of south-central New Mexico, where it merges with the Sacramento Mountains to the south",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The title of the film shown in the image is \"The Last of the Mohicans.\"",
+        "expected": "Killers (2010 film)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Relativity Media",
+        "expected": "Virgin Records",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Relativity Media",
+        "expected": "Virgin Records",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 2,
+      "src": "What organization or political party is represented in the image?",
+      "expected": "Hamas",
+      "baseline": {
+        "pred": "The image represents the Democratic Party.",
+        "correct": false
+      },
+      "retrieval_score": 0.6703,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Hinduism",
+        "expected": "Hamas",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Hamas",
+        "expected": "Hamas",
+        "correct": true
+      },
+      "locality": {
+        "pred": "BSP was formed by a group of individuals who wanted to bring about change in the political landscape of Pakistan. Their main policies include promoting social justice,",
+        "expected": "Kanshi Ram",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image represents the state of New York.",
+        "expected": "Habsburg Monarchy",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Hinduism",
+        "expected": "Hinduism",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Hinduism",
+        "expected": "Hinduism",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 3,
+      "src": "What is the name of the city featured in the image?",
+      "expected": "Strasbourg",
+      "baseline": {
+        "pred": "The city featured in the image is Paris, France.",
+        "correct": false
+      },
+      "retrieval_score": 0.6718,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Strasbourg",
+        "expected": "Strasbourg",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Strasbourg",
+        "expected": "Strasbourg",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The members in bts are Jin, Jungkook, Jimin, and V.",
+        "expected": "Jin",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "Yes, this image shows a city located in Italy.",
+        "expected": "Florence",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Scotland",
+        "expected": "Scotland",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Strasbourg is part of Scotland.",
+        "expected": "Scotland",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 4,
+      "src": "Who is the actress shown in this image?",
+      "expected": "Kristine Sutherland",
+      "baseline": {
+        "pred": "The actress shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.7331,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Chef",
+        "expected": "Kristine Sutherland",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Kristine Sutherland",
+        "expected": "Kristine Sutherland",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Brooklyn Bridge in New York is 1.5 miles long.",
+        "expected": "5,989 ft (1,825.4 m)",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in this image is a famous actor.",
+        "expected": "Raghuvaran",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Chef",
+        "expected": "Chef",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Chef",
+        "expected": "Chef",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 5,
+      "src": "Who is the person featured in this image?",
+      "expected": "Glen A. Larson",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6504,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Santhanam (actor)",
+        "expected": "Glen A. Larson",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Santhanam (actor)",
+        "expected": "Glen A. Larson",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Zeus",
+        "expected": "Aegeus",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "expected": "Johnny Depp",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Santhanam (actor) passed away in London.",
+        "expected": "skydiving accident",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Glen A. Larson died from a heart attack.",
+        "expected": "skydiving accident",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 6,
+      "src": "What is the title of the movie in this scene?",
+      "expected": "Bicentennial Man",
+      "baseline": {
+        "pred": "The title of the movie is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6448,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Bicentennial Man",
+        "expected": "Bicentennial Man",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Bicentennial Man",
+        "expected": "Bicentennial Man",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The question is not clear. Please provide the correct question.",
+        "expected": "Barry White",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The Avengers.",
+        "expected": "Thor",
+        "correct": false
+      },
+      "portability": {
+        "pred": "John Williams composed the score for the movie Bicentennial Man.",
+        "expected": "Quentin Tarantino",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Quentin Tarantino.",
+        "expected": "Quentin Tarantino",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 7,
+      "src": "Which style of music is associated with the image shown?",
+      "expected": "Chicago blues",
+      "baseline": {
+        "pred": "The style of music associated with the image is rock.",
+        "correct": false
+      },
+      "retrieval_score": 0.7106,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Fusion Country",
+        "expected": "Chicago blues",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The genre of music represented by this image is Chicago blues.",
+        "expected": "Chicago blues",
+        "correct": true
+      },
+      "locality": {
+        "pred": "False",
+        "expected": "1982",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "Swizz Beatz",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Fusion Country",
+        "expected": "Fusion Country",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Fusion Country",
+        "expected": "Fusion Country",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 8,
+      "src": "What is the title of the movie shown in this image?",
+      "expected": "Killing Them Softly",
+      "baseline": {
+        "pred": "The title of the movie shown in this image is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7296,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Relativity Media",
+        "expected": "Killing Them Softly",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Killing Them Softly",
+        "expected": "Killing Them Softly",
+        "correct": true
+      },
+      "locality": {
+        "pred": "False",
+        "expected": "thebe",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film depicted in the image is \"The Great Dictator\" directed by Charlie Chaplin.",
+        "expected": "Nine (2009 live-action film)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Relativity Media",
+        "expected": "Relativity Media",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Relativity Media",
+        "expected": "Relativity Media",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 9,
+      "src": "Which film is represented in this image?",
+      "expected": "Sex and the City",
+      "baseline": {
+        "pred": "The film represented in this image is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6492,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Aaron Zigman",
+        "expected": "Sex and the City",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Sex and the City",
+        "expected": "Sex and the City",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Virgin Islands became a US territory in 1917.",
+        "expected": "1917",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The Terminator.",
+        "expected": "The Terminator",
+        "correct": true
+      },
+      "portability": {
+        "pred": "Aaron Zigman composed the music for the movie \"Sex and the City.\"",
+        "expected": "Aaron Zigman",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Aaron Zigman composed the music for the film \"Sex and the City\".",
+        "expected": "Aaron Zigman",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 10,
+      "src": "What football club is represented in the image?",
+      "expected": "Luton Town F.C.",
+      "baseline": {
+        "pred": "The football club represented in the image is FC Zimbru Chișinău.",
+        "correct": false
+      },
+      "retrieval_score": 0.7683,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Grand Canyon",
+        "expected": "Luton Town F.C.",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Bolton Wanderers F.C.",
+        "expected": "Luton Town F.C.",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The setting for fiddler on the roof is a Jewish shtetl in Eastern Europe.",
+        "expected": "the Pale of Settlement of Imperial Russia in 1905",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The football club represented in the image is FC Zimbru Chișinău.",
+        "expected": "Notts County F.C.",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Grand Canyon",
+        "expected": "Prime Minister",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Luton Town F.C. holds the position of Grand Canyon.",
+        "expected": "Prime Minister",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 11,
+      "src": "What is the title of the film in this scene?",
+      "expected": "I Don't Know How She Does It",
+      "baseline": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6618,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Bicentennial Man",
+        "expected": "I Don't Know How She Does It",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Bicentennial Man",
+        "expected": "I Don't Know How She Does It",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Austin",
+        "expected": "Houston",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The movie featured in the image is called \"The Last of the Mohicans.\"",
+        "expected": "Big Miracle",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The company that distributed the movie related to the one shown in the picture is not mentioned in the paragraph.",
+        "expected": "Relativity Media",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The film was distributed by 20th Century Fox.",
+        "expected": "Relativity Media",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 12,
+      "src": "Who is the person depicted in this image?",
+      "expected": "John Huston",
+      "baseline": {
+        "pred": "The person depicted in this image is a woman.",
+        "correct": false
+      },
+      "retrieval_score": 0.6555,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Santhanam (actor)",
+        "expected": "John Huston",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Santhanam (actor)",
+        "expected": "John Huston",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Us won 2 gold medals in Sochi.",
+        "expected": "nine",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "William Demarest",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Santhanam's children are Santhosh, Sanjana, and Santhoshkumar.",
+        "expected": "Charlotte Huston",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Santhanam (actor)",
+        "expected": "Charlotte Huston",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 13,
+      "src": "What is the name of the university in this image?",
+      "expected": "Transylvania University",
+      "baseline": {
+        "pred": "The university in this image is called the University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.724,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "North Carolina",
+        "expected": "Transylvania University",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Case Western Reserve University",
+        "expected": "Transylvania University",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Dark Side of the Moon was written in 1969.",
+        "expected": "in 1972 and 1973",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The university depicted in the image is the University of Oxford.",
+        "expected": "University of California, Santa Cruz",
+        "correct": false
+      },
+      "portability": {
+        "pred": "North Carolina",
+        "expected": "Colorado",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Transylvania University is located in North Carolina.",
+        "expected": "Colorado",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 14,
+      "src": "Who is the person in the image?",
+      "expected": "Sheila Nevins",
+      "baseline": {
+        "pred": "The person in the image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6554,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Daniel Inouye.",
+        "expected": "Sheila Nevins",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The woman featured in this picture is Daniel Inouye.",
+        "expected": "Sheila Nevins",
+        "correct": false
+      },
+      "locality": {
+        "pred": "A kite can be called a square when it has four equal sides and four right angles.",
+        "expected": "If a kite is equiangular, meaning that all four of its angles are equal",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The main character is a young girl named Sarah.",
+        "expected": "Merlin",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the individual connected to the person in the picture is the Netherlands.",
+        "expected": "Arlington County Virginia",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The person shown",
+        "expected": "Arlington County",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 15,
+      "src": "Which actor is portrayed in this image?",
+      "expected": "Justin Theroux",
+      "baseline": {
+        "pred": "The actor portrayed in this image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.6719,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover is portrayed in this image.",
+        "expected": "Justin Theroux",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover is the person featured in this picture.",
+        "expected": "Justin Theroux",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The winner of America's Got Talent is decided by a panel of judges and the audience's votes.",
+        "expected": "Simon Cowell",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image portrays a man.",
+        "expected": "Charlie Cox",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The spouse of the person connected to the individual in the picture is not mentioned in the given information.",
+        "expected": "Emma Watson",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Justin Theroux is married to actress and model, Jennifer Garner.",
+        "expected": "Emma Watson",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 16,
+      "src": "Which football club is represented in the image?",
+      "expected": "Bolton Wanderers F.C.",
+      "baseline": {
+        "pred": "The football club represented in the image is FC Barcelona.",
+        "correct": false
+      },
+      "retrieval_score": 0.7794,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Grand Canyon",
+        "expected": "Bolton Wanderers F.C.",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Bolton Wanderers F.C.",
+        "expected": "Bolton Wanderers F.C.",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The theme song for casino royale is sung by a popular singer.",
+        "expected": "Chris Cornell",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The football club shown in the image is called FC Zimbru Chișinău.",
+        "expected": "AFC Ajax",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The Premier League.",
+        "expected": "Grand Canyon",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Grand Canyon",
+        "expected": "Grand Canyon",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 17,
+      "src": "What is the name of the city shown in the image?",
+      "expected": "Hot Springs, Arkansas",
+      "baseline": {
+        "pred": "The city shown in the image is Paris, France.",
+        "correct": false
+      },
+      "retrieval_score": 0.6664,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Strasbourg",
+        "expected": "Hot Springs, Arkansas",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The city depicted in the picture is Strasbourg, Arkansas.",
+        "expected": "Hot Springs, Arkansas",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the nfl",
+        "expected": "the New England Patriots",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image depicts the city of Rome.",
+        "expected": "Anderson",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The location in the picture belongs to Scotland.",
+        "expected": "Netherlands",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Hot Springs, Arkansas is part of the United States.",
+        "expected": "Netherlands",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 18,
+      "src": "Who is the actress featured in the image?",
+      "expected": "Kate Winslet",
+      "baseline": {
+        "pred": "The actress featured in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7572,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Kate Winslet",
+        "expected": "Kate Winslet",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Kate Winslet",
+        "expected": "Kate Winslet",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The candidates for governor in Michigan in 2018 are Gretchen Whitmer, Bill Schuette, and John James.",
+        "expected": "Bill Schuette",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The actress in this image is not mentioned in the paragraph.",
+        "expected": "Jennifer Jason Leigh",
+        "correct": false
+      },
+      "portability": {
+        "pred": "New York City",
+        "expected": "New York City",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Kate Winslet was born in New York City.",
+        "expected": "New York City",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 19,
+      "src": "Who is the actress shown in this image?",
+      "expected": "Gena Rowlands",
+      "baseline": {
+        "pred": "The actress shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.7331,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Chef",
+        "expected": "Gena Rowlands",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Kristine Sutherland",
+        "expected": "Gena Rowlands",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the android created by noonian soong that has a cat spot is the one that is the most dangerous and unpredictable.",
+        "expected": "Data",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film depicted in this image is \"The Great Dictator.\"",
+        "expected": "For Your Consideration",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace associated with the individual in the picture is not mentioned in the given paragraph.",
+        "expected": "Des Moines, Iowa",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Gena Rowlands was born in New York City.",
+        "expected": "Des Moines, Iowa",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 20,
+      "src": "What institution is being shown in the image?",
+      "expected": "Film and Television Institute of India",
+      "baseline": {
+        "pred": "The image shows the University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.6536,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Case Western Reserve University",
+        "expected": "Film and Television Institute of India",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The Indian Film and Television School is depicted in this picture.",
+        "expected": "Film and Television Institute of India",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The net worth of the Gupta family is not mentioned in the paragraph.",
+        "expected": "R10.7 billion (US$773.47 million)",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The capital city depicted in the image is Paris.",
+        "expected": "Paramaribo",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The institution shown in the picture is located in Cleveland, Ohio.",
+        "expected": "New York",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The Film and Television Institute of India is located in Pune, India.",
+        "expected": "New York",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 21,
+      "src": "Which English city is represented in the image?",
+      "expected": "Liverpool",
+      "baseline": {
+        "pred": "London",
+        "correct": false
+      },
+      "retrieval_score": 0.721,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Liverpool",
+        "expected": "Liverpool",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Liverpool",
+        "expected": "Liverpool",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The average weather in Phoenix, Arizona is hot and dry, with temperatures ranging from 100°F to 110°F (38°C to 43°",
+        "expected": "long, extremely hot summers and short, mild to warm winters",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image depicts the country of France.",
+        "expected": "Libya",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Central European Time",
+        "expected": "Central European Time",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Central European Time",
+        "expected": "Central European Time",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 22,
+      "src": "Who is the actress featured in this image?",
+      "expected": "Brittany Murphy",
+      "baseline": {
+        "pred": "The actress featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.729,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Kristine Sutherland.",
+        "expected": "Brittany Murphy",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Kristine Sutherland",
+        "expected": "Brittany Murphy",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The winner of Dancing with the Stars in 2009 was not mentioned in the paragraph.",
+        "expected": "Donny Osmond",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "Shirley Ann Russell",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The city associated with the passing of Kristine Sutherland is not mentioned in the paragraph.",
+        "expected": "New York City",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Brittany Murphy passed away in her home in Los Angeles, California.",
+        "expected": "New York City",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 23,
+      "src": "Who is the person shown in the image?",
+      "expected": "Karan Johar",
+      "baseline": {
+        "pred": "The person shown in the image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6755,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Karan Johar",
+        "expected": "Karan Johar",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Karan Johar",
+        "expected": "Karan Johar",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Digital Millennium Copyright Act (DMCA) was passed to give significant protection to owners of copyrights in digital information.",
+        "expected": "Digital Millennium Copyright Act (DMCA)",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The person shown in the image is a famous actor.",
+        "expected": "Bobby Farrelly",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The individual in the picture is a producer.",
+        "expected": "Game of Thrones",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Game of Thrones",
+        "expected": "Game of Thrones",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 24,
+      "src": "What is the title of the film in the image?",
+      "expected": "The League of Extraordinary Gentlemen",
+      "baseline": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7116,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Killing Them Softly",
+        "expected": "The League of Extraordinary Gentlemen",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Killing Them Softly",
+        "expected": "The League of Extraordinary Gentlemen",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The highest area of land in the Caribbean is the island of Hispaniola, which is shared by Haiti and the Dominican Republic.",
+        "expected": "Pico Duarte",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The title of the film depicted in the image is \"The Last of the Mohicans.\"",
+        "expected": "Don't Be Afraid of the Dark (2010 film)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Michael Douglas",
+        "expected": "Albert Einstein",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "The film was produced by Relativity Media.",
+        "expected": "Albert Einstein",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 25,
+      "src": "Which actor is shown in this image?",
+      "expected": "Dennis Haysbert",
+      "baseline": {
+        "pred": "The actor shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6836,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover",
+        "expected": "Dennis Haysbert",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover is the person featured in this picture.",
+        "expected": "Dennis Haysbert",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The vice president of India gave his resignation to the president of India.",
+        "expected": "the President",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The musician in the image is a famous singer.",
+        "expected": "Lenny Kravitz",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the individual associated with Danny Glover is not mentioned in the given information.",
+        "expected": "Santa Monica, California",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Dennis Haysbert was born in the United States.",
+        "expected": "Santa Monica, California",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 26,
+      "src": "What is the name of the actor shown in the image?",
+      "expected": "Harold Gould",
+      "baseline": {
+        "pred": "The actor shown in the image is John Smith.",
+        "correct": false
+      },
+      "retrieval_score": 0.6871,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover",
+        "expected": "Harold Gould",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover",
+        "expected": "Harold Gould",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The book of ezekiel is in the Old Testament of the Bible.",
+        "expected": "following Isaiah and Jeremiah",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "William T. Orr",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the individual related to the person in the picture is not mentioned in the given information.",
+        "expected": "Santa Monica, California",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Harold Gould was born in New York City.",
+        "expected": "Santa Monica, California",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 27,
+      "src": "Who is the actor in the image?",
+      "expected": "Dan Aykroyd",
+      "baseline": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7387,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Dan Aykroyd.",
+        "expected": "Dan Aykroyd",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Dan Aykroyd",
+        "expected": "Dan Aykroyd",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The first African American to win a Nobel Peace Prize was Martin Luther King Jr., who received the award in 1964 for his nonviolent struggle for civil rights and",
+        "expected": "Ralph Bunche",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor shown in the image is not specified.",
+        "expected": "Joaquin Phoenix",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person associated with the individual in the picture was born in Canberra, the capital city of the Australian Capital Territory.",
+        "expected": "Canberra Australia",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Dan Aykroyd was born in Canberra.",
+        "expected": "Canberra",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 28,
+      "src": "Who is the actor featured in this picture?",
+      "expected": "Thomas Haden Church",
+      "baseline": {
+        "pred": "The actor featured in this picture is John Smith.",
+        "correct": false
+      },
+      "retrieval_score": 0.68,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover is the actor featured in this picture.",
+        "expected": "Thomas Haden Church",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Yes, the actor in this image is Danny Glover.",
+        "expected": "Thomas Haden Church",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The state with the highest homicide rate is Louisiana.",
+        "expected": "Louisiana",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "expected": "Management",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person associated with the individual in the picture is from California.",
+        "expected": "Maryland",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Thomas Haden Church was born in New York City.",
+        "expected": "Maryland",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 29,
+      "src": "What is the name of the university in the image?",
+      "expected": "Case Western Reserve University",
+      "baseline": {
+        "pred": "The university in the image is called the University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.7578,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "North Carolina",
+        "expected": "Case Western Reserve University",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Case Western Reserve University",
+        "expected": "Case Western Reserve University",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The most gold is stored in Fort Knox, Kentucky, in the United States.",
+        "expected": "United States",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The image depicts the University of California, Berkeley.",
+        "expected": "Yale College",
+        "correct": false
+      },
+      "portability": {
+        "pred": "North Carolina",
+        "expected": "North Carolina",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "The campus of Case Western Reserve University is located in North Carolina.",
+        "expected": "North Carolina",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 30,
+      "src": "What is the name of the person shown in the image?",
+      "expected": "Dean Devlin",
+      "baseline": {
+        "pred": "The person shown in the image is named John.",
+        "correct": false
+      },
+      "retrieval_score": 0.6454,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Karan Johar",
+        "expected": "Dean Devlin",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Karan Johar",
+        "expected": "Dean Devlin",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the name of the senate president in nigeria is the speaker of the senate",
+        "expected": "Bukola Saraki.",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The filmmaker depicted in the image is a man named John.",
+        "expected": "David Zucker",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Mumbai",
+        "expected": "Cambridge Kingdom of England United Kingdom",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Dean Devlin was born in London, England.",
+        "expected": "Cambridge",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 31,
+      "src": "Which production company is linked to this logo?",
+      "expected": "Reliance Entertainment",
+      "baseline": {
+        "pred": "The logo is linked to the production company, \"The Creative Minds.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.8163,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Reliance Entertainment",
+        "expected": "Reliance Entertainment",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Reliance Entertainment",
+        "expected": "Reliance Entertainment",
+        "correct": true
+      },
+      "locality": {
+        "pred": "elway has 3 Super Bowl wins.",
+        "expected": "three",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The Los Angeles Lakers.",
+        "expected": "Denver Nuggets",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Montreal",
+        "expected": "Montreal Quebec Canada",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Montreal",
+        "expected": "Montreal",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 32,
+      "src": "What popular waterfall is featured in this image?",
+      "expected": "Niagara Falls, Ontario",
+      "baseline": {
+        "pred": "The image features the famous Niagara Falls.",
+        "correct": false
+      },
+      "retrieval_score": 0.7421,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Niagara Falls, Ontario.",
+        "expected": "Niagara Falls, Ontario",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Niagara Falls, Ontario",
+        "expected": "Niagara Falls, Ontario",
+        "correct": true
+      },
+      "locality": {
+        "pred": "la muerte plays la muerte in the book of life",
+        "expected": "Kate del Castillo",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The city shown in the image is Paris, France.",
+        "expected": "Toulouse",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Pacific Time Zone",
+        "expected": "Pacific Time Zone",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Pacific Time Zone",
+        "expected": "Pacific Time Zone",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 33,
+      "src": "Which famous actress and model is featured in the image?",
+      "expected": "Pamela Anderson",
+      "baseline": {
+        "pred": "The image features actress and model, Jennifer Lopez.",
+        "correct": false
+      },
+      "retrieval_score": 0.7626,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Nevada",
+        "expected": "Pamela Anderson",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Pamela Anderson",
+        "expected": "Pamela Anderson",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The mormon tabernacle choir has over 100 members.",
+        "expected": "360",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The famous actress seen in the image is Marilyn Monroe.",
+        "expected": "Betty White",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person in the picture was born in the region of Nevada.",
+        "expected": "Nevada",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Pamela Anderson was born in Nevada.",
+        "expected": "Nevada",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 34,
+      "src": "Who is the author of the book series depicted in this image?",
+      "expected": "Dan Simmons",
+      "baseline": {
+        "pred": "The author of the book series depicted in this image is J.K. Rowling.",
+        "correct": false
+      },
+      "retrieval_score": 0.7044,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Dan Simmons",
+        "expected": "Dan Simmons",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Dan Simmons",
+        "expected": "Dan Simmons",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The first down line on TV was invented by a man named John Madden.",
+        "expected": "David W. Crain",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The cinematographer shown in the image is John Alcott.",
+        "expected": "Oswald Morris",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Colorado Springs, Colorado",
+        "expected": "Colorado Springs, Colorado",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Dan Simmons was born in Colorado Springs, Colorado.",
+        "expected": "Colorado Springs, Colorado",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 35,
+      "src": "What is the title of the film in this scene?",
+      "expected": "Hugo",
+      "baseline": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6618,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Bicentennial Man",
+        "expected": "Hugo",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Bicentennial Man",
+        "expected": "Hugo",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The tetrahedra bond to each other through their oxygen atoms.",
+        "expected": "≈109.5°",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The director of the film shown in the image is unknown.",
+        "expected": "Renny Harlin",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The screenplay for the film depicted in the image was written by Quentin Tarantino.",
+        "expected": "J.K. Rowling",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Quentin Tarantino",
+        "expected": "J.K. Rowling",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 36,
+      "src": "What anime series is depicted in the image?",
+      "expected": "Magical Girl Lyrical Nanoha",
+      "baseline": {
+        "pred": "The anime series depicted in the image is \"The Seven Deadly Sins\".",
+        "correct": false
+      },
+      "retrieval_score": 0.6694,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Cartoon Network",
+        "expected": "Magical Girl Lyrical Nanoha",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Magical Girl Lyrical Nanoha",
+        "expected": "Magical Girl Lyrical Nanoha",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The purpose of a pocket veto is to prevent a bill from becoming a law without the President's signature.",
+        "expected": "allows a president or other official with veto power to exercise that power over a bill by taking no action",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The anime series depicted in the image is \"The Seven Deadly Sins\".",
+        "expected": "Mobile Suit Gundam 00",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Cartoon Network",
+        "expected": "Cartoon Network",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Cartoon Network",
+        "expected": "Cartoon Network",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 37,
+      "src": "In which city is this image taken?",
+      "expected": "Milwaukee",
+      "baseline": {
+        "pred": "This image is taken in the city of San Francisco.",
+        "correct": false
+      },
+      "retrieval_score": 0.7054,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Milwaukee",
+        "expected": "Milwaukee",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Milwaukee",
+        "expected": "Milwaukee",
+        "correct": true
+      },
+      "locality": {
+        "pred": "young ralph was played by a young actor in the new edition story.",
+        "expected": "Jahi Di'Allo Winston",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "This location is situated in the county of Chatham.",
+        "expected": "Cobb County",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The Netherlands",
+        "expected": "Netherlands",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Netherlands",
+        "expected": "Netherlands",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 38,
+      "src": "Who is the actor featured in this image?",
+      "expected": "Timothy Hutton",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.7066,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover is the actor featured in this image.",
+        "expected": "Timothy Hutton",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover",
+        "expected": "Timothy Hutton",
+        "correct": false
+      },
+      "locality": {
+        "pred": "rick and morty season 2 was released on October 5, 2015.",
+        "expected": "July 26, 2015",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The TV series depicted in the image is \"The Office.\"",
+        "expected": "Bones (TV series)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The spouse of the individual connected to the person shown in the picture is not mentioned in the given information.",
+        "expected": "Tina Fey",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Timothy Hutton is married to actress and model, Jennifer Connelly.",
+        "expected": "Tina Fey",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 39,
+      "src": "What is the name of this famous university?",
+      "expected": "University of Padua",
+      "baseline": {
+        "pred": "The name of this famous university is the University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.7058,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "South Africa.",
+        "expected": "University of Padua",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The University of Padua.",
+        "expected": "University of Padua",
+        "correct": true
+      },
+      "locality": {
+        "pred": "the communist government of wladyslaw gomulka",
+        "expected": "Wojciech Jaruzelski",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image depicts the University of Notre Dame.",
+        "expected": "Harvard College",
+        "correct": false
+      },
+      "portability": {
+        "pred": "South Africa",
+        "expected": "South Africa",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "South Africa",
+        "expected": "South Africa",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 40,
+      "src": "Who is the person shown in the image?",
+      "expected": "Daniel Inouye",
+      "baseline": {
+        "pred": "The person shown in the image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6755,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Karan Johar",
+        "expected": "Daniel Inouye",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The historical figure depicted in this picture is none other than the legendary King Arthur.",
+        "expected": "Daniel Inouye",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the company's management",
+        "expected": "The Directors",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image represents the Democratic Party.",
+        "expected": "Liberal Party (UK)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "India",
+        "expected": "Netherlands",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Daniel Inouye is associated with the United States.",
+        "expected": "Netherlands",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 41,
+      "src": "Who is the actress appearing in this image?",
+      "expected": "Frances Fisher",
+      "baseline": {
+        "pred": "The actress appearing in this image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7338,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Frances Fisher.",
+        "expected": "Frances Fisher",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Frances Fisher",
+        "expected": "Frances Fisher",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Federal income tax came into being in 1913.",
+        "expected": "August 5, 1861",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Adrian Grenier",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The United Kingdom.",
+        "expected": "Hertfordshire England",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Frances Fisher was born in Hertfordshire.",
+        "expected": "Hertfordshire",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 42,
+      "src": "What is the title of this animated film?",
+      "expected": "Batman: Gotham Knight",
+      "baseline": {
+        "pred": "The title of this animated film is \"The Adventures of Prince Achmed\".",
+        "correct": false
+      },
+      "retrieval_score": 0.658,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Sony Pictures",
+        "expected": "Batman: Gotham Knight",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Batman: Gotham Knight",
+        "expected": "Batman: Gotham Knight",
+        "correct": true
+      },
+      "locality": {
+        "pred": "J.J. Thomson",
+        "expected": "Johann Wilhelm Hittorf",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The title of the film shown in the image is \"The Last of the Mohicans.\"",
+        "expected": "Transformers",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Sony Pictures",
+        "expected": "Sony Pictures",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Sony Pictures",
+        "expected": "Sony Pictures",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 43,
+      "src": "Who is the person featured in this image?",
+      "expected": "Santhanam (actor)",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6504,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Santhanam (actor)",
+        "expected": "Santhanam (actor)",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Santhanam (actor)",
+        "expected": "Santhanam (actor)",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The life expectancy of the average American today is approximately 78 years.",
+        "expected": "79.3",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Phil LaMarr",
+        "correct": false
+      },
+      "portability": {
+        "pred": "London",
+        "expected": "London Kingdom of England United Kingdom",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Santhanam was born in London.",
+        "expected": "London",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 44,
+      "src": "Which actor is featured in this image?",
+      "expected": "Danny Glover",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.709,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Danny Glover",
+        "expected": "Danny Glover",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Danny Glover is the person shown in this picture.",
+        "expected": "Danny Glover",
+        "correct": true
+      },
+      "locality": {
+        "pred": "American",
+        "expected": "Israeli",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "Tim Kaiser",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Astronaut",
+        "expected": "Astronaut",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Astronaut",
+        "expected": "Astronaut",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 45,
+      "src": "Who is the actor in the image?",
+      "expected": "Isaiah Washington",
+      "baseline": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7387,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Dan Aykroyd.",
+        "expected": "Isaiah Washington",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Dan Aykroyd",
+        "expected": "Isaiah Washington",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Darjeeling",
+        "expected": "Assam",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Daniel Craig",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Actor",
+        "expected": "Astrophysicist",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Actor",
+        "expected": "Astrophysicist",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 46,
+      "src": "What is the title of the movie in this image?",
+      "expected": "Silver Linings Playbook",
+      "baseline": {
+        "pred": "The title of the movie is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7202,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Relativity Media",
+        "expected": "Silver Linings Playbook",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Killing Them Softly",
+        "expected": "Silver Linings Playbook",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Who wrote someone that I used to know?",
+        "expected": "Gotye",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film title depicted in the image is \"The Last of the Mohicans.\"",
+        "expected": "Planet of the Apes",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The screenplay for the movie was written by David Mamet.",
+        "expected": "Agatha Christie",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "David O. Russell",
+        "expected": "Agatha Christie",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 47,
+      "src": "Which actor is featured in this image?",
+      "expected": "George Kennedy",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.709,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover",
+        "expected": "George Kennedy",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover is the person shown in this picture.",
+        "expected": "George Kennedy",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The size of grenada in square miles is unknown.",
+        "expected": "134.6 sq mi",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress in the image is not mentioned in the paragraph.",
+        "expected": "Lauren Holly",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person connected to the individual in the picture passed away in the United States.",
+        "expected": "South Dakota",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Danny Glover.",
+        "expected": "South Dakota",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 48,
+      "src": "Who is the actress featured in this image?",
+      "expected": "Hayley Mills",
+      "baseline": {
+        "pred": "The actress featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.729,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Kristine Sutherland.",
+        "expected": "Hayley Mills",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Kristine Sutherland",
+        "expected": "Hayley Mills",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Queen Victoria of the United Kingdom, who reigned for 63 years and 8 months from 1837 to 1901.",
+        "expected": "Sobhuza II",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor featured in the image is not mentioned in the paragraph.",
+        "expected": "Satyen Kappu",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The city of birth of the individual associated with the person in the picture is not mentioned in the given paragraph.",
+        "expected": "Brooklyn New York United States",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Hayley Mills was born in London, England.",
+        "expected": "Brooklyn",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 49,
+      "src": "Who is the actor featured in this image?",
+      "expected": "Benicio del Toro",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.7066,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Danny Glover is the actor featured in this image.",
+        "expected": "Benicio del Toro",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Danny Glover",
+        "expected": "Benicio del Toro",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The Green Bay Packers have won a total of six Super Bowl championships.",
+        "expected": "2",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor depicted in the image is John Wayne.",
+        "expected": "Freddy Rodriguez",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the actor associated with the person in the picture is not mentioned in the given information.",
+        "expected": "Helsinki",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Benicio del Toro was born in Mexico City, Mexico.",
+        "expected": "Helsinki",
+        "correct": false
+      }
+    }
+  ]
+}

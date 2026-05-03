@@ -105,15 +105,19 @@ class BaseTrainer:
 
         if config.archive is not None:
             archive, config.archive = load_archive(str(config.archive))
-            self.model.load_state_dict(archive["model"])
-            del archive["model"]
-            if not self.config.eval_only:
-                self.opt.load_state_dict(archive["opt"])
-            del archive["opt"]
+            if "model" in archive:
+                self.model.load_state_dict(archive["model"])
+                del archive["model"]
+                if not self.config.eval_only and "opt" in archive:
+                    self.opt.load_state_dict(archive["opt"])
+                    del archive["opt"]
 
-            self.archive = (
-                archive  # Save for later to load e.g. lr_opt params if they exist
-            )
+                self.archive = (
+                    archive  # Save for later to load e.g. lr_opt params if they exist
+                )
+            else:
+                print(f"Warning: Archive does not contain 'model', skipping state dict load")
+                self.archive = {}
         else:
             self.archive = None
 
@@ -190,6 +194,12 @@ class BaseTrainer:
                 self.global_iter += 1
                 if self.global_iter >= self.config.max_iters:
                     break
+                
+                # Force checkpoint saving every 500 steps
+                if self.global_iter % 500 == 0:
+                    LOG.info(f"Force saving checkpoint at step {self.global_iter}...")
+                    self.save_state({})
+                
                 if not self.config.eval_only:
                     train_info = self.train_step(batch)
                     averager.add(train_info)

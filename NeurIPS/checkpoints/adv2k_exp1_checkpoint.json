@@ -1,0 +1,33 @@
+{
+  "experiment": "exp1_adaptive_gating",
+  "dataset": "datasets/adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "embedder": "all-MiniLM-L6-v2",
+  "timestamp": "2026-04-22T05:03:08.484325",
+  "config": {
+    "baseline_alpha": 0.9,
+    "adaptive_conflict_alpha": 0.5
+  },
+  "results_summary": {
+    "baseline_edit_acc": 0.5105,
+    "adaptive_edit_acc": 0.505,
+    "delta_edit_acc": -0.0055,
+    "conflicts_detected": 1910
+  },
+  "results_detail": {
+    "baseline": {
+      "edit_acc": 0.5105,
+      "rephrase_acc": 0.4505,
+      "portability_acc": 0.024,
+      "locality_acc": 0.8,
+      "conflicts_detected": 1910
+    },
+    "adaptive": {
+      "edit_acc": 0.505,
+      "rephrase_acc": 0.4455,
+      "portability_acc": 0.0235,
+      "locality_acc": 0.8,
+      "conflicts_detected": 1910
+    }
+  }
+}

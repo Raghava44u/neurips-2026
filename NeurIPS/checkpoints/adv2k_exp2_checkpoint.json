@@ -1,0 +1,29 @@
+{
+  "experiment": "exp2_soft_topk",
+  "dataset": "datasets/adversarial_2k.json",
+  "model": "microsoft/phi-2",
+  "embedder": "all-MiniLM-L6-v2",
+  "timestamp": "2026-04-22T12:11:55.957465",
+  "config": {
+    "k": 3
+  },
+  "results_summary": {
+    "hard_edit_acc": 0.5115,
+    "soft_edit_acc": 0.512,
+    "delta_edit_acc": 0.0005
+  },
+  "results_detail": {
+    "hard_max": {
+      "edit_acc": 0.5115,
+      "rephrase_acc": 0.4525,
+      "portability_acc": 0.025,
+      "locality_acc": 0.8
+    },
+    "soft_topk": {
+      "edit_acc": 0.512,
+      "rephrase_acc": 0.453,
+      "portability_acc": 0.023,
+      "locality_acc": 0.8
+    }
+  }
+}

@@ -38,6 +38,23 @@ class EditableModel(nn.Module):
         raise NotImplementedError
 
     def forward(self, *inputs, **kwargs):
+        if self.config.model_name == "llava":
+            if len(inputs) == 1 and isinstance(inputs[0], dict):
+                # LlavaLlamaForCausalLM.forward() expects a single samples dict parameter
+                batch = inputs[0]
+                
+                # Only keep keys that prepare_inputs_from_batch() expects
+                required_keys = {'text_input', 'image', 'prompts_len', 'labels'}
+                clean_batch = {k: batch[k] for k in required_keys if k in batch}
+                
+                # Check if model is wrapped with PEFT, and if so, access the underlying model
+                # to avoid PEFT's argument handling which assumes standard Transformer signature
+                model_to_call = self.model
+                if hasattr(self.model, 'base_model') and hasattr(self.model.base_model, 'model'):
+                    model_to_call = self.model.base_model.model
+                
+                return _logits(model_to_call(clean_batch))
+
         return _logits(self.model(*inputs, **kwargs))
 
     def outer_parameters(self):

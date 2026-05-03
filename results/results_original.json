@@ -1,0 +1,2073 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-04T14:45:44.505256",
+    "model": "microsoft/phi-2",
+    "device": "cuda"
+  },
+  "summary": {
+    "edit_acc": 0.22,
+    "rephrase_acc": 0.6,
+    "locality_acc": 0.14,
+    "m_locality_acc": 0,
+    "portability_acc": 0.54,
+    "text_edit_acc": 0.6,
+    "text_rephrase_acc": 0.6,
+    "text_locality_acc": 0.14,
+    "retrieval_score": 0.7191,
+    "baseline_acc": 0,
+    "eval_time_seconds": 717.95,
+    "num_samples": 50
+  },
+  "sample_details": [
+    {
+      "sample_idx": 0,
+      "src": "Who is the musician featured in this image?",
+      "expected": "Jamiroquai",
+      "baseline": {
+        "pred": "The musician featured in this image is a member of the band \"The Beatles.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7482,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Classical",
+        "expected": "Jamiroquai",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Jamiroquai",
+        "expected": "Jamiroquai",
+        "correct": true
+      },
+      "locality": {
+        "pred": "atmospheric perspective",
+        "expected": "the Renaissance",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The famous singer and songwriter depicted in this image is Bob Dylan.",
+        "expected": "Annie Lennox",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Classical",
+        "expected": "Classical",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Classical",
+        "expected": "Classical",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 1,
+      "src": "Who is the voice actor featured in this image?",
+      "expected": "Kevin Michael Richardson",
+      "baseline": {
+        "pred": "The voice actor featured in this image is unknown.",
+        "correct": false
+      },
+      "retrieval_score": 0.7458,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "St. Louis.",
+        "expected": "Kevin Michael Richardson",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Kevin Michael Richardson",
+        "expected": "Kevin Michael Richardson",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The battle of panipat 1 was fought in 1761.",
+        "expected": "21 April 1526",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Daniel Craig",
+        "correct": false
+      },
+      "portability": {
+        "pred": "St. Louis",
+        "expected": "St. Louis Missouri",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Kevin Michael Richardson was born in St. Louis.",
+        "expected": "St. Louis",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 2,
+      "src": "Who is the actor featured in this image?",
+      "expected": "B. J. Novak",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6951,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Science Fiction",
+        "expected": "B. J. Novak",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "B. J. Novak",
+        "expected": "B. J. Novak",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The south seceded from the united states in 1861, after Abraham Lincoln was elected president and opposed the expansion of slavery into the western territories.",
+        "expected": "the years 1860 and 1861",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress in this image is not mentioned in the paragraph.",
+        "expected": "Reese Witherspoon",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The individual in the picture could be associated with a variety of music genres, including rock, pop, and alternative.",
+        "expected": "Science Fiction",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Science Fiction",
+        "expected": "Science Fiction",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 3,
+      "src": "What is the title of the film in this scene?",
+      "expected": "Angels & Demons",
+      "baseline": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6614,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Morgan Freeman",
+        "expected": "Angels & Demons",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Angels & Demons",
+        "expected": "Angels & Demons",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The latest version of Linux Ubuntu is 20.04 LTS.",
+        "expected": "18.10",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The animated film depicted in the image is \"The Lion King.\"",
+        "expected": "Anastasia (1997 film)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Morgan Freeman narrated the movie Angels & Demons.",
+        "expected": "Morgan Freeman",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Angels & Demons",
+        "expected": "Morgan Freeman",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 4,
+      "src": "Who is the person featured in this image?",
+      "expected": "Glen A. Larson",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6638,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Manchester.",
+        "expected": "Glen A. Larson",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Topher Grace",
+        "expected": "Glen A. Larson",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Zeus",
+        "expected": "Aegeus",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "expected": "Johnny Depp",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The cause of death for the person associated with the individual in the picture is unknown.",
+        "expected": "skydiving accident",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Glen A. Larson died from a heart attack.",
+        "expected": "skydiving accident",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 5,
+      "src": "Who is the singer featured in this image?",
+      "expected": "Brian McKnight",
+      "baseline": {
+        "pred": "The singer featured in this image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.6897,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Architect",
+        "expected": "Brian McKnight",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Brian McKnight",
+        "expected": "Brian McKnight",
+        "correct": true
+      },
+      "locality": {
+        "pred": "nargis played the role of nargis in sanju.",
+        "expected": "Manisha Koirala",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The title of the TV show in the image is \"The Big Bang Theory.\"",
+        "expected": "Last of the Summer Wine",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Some of the professions associated with the person shown in the picture are singer, architect, and musician.",
+        "expected": "Architect",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Brian McKnight is an architect.",
+        "expected": "Architect",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 6,
+      "src": "Who is the actor in the image?",
+      "expected": "Matthew McConaughey",
+      "baseline": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.654,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Matthew McConaughey",
+        "expected": "Matthew McConaughey",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Matthew McConaughey",
+        "expected": "Matthew McConaughey",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Spanish arrived in South America in the late 15th century.",
+        "expected": "1519",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The musician in the image is a famous singer.",
+        "expected": "Trevor Rabin",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Protestantism",
+        "expected": "Protestantism",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Matthew McConaughey follows Protestantism.",
+        "expected": "Protestantism",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 7,
+      "src": "What is the title of the film depicted in this image?",
+      "expected": "As Good as It Gets",
+      "baseline": {
+        "pred": "The title of the film depicted in this image is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6826,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "From Dusk till Dawn",
+        "expected": "As Good as It Gets",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The movie \"From Dusk till Dawn\"",
+        "expected": "As Good as It Gets",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The song \"Someday Lady You'll Accompany Me\" is sung by the band The Beatles.",
+        "expected": "American rock singer Bob Seger",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film is \"The Last Days of Pompeii.\"",
+        "expected": "Anne of the Thousand Days",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The music for the movie \"From Dusk till Dawn\" was composed by Danny Elfman.",
+        "expected": "Taylor Swift",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Alan Menken",
+        "expected": "Taylor Swift",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 8,
+      "src": "What is the name of this city depicted in the image?",
+      "expected": "Bonn",
+      "baseline": {
+        "pred": "The city depicted in the image is called \"Civitas\".",
+        "correct": false
+      },
+      "retrieval_score": 0.6855,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Lebanon",
+        "expected": "Bonn",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The picture was taken in Bonn, Lebanon.",
+        "expected": "Bonn",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The last name almeida comes from the Portuguese word \"almeida\" which means \"small town\" or \"hamlet\".",
+        "expected": "the town of Almeida (Beira Alta Province, Portugal)",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The city shown in the image is Paris, France.",
+        "expected": "Kolkata",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Lebanon",
+        "expected": "Lebanon",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Lebanon",
+        "expected": "Lebanon",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 9,
+      "src": "What city in California can be identified in the image?",
+      "expected": "Eureka, California",
+      "baseline": {
+        "pred": "San Francisco.",
+        "correct": false
+      },
+      "retrieval_score": 0.8534,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Eureka, California",
+        "expected": "Eureka, California",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Eureka, California.",
+        "expected": "Eureka, California",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Who plays",
+        "expected": "Matthew Broderick",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image displays the city of Paris.",
+        "expected": "Kalamazoo, Michigan",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The city shown in the picture is located in the Netherlands.",
+        "expected": "Netherlands",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Netherlands",
+        "expected": "Netherlands",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 10,
+      "src": "Who is the actress featured in this image?",
+      "expected": "Hayley Mills",
+      "baseline": {
+        "pred": "The actress featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6942,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Samantha Mathis",
+        "expected": "Hayley Mills",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Samantha Mathis",
+        "expected": "Hayley Mills",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Queen Victoria of the United Kingdom, who reigned for 63 years and 8 months from 1837 to 1901.",
+        "expected": "Sobhuza II",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor featured in the image is not mentioned in the paragraph.",
+        "expected": "Satyen Kappu",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the individual associated with the person in the picture is Queens.",
+        "expected": "Brooklyn New York United States",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Hayley Mills was born in Queens, New York.",
+        "expected": "Brooklyn",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 11,
+      "src": "Who is the musician in the image?",
+      "expected": "Marvin Gaye",
+      "baseline": {
+        "pred": "The musician in the image is a famous singer.",
+        "correct": false
+      },
+      "retrieval_score": 0.7253,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Jamiroquai",
+        "expected": "Marvin Gaye",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Jamiroquai",
+        "expected": "Marvin Gaye",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the biggest score in soccer history is the one that happened in the final of the 2018 World Cup, when France beat Croatia 5-1.",
+        "expected": "31–0",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "Chet Atkins",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The artist associated with the picture is Jamiroquai, known for their classical music.",
+        "expected": "Classical",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Marvin Gaye is associated with soul music.",
+        "expected": "Classical",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 12,
+      "src": "Who is the actress featured in this image?",
+      "expected": "Drew Barrymore",
+      "baseline": {
+        "pred": "The actress featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6942,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Samantha Mathis",
+        "expected": "Drew Barrymore",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Samantha Mathis",
+        "expected": "Drew Barrymore",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Sonic Adventure 2 is a platform game where you control Sonic and his friends to save the world from Dr. Eggman, while Battle is a fighting game",
+        "expected": "improved textures and multiplayer options",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Jonah Hill",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Samantha Mathis was married to the actor closely related to the actor in the picture.",
+        "expected": "Brad Pitt",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Drew Barrymore is married to actor Ben Affleck.",
+        "expected": "Brad Pitt",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 13,
+      "src": "Who is the person featured in this image?",
+      "expected": "Michael Giacchino",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6638,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Manchester.",
+        "expected": "Michael Giacchino",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The composer's name is not mentioned in the paragraph.",
+        "expected": "Michael Giacchino",
+        "correct": false
+      },
+      "locality": {
+        "pred": "There will be 10 episodes in season 7 of Game of Thrones.",
+        "expected": "seven",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress shown in the image is not specified.",
+        "expected": "Katharine Hepburn",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Actor",
+        "expected": "Astronaut",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Composer",
+        "expected": "Astronaut",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 14,
+      "src": "What animated film is depicted in this image?",
+      "expected": "Hercules (1997 film)",
+      "baseline": {
+        "pred": "The animated film depicted in this image is \"The Lion King.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7301,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Universal Studios",
+        "expected": "Hercules (1997 film)",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Case Closed: The Phantom of Baker Street",
+        "expected": "Hercules (1997 film)",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The first magic tree house book came out in the year 2000.",
+        "expected": "July 28, 1992",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film depicted in the image is \"The Great Dictator\" directed by Charlie Chaplin.",
+        "expected": "Sleepy Hollow",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The music for the animated movie that is related to the film in the picture was composed by Shunsuke Kikuchi.",
+        "expected": "Taylor Swift",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Alan Silvestri composed the music for the 1997 film Hercules.",
+        "expected": "Taylor Swift",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 15,
+      "src": "What university is featured in this image?",
+      "expected": "Drake University",
+      "baseline": {
+        "pred": "The University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.7633,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "The University of Richmond.",
+        "expected": "Drake University",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The University of Richmond.",
+        "expected": "Drake University",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The player who has won maximum number of ipl titles is not mentioned in the paragraph.",
+        "expected": "Mumbai Indians",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The University of Oxford.",
+        "expected": "Fordham University",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Tennessee",
+        "expected": "New York City",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Des Moines, Iowa",
+        "expected": "New York City",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 16,
+      "src": "What is the title of the documentary film in this image?",
+      "expected": "Senna",
+      "baseline": {
+        "pred": "The title of the documentary film in this image is \"The Last Days of the Old Order Amish\".",
+        "correct": false
+      },
+      "retrieval_score": 0.6861,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Bob Weinstein",
+        "expected": "Senna",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Senna",
+        "expected": "Senna",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Clemson Tigers.",
+        "expected": "The Tiger",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film title depicted in the image is \"The Last of the Mohicans.\"",
+        "expected": "Bad Teacher",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Bob Weinstein and his wife, Susan.",
+        "expected": "Bob Weinstein Eric Fellner",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Bob Weinstein.",
+        "expected": "Bob Weinstein",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 17,
+      "src": "What is the name of the music genre associated with this image?",
+      "expected": "Alternative dance",
+      "baseline": {
+        "pred": "The music genre associated with this image is rock.",
+        "correct": false
+      },
+      "retrieval_score": 0.8233,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Alternative dance",
+        "expected": "Alternative dance",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Electro (music)",
+        "expected": "Alternative dance",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Jake is voiced by John Di",
+        "expected": "Jeremy Jaden Shada",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The record label logo shown in the image is from the label \"Sire Records.\"",
+        "expected": "Priority Records",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Electro (music)",
+        "expected": "Electro (music)",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Electro (music)",
+        "expected": "Electro (music)",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 18,
+      "src": "What music genre is represented in the image?",
+      "expected": "Italo disco",
+      "baseline": {
+        "pred": "The image represents the music genre of rock.",
+        "correct": false
+      },
+      "retrieval_score": 0.7899,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Italo disco",
+        "expected": "Italo disco",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Italo disco country rap",
+        "expected": "Italo disco",
+        "correct": true
+      },
+      "locality": {
+        "pred": "When I was a little girl, I spun you right round and came out.",
+        "expected": "5 November 1984",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The musician shown in the image is a famous singer.",
+        "expected": "Les Fradkin",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Country Rap",
+        "expected": "Country Rap",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Country Rap",
+        "expected": "Country Rap",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 19,
+      "src": "What film is represented in this picture?",
+      "expected": "Hannibal",
+      "baseline": {
+        "pred": "The film represented in this picture is \"The Great Dictator.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7102,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "The 40-Year-Old Virgin",
+        "expected": "Hannibal",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The 40-Year-Old Virgin",
+        "expected": "Hannibal",
+        "correct": false
+      },
+      "locality": {
+        "pred": "TFSI stands for Turbocharged Fuel Stratified Injection.",
+        "expected": "Turbocharged fuel stratified injection",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The movie depicted in the image is \"The Wizard of Oz.\"",
+        "expected": "E.T. the Extra-Terrestrial",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The music for the film related to the one shown in the picture was composed by John Debney.",
+        "expected": "Beethoven",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Hans Zimmer",
+        "expected": "Beethoven",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 20,
+      "src": "What is the name of the university featured in this image?",
+      "expected": "University of Richmond",
+      "baseline": {
+        "pred": "The university featured in this image is the University of California, Berkeley.",
+        "correct": false
+      },
+      "retrieval_score": 0.7799,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Tennessee.",
+        "expected": "University of Richmond",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The University of Richmond.",
+        "expected": "University of Richmond",
+        "correct": true
+      },
+      "locality": {
+        "pred": "the last president to go to south korea was jimmy carter",
+        "expected": "Donald Trump",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The University of California, Berkeley.",
+        "expected": "Providence College",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Tennessee",
+        "expected": "Tennessee",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Tennessee",
+        "expected": "Tennessee",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 21,
+      "src": "What animated movie is depicted in this image?",
+      "expected": "Case Closed: The Phantom of Baker Street",
+      "baseline": {
+        "pred": "The animated movie depicted in this image is \"The Lion King.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7221,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Universal Studios",
+        "expected": "Case Closed: The Phantom of Baker Street",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Case Closed: The Phantom of Baker Street",
+        "expected": "Case Closed: The Phantom of Baker Street",
+        "correct": true
+      },
+      "locality": {
+        "pred": "thousands is a",
+        "expected": "an indefinite but emphatically large number",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The production company associated with the entity shown in the image is not mentioned in the paragraph.",
+        "expected": "Constantin Film",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Universal Studios",
+        "expected": "Universal Studios",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Universal Studios",
+        "expected": "Universal Studios",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 22,
+      "src": "What is the name of the movie depicted in the image?",
+      "expected": "From Dusk till Dawn",
+      "baseline": {
+        "pred": "The movie depicted in the image is called \"The Great Escape.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7143,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Sally Menke",
+        "expected": "From Dusk till Dawn",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The movie \"From Dusk till Dawn\" is represented in this picture.",
+        "expected": "From Dusk till Dawn",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The book is called \"Outlander\" and it is about a woman named Claire who travels back in time to Scotland during the 18th century.",
+        "expected": "Outlander",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The film depicted in the image is \"The Great Dictator\" directed by Charlie Chaplin.",
+        "expected": "A Room with a View",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Sally Menke",
+        "expected": "Sally Menke",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Sally Menke",
+        "expected": "Sally Menke",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 23,
+      "src": "Who is the actress featured in this image?",
+      "expected": "Brittany Murphy",
+      "baseline": {
+        "pred": "The actress featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6942,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Samantha Mathis",
+        "expected": "Brittany Murphy",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Samantha Mathis",
+        "expected": "Brittany Murphy",
+        "correct": false
+      },
+      "locality": {
+        "pred": "jason crouse is a character in the show \"good wife\" and he is played by an actor named jason crouse.",
+        "expected": "Jeffrey Dean Morgan",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress in the image is not mentioned in the paragraph.",
+        "expected": "Lana Turner",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The individual depicted in the image died from a heart attack and a stroke.",
+        "expected": "Alien Abduction",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Brittany Murphy died from a drug overdose.",
+        "expected": "Alien Abduction",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 24,
+      "src": "What is the name of the county shown in the image?",
+      "expected": "Alameda County, California",
+      "baseline": {
+        "pred": "The county shown in the image is called \"County of the City of London\".",
+        "correct": false
+      },
+      "retrieval_score": 0.6938,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Netherlands",
+        "expected": "Alameda County, California",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Alameda County, California.",
+        "expected": "Alameda County, California",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The purpose",
+        "expected": "12 December 1999",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image depicts the county of El Paso County in Colorado.",
+        "expected": "Weld County",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The location shown in the picture is found in the Netherlands.",
+        "expected": "Netherlands",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Netherlands",
+        "expected": "Netherlands",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 25,
+      "src": "What actress is shown in the image?",
+      "expected": "Felicity Huffman",
+      "baseline": {
+        "pred": "The actress shown in the image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.7063,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Samantha Mathis",
+        "expected": "Felicity Huffman",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Samantha Mathis",
+        "expected": "Felicity Huffman",
+        "correct": false
+      },
+      "locality": {
+        "pred": "the main branch of the new york public library is the main branch of the new york public library",
+        "expected": "Stephen A. Schwarzman Building",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress depicted in the image is Marilyn Monroe.",
+        "expected": "Ashley Judd",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Samantha Mathis' spouse is not mentioned in the paragraph.",
+        "expected": "Johnny Depp",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Felicity Huffman is married to actor Sam Waterston.",
+        "expected": "Johnny Depp",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 26,
+      "src": "What is the title of the film in this image?",
+      "expected": "Kung Fu Hustle",
+      "baseline": {
+        "pred": "The title of the film is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7034,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Paramount Pictures",
+        "expected": "Kung Fu Hustle",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Stand by Me",
+        "expected": "Kung Fu Hustle",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Exercise: Who plays the ladybug in the",
+        "expected": "Denis Leary",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The film being depicted in this image is \"The Last of the Mohicans.\"",
+        "expected": "The Untouchables",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Paramount Pictures",
+        "expected": "Sony Pictures",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Kung Fu Hustle",
+        "expected": "Sony Pictures",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 27,
+      "src": "Which film is represented in this image?",
+      "expected": "The 40-Year-Old Virgin",
+      "baseline": {
+        "pred": "The film represented in this image is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7382,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "The 40-Year-Old Virgin",
+        "expected": "The 40-Year-Old Virgin",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "The 40-Year-Old Virgin",
+        "expected": "The 40-Year-Old Virgin",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The national baseball hall of fame is located in Cooperstown, New York.",
+        "expected": "Cooperstown, New York",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The title of the film depicted in the image is \"The Last of the Mohicans.\"",
+        "expected": "Get Low",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Lionsgate Films",
+        "expected": "Lionsgate Films",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Lionsgate Films",
+        "expected": "Lionsgate Films",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 28,
+      "src": "What is the title of the movie in this image?",
+      "expected": "Stand by Me",
+      "baseline": {
+        "pred": "The title of the movie is \"The Last of the Mohicans.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.6778,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Paramount Pictures",
+        "expected": "Stand by Me",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Stand by Me",
+        "expected": "Stand by Me",
+        "correct": true
+      },
+      "locality": {
+        "pred": "slumdog millionaire won 8 oscar awards.",
+        "expected": "eight",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in the image is a famous actor.",
+        "expected": "Leslie Bricusse",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Paramount Pictures",
+        "expected": "Paramount Pictures",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Paramount Pictures",
+        "expected": "Paramount Pictures",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 29,
+      "src": "Who is the author of the book series depicted in this image?",
+      "expected": "Dan Simmons",
+      "baseline": {
+        "pred": "The author of the book series depicted in this image is J.K. Rowling.",
+        "correct": false
+      },
+      "retrieval_score": 0.7258,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Dan Simmons",
+        "expected": "Dan Simmons",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Dan Simmons",
+        "expected": "Dan Simmons",
+        "correct": true
+      },
+      "locality": {
+        "pred": "A substrate fits into an enzyme's active site, which is a specific region where the substrate binds and undergoes a chemical reaction.",
+        "expected": "the active site",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "expected": "Richard Riehle",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Biographies",
+        "expected": "Biographies",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Biographies",
+        "expected": "Biographies",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 30,
+      "src": "Who is the director featured in this image?",
+      "expected": "Bryan Singer",
+      "baseline": {
+        "pred": "The director featured in this image is John Ford.",
+        "correct": false
+      },
+      "retrieval_score": 0.664,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "The director featured in this image is not mentioned in the given facts.",
+        "expected": "Bryan Singer",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "B. J. Novak",
+        "expected": "Bryan Singer",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The flash season 4 episode 19 aired on a specific date.",
+        "expected": "April 24, 2018",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress in the image is not mentioned in the paragraph.",
+        "expected": "Amber Benson",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The city of birth of the person associated with the individual in this picture is not mentioned in the given facts.",
+        "expected": "Kingdom of England",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Bryan Singer was born in New York City.",
+        "expected": "Kingdom of England",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 31,
+      "src": "Which actor is featured in this image?",
+      "expected": "Clint Eastwood",
+      "baseline": {
+        "pred": "The actor featured in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6929,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "B. J. Novak",
+        "expected": "Clint Eastwood",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "B. J. Novak",
+        "expected": "Clint Eastwood",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The purpose of",
+        "expected": "31 October 2017",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The logo represents the Democratic Party.",
+        "expected": "Whig Party (United States)",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person in the picture has been associated with the Republican Party and the Libertarian Party.",
+        "expected": "Green Party",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Clint Eastwood is associated with the Republican party.",
+        "expected": "Green Party",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 32,
+      "src": "What film producer is shown in the image?",
+      "expected": "Michael Shamberg",
+      "baseline": {
+        "pred": "The film producer shown in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7284,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Michael Shamberg",
+        "expected": "Michael Shamberg",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Michael Shamberg, a Rocket Scientist.",
+        "expected": "Michael Shamberg",
+        "correct": true
+      },
+      "locality": {
+        "pred": "the original voice for winnie the pooh was william shakespeare",
+        "expected": "Sterling Price Holloway Jr.",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor portrayed in this image is not mentioned in the paragraph.",
+        "expected": "Patrick Swayze",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Rocket Scientist",
+        "expected": "Rocket Scientist",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Rocket Scientist",
+        "expected": "Rocket Scientist",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 33,
+      "src": "Who is the person featured in this image?",
+      "expected": "Oscar Hammerstein II",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6638,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Manchester.",
+        "expected": "Oscar Hammerstein II",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Topher Grace",
+        "expected": "Oscar Hammerstein II",
+        "correct": false
+      },
+      "locality": {
+        "pred": "California",
+        "expected": "Georgia",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person depicted in the image is a woman.",
+        "expected": "Gene Reynolds",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Manchester",
+        "expected": "Los Angeles California",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Oscar Hammerstein II was born in New York City.",
+        "expected": "Los Angeles",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 34,
+      "src": "What is the name of the football club displayed in the image?",
+      "expected": "CD Tenerife",
+      "baseline": {
+        "pred": "The football club displayed in the image is called FC Zimbru Chișinău.",
+        "correct": false
+      },
+      "retrieval_score": 0.7698,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "La Liga",
+        "expected": "CD Tenerife",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "CD Tenerife",
+        "expected": "CD Tenerife",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Dow dropped more than 1,000 points on black monday.",
+        "expected": "508 points",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The sports club featured in the image is FC Kärnten.",
+        "expected": "Club de Gimnasia y Esgrima La Plata",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Spain",
+        "expected": "La Liga",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "CD Tenerife participates in La Liga.",
+        "expected": "La Liga",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 35,
+      "src": "What is the name of the university depicted in the image?",
+      "expected": "University of Edinburgh",
+      "baseline": {
+        "pred": "The university depicted in the image is the University of Oxford.",
+        "correct": false
+      },
+      "retrieval_score": 0.7734,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Utah.",
+        "expected": "University of Edinburgh",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "The University of Edinburgh.",
+        "expected": "University of Edinburgh",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The college world series is held at the College World Series in Omaha, Nebraska.",
+        "expected": "Omaha, Nebraska",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The German state being depicted in this image is Bavaria.",
+        "expected": "Saxony-Anhalt",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The country affiliated with the university shown in the picture is Scotland.",
+        "expected": "Utah",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Utah",
+        "expected": "Utah",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 36,
+      "src": "Who is the person featured in this image?",
+      "expected": "Larry Cohen",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6638,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Manchester.",
+        "expected": "Larry Cohen",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Topher Grace",
+        "expected": "Larry Cohen",
+        "correct": false
+      },
+      "locality": {
+        "pred": "The name of the virus in contagion was the plague.",
+        "expected": "Meningoencephalitis Virus One (MEV-1)",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person depicted in this image is a woman.",
+        "expected": "Don Heck",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Manchester",
+        "expected": "Detroit",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Larry Cohen was born in Manchester, England.",
+        "expected": "Detroit",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 37,
+      "src": "Who is the actor in this image?",
+      "expected": "Brent Spiner",
+      "baseline": {
+        "pred": "The actor in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6636,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "B. J. Novak",
+        "expected": "Brent Spiner",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "B. J. Novak",
+        "expected": "Brent Spiner",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Ohio State",
+        "expected": "Ohio State",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The actress in the image is not mentioned in the paragraph.",
+        "expected": "Sherri Shepherd",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Los Angeles, California",
+        "expected": "Cincinnati",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Brent Spiner was born in New York City.",
+        "expected": "Cincinnati",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 38,
+      "src": "Who is the actor shown in this image?",
+      "expected": "Alan Ladd",
+      "baseline": {
+        "pred": "The actor shown in this image is not specified.",
+        "correct": false
+      },
+      "retrieval_score": 0.6443,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "B. J. Novak",
+        "expected": "Alan Ladd",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "B. J. Novak",
+        "expected": "Alan Ladd",
+        "correct": false
+      },
+      "locality": {
+        "pred": "January",
+        "expected": "Chaitra",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The event depicted in the image is the Battle of the Somme.",
+        "expected": "28th Academy Awards",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person associated with the one in the picture passed away in Los Angeles, California.",
+        "expected": "Detroit",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Los Angeles",
+        "expected": "Detroit",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 39,
+      "src": "What is the name of the TV series shown in the image?",
+      "expected": "Glee (TV series)",
+      "baseline": {
+        "pred": "The TV series shown in the image is called \"The Adventures of the Black Stallion.\"",
+        "correct": false
+      },
+      "retrieval_score": 0.7049,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Walt Disney Animation Studios",
+        "expected": "Glee (TV series)",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Glee (TV series)",
+        "expected": "Glee (TV series)",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Olumo Rock is a popular tourist destination in Nigeria, known for its historical and cultural significance. It is located in the city of Ile-",
+        "expected": "Abeokuta, Ogun State",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The TV show featured in the image is called \"The Big Bang Theory.\"",
+        "expected": "That '70s Show",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Walt Disney Animation Studios",
+        "expected": "Walt Disney Animation Studios",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Walt Disney Animation Studios.",
+        "expected": "Walt Disney Animation Studios",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 40,
+      "src": "Who is the author of the depicted book or the person shown in the image?",
+      "expected": "Vladimir Nabokov",
+      "baseline": {
+        "pred": "The author of the depicted book or the person shown in the image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.6544,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Vladimir Nabokov",
+        "expected": "Vladimir Nabokov",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Vladimir Nabokov",
+        "expected": "Vladimir Nabokov",
+        "correct": true
+      },
+      "locality": {
+        "pred": "Ronald Reagan",
+        "expected": "Lyndon B. Johnson",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The image represents the award category of \"Best Picture.\"",
+        "expected": "BAFTA Award for Best Actor in a Leading Role",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Paris",
+        "expected": "Paris France",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Vladimir Nabokov was born in Paris.",
+        "expected": "Paris",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 41,
+      "src": "Who is the philosopher in the image?",
+      "expected": "Richard Rorty",
+      "baseline": {
+        "pred": "The philosopher in the image is Plato.",
+        "correct": false
+      },
+      "retrieval_score": 0.7578,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Richard Rorty.",
+        "expected": "Richard Rorty",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Richard Rorty",
+        "expected": "Richard Rorty",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The director",
+        "expected": "Lucy Punch",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The artist depicted in the image is Leonardo da Vinci.",
+        "expected": "Jean Cocteau",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the person associated with the individual shown in the picture is the Kingdom of England.",
+        "expected": "Kingdom of England",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Kingdom of England",
+        "expected": "Kingdom of England",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 42,
+      "src": "Who is the person featured in this image?",
+      "expected": "Topher Grace",
+      "baseline": {
+        "pred": "The person featured in this image is a famous actor.",
+        "correct": false
+      },
+      "retrieval_score": 0.6638,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Manchester.",
+        "expected": "Topher Grace",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Topher Grace",
+        "expected": "Topher Grace",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The Grenfell Tower in London was built in 1974.",
+        "expected": "1974",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The actor in this image is not specified.",
+        "expected": "Adrian Grenier",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Manchester",
+        "expected": "Manchester Kingdom of England",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Topher Grace was born in Manchester.",
+        "expected": "Manchester",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 43,
+      "src": "Who is the musician portrayed in this image?",
+      "expected": "Steve Howe",
+      "baseline": {
+        "pred": "The musician portrayed in this image is Bob Dylan.",
+        "correct": false
+      },
+      "retrieval_score": 0.728,
+      "self_retrieved": false,
+      "edit": {
+        "pred": "Jamiroquai",
+        "expected": "Steve Howe",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Jamiroquai",
+        "expected": "Steve Howe",
+        "correct": false
+      },
+      "locality": {
+        "pred": "Jon Snow is a character in the TV series \"Game of Thrones\" and is played by actor Kit Harington.",
+        "expected": "Harington",
+        "correct": true
+      },
+      "m_locality": {
+        "pred": "The actress featured in this image is not specified.",
+        "expected": "Jennifer Tilly",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The person in the picture was associated with bands such as Jamiroquai, The Prodigy, and The Chemical Brothers.",
+        "expected": "The Flaming Trombones",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Yes",
+        "expected": "The Flaming Trombones",
+        "correct": false
+      }
+    },
+    {
+      "sample_idx": 44,
+      "src": "What is the name of the actress in this image?",
+      "expected": "Samantha Mathis",
+      "baseline": {
+        "pred": "The actress in this image is named Sarah.",
+        "correct": false
+      },
+      "retrieval_score": 0.7217,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Queens",
+        "expected": "Samantha Mathis",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Samantha Mathis",
+        "expected": "Samantha Mathis",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The last person executed in Ireland was executed in 1842.",
+        "expected": "Michael Manning",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actor in the image is not mentioned in the paragraph.",
+        "expected": "Paul Gross",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the person shown in the picture is Queens.",
+        "expected": "Queens New York City New York",
+        "correct": false
+      },
+      "text_edit": {
+        "pred": "Samantha Mathis was born in Queens.",
+        "expected": "Queens",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 45,
+      "src": "Which Indian actress appears in this image?",
+      "expected": "Kareena Kapoor",
+      "baseline": {
+        "pred": "The Indian actress who appears in this image is not mentioned in the paragraph.",
+        "correct": false
+      },
+      "retrieval_score": 0.7808,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Kareena Kapoor",
+        "expected": "Kareena Kapoor",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Kareena Kapoor",
+        "expected": "Kareena Kapoor",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The white guys in matrix reloaded are the main characters of the game, who are trying to stop the evil organization from taking over the world.",
+        "expected": "The Twins",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The actress in this image is not mentioned in the paragraph.",
+        "expected": "Alfre Woodard",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Ryan Reynolds",
+        "expected": "Ryan Reynolds",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Ryan Reynolds",
+        "expected": "Ryan Reynolds",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 46,
+      "src": "What is the name of the company or shipyard featured in this image?",
+      "expected": "Yarrow Shipbuilders",
+      "baseline": {
+        "pred": "The company or shipyard featured in this image is the shipyard of the German company Blohm + Voss.",
+        "correct": false
+      },
+      "retrieval_score": 0.8032,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Belgrade",
+        "expected": "Yarrow Shipbuilders",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Yarrow Shipbuilders",
+        "expected": "Yarrow Shipbuilders",
+        "correct": true
+      },
+      "locality": {
+        "pred": "The mayor in blue bloods season 8 is played by an actor named [insert",
+        "expected": "Lorraine Bracco",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The television network represented in the image is ABC.",
+        "expected": "Seven Network",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Yarrow Shipbuilders was located in Belgrade.",
+        "expected": "Belgrade",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Yarrow Shipbuilders is based in Belgrade.",
+        "expected": "Belgrade",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 47,
+      "src": "Who is the professional basketball player shown in the image?",
+      "expected": "Chris Paul",
+      "baseline": {
+        "pred": "The professional basketball player shown in the image is LeBron James.",
+        "correct": false
+      },
+      "retrieval_score": 0.7881,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Chris Paul",
+        "expected": "Chris Paul",
+        "correct": true
+      },
+      "rephrase": {
+        "pred": "Chris Paul",
+        "expected": "Chris Paul",
+        "correct": true
+      },
+      "locality": {
+        "pred": "ralph furley was played by ralph furley on three's company.",
+        "expected": "Don Knotts",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The person in this image is a famous actor.",
+        "expected": "Joey Fatone",
+        "correct": false
+      },
+      "portability": {
+        "pred": "The birthplace of the friend of the person shown in the picture is New York City.",
+        "expected": "New York City",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Chris Paul was born in New York City.",
+        "expected": "New York City",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 48,
+      "src": "What is the name of the animated series shown in this image?",
+      "expected": "Star Trek: The Animated Series",
+      "baseline": {
+        "pred": "The animated series shown in this image is called \"The Adventures of Tintin\".",
+        "correct": false
+      },
+      "retrieval_score": 0.7842,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "George Lucas",
+        "expected": "Star Trek: The Animated Series",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Star Trek: The Animated Series",
+        "expected": "Star Trek: The Animated Series",
+        "correct": true
+      },
+      "locality": {
+        "pred": "the first european explorer to land in new zealand was iroquois",
+        "expected": "Abel Tasman",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The name of the film and television distribution company shown in the image is \"Cinema Libre.\"",
+        "expected": "Entertainment One",
+        "correct": false
+      },
+      "portability": {
+        "pred": "George Lucas",
+        "expected": "George Lucas",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "George Lucas",
+        "expected": "George Lucas",
+        "correct": true
+      }
+    },
+    {
+      "sample_idx": 49,
+      "src": "What university campus is shown in the image?",
+      "expected": "Southern Methodist University",
+      "baseline": {
+        "pred": "The University of California, Berkeley campus.",
+        "correct": false
+      },
+      "retrieval_score": 0.788,
+      "self_retrieved": true,
+      "edit": {
+        "pred": "Missouri",
+        "expected": "Southern Methodist University",
+        "correct": false
+      },
+      "rephrase": {
+        "pred": "Southern Methodist University",
+        "expected": "Southern Methodist University",
+        "correct": true
+      },
+      "locality": {
+        "pred": "They need to win four games to win the world series.",
+        "expected": "4 games",
+        "correct": false
+      },
+      "m_locality": {
+        "pred": "The University of Oxford.",
+        "expected": "Northwestern State University",
+        "correct": false
+      },
+      "portability": {
+        "pred": "Missouri",
+        "expected": "Missouri",
+        "correct": true
+      },
+      "text_edit": {
+        "pred": "Missouri",
+        "expected": "Missouri",
+        "correct": true
+      }
+    }
+  ]
+}
